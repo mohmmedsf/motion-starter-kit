@@ -13,6 +13,11 @@
 >
 > **For AI agents:** if the user gave you this repo's link and asked for a video: clone it, read `AGENTS.md`, and follow `.agents/skills/motion-from-reference/SKILL.md` step by step. Ask all your questions once, in simple words. Never render before the user has watched the video in Remotion Studio and approved it.
 
+## معرض ستايلات الموشن جرافيك
+[![معرض ستايلات الموشن جرافيك](gallery/preview.jpg)](https://motalim-ai.github.io/motion-starter-kit/gallery/)
+
+لا تعرف أي ستايل تختار؟ افتح **[المعرض](https://motalim-ai.github.io/motion-starter-kit/gallery/)**: فيه 26 ستايلًا في 6 عائلات، وكلها تشرح الفكرة نفسها بمثال حي يتحرك، لترى الفرق بعينك. ومع كل ستايل: ما الذي يناسبه، وكلمات البحث عنه في Pinterest، وفيديو الستايل إن كان من الستايلات العشرة في هذا الريبو.
+
 ## الاستخدام: رابط وجملة واحدة
 1. انسخ رابط الريبو: `https://github.com/motalim-ai/motion-starter-kit`
 2. افتح أي وكيل برمجة (Claude Code أو Codex أو Antigravity) في مجلد فارغ.
@@ -82,6 +87,7 @@ https://github.com/motalim-ai/motion-starter-kit
 ## خريطة المشروع
 ```
 styles/             مكتبة الستايلات: لكل ستايل فيديو ومعاينة
+gallery/            معرض الستايلات: صفحة تُفتح في المتصفح، فيها 26 ستايلًا بأمثلة حية
 reference/          أو ضع هنا فيديو مرجعيًا من عندك
 AGENTS.md           القانون: القواعد لكل الوكلاء
 CLAUDE.md           يستورد AGENTS.md لـ Claude Code

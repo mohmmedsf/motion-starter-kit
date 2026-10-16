@@ -1,0 +1,1315 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ستايلات الموشن جرافيك | متعلم</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --offwhite:#F3F2EE;--black:#000;--white:#fff;--blue:#0056D2;--sky:#00B6FF;--teal:#47B6CC;--green:#2EA57C;
+  --coral:#FF4F5C;--amber:#FFB300;--orange:#EE702E;--navy:#1F3D63;
+  --ink:#000;--ink-2:var(--navy);--ink-3:rgba(31,61,99,.72);--line:rgba(31,61,99,.12);--line-2:rgba(31,61,99,.25);
+  --veil:rgba(255,255,255,.14);--band-line:rgba(255,255,255,.45);--on-band-2:rgba(255,255,255,.86);
+  --shadow-window:0 50px 90px -30px rgba(0,0,0,.55);--shadow-float:0 30px 60px -24px rgba(0,0,0,.55);
+  --shadow-lift:0 24px 40px -20px rgba(0,0,0,.5);--shadow-card:inset 0 0 0 1px rgba(31,61,99,.12);
+  --ease:cubic-bezier(.22,.7,.2,1);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:var(--white);color:var(--ink);font-family:"IBM Plex Sans Arabic",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.ltr{direction:ltr;unicode-bidi:isolate}
+.sq{display:inline-block;width:12px;height:12px;border-radius:3px;flex:none}
+
+.band{margin:12px;border-radius:40px;position:relative;overflow:hidden;color:#fff}
+.band.blue{background:var(--blue)}
+.band.navy{background:var(--navy)}
+.band::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.09) 1.2px,transparent 1.2px);background-size:22px 22px;pointer-events:none}
+.hero{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:40px;align-items:center;padding:36px 56px 64px;position:relative}
+.logo svg{height:44px;width:auto;display:block}
+.pill{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:7px 14px;font-size:14px;font-weight:600;line-height:1}
+.pill.veil{background:var(--veil);box-shadow:inset 0 0 0 1px var(--band-line);color:#fff}
+.pill.white{background:#fff;color:var(--ink);box-shadow:var(--shadow-lift)}
+.hero h1{font-size:clamp(38px,5vw,64px);line-height:1.12;font-weight:700;margin:22px 0 0;letter-spacing:-.01em}
+.hero h1 .am{color:var(--amber);display:block}
+.hero .lead{font-size:clamp(17px,1.5vw,20px);line-height:1.75;color:var(--on-band-2);margin:18px 0 0;max-width:34em}
+.stats{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.stats .pill b{font-family:"IBM Plex Mono",monospace;font-size:15px}
+.stage{position:relative;padding:20px 0}
+.win{background:#fff;border-radius:24px;box-shadow:var(--shadow-window);overflow:hidden;transform:rotate(-2deg)}
+.chrome{display:flex;align-items:center;gap:7px;padding:12px 14px;border-bottom:1px solid var(--line)}
+.chrome i{width:10px;height:10px;border-radius:50%;background:var(--line-2)}
+.chrome .url{margin-inline:auto;font-size:12px;color:var(--ink-3);background:var(--offwhite);border-radius:999px;padding:5px 14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;padding:10px}
+.tile{aspect-ratio:16/9;border-radius:12px;overflow:hidden;position:relative;container-type:inline-size}
+.float{position:absolute;border-radius:20px;box-shadow:var(--shadow-float);animation:floaty 8s var(--ease) infinite}
+.float.prompt{background:var(--amber);color:#000;padding:14px 16px;font-size:14px;line-height:1.6;font-weight:600;max-width:260px;inset-inline-start:-26px;bottom:-14px;transform:rotate(3deg)}
+.float.prompt small{display:block;font-family:"IBM Plex Mono",monospace;font-size:11px;opacity:.7;margin-bottom:4px}
+.float.ok{inset-inline-end:-10px;top:-6px;background:#fff;color:#000;border-radius:999px;padding:9px 16px 9px 12px;font-weight:600;font-size:14px;display:flex;gap:8px;align-items:center;animation-delay:-3s}
+.float.ok .dot{width:22px;height:22px;border-radius:50%;background:var(--green);display:grid;place-items:center;color:#fff;font-size:13px}
+@keyframes floaty{0%,100%{translate:0 0}50%{translate:0 -10px}}
+
+.bar{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);backdrop-filter:saturate(1.4) blur(12px);-webkit-backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid var(--line)}
+.bar-in{max-width:1320px;margin:0 auto;padding:12px 24px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.fams{display:flex;gap:6px;flex-wrap:wrap;flex:1}
+.chip{display:inline-flex;align-items:center;gap:7px;padding:8px 13px;border-radius:999px;font-size:14px;font-weight:600;text-decoration:none;color:var(--ink-2);box-shadow:inset 0 0 0 1px var(--line);transition:background .2s}
+.chip:hover{background:var(--offwhite)}
+.seg{display:inline-flex;background:var(--offwhite);border-radius:999px;padding:3px}
+.seg button{all:unset;cursor:pointer;padding:7px 13px;border-radius:999px;font-size:13px;font-weight:600;color:var(--ink-3)}
+.seg button[aria-pressed=true]{background:#fff;color:#000;box-shadow:var(--shadow-card)}
+.seg-lab{font-size:13px;color:var(--ink-3);font-weight:500}
+
+main{max-width:1320px;margin:0 auto;padding:0 24px 40px}
+.sec{padding-top:64px}
+.kicker{display:flex;align-items:center;gap:9px;font-size:15px;font-weight:600;color:var(--ink-2)}
+.sec h2{font-size:clamp(28px,3vw,40px);font-weight:700;margin:10px 0 6px;line-height:1.25}
+.sec .sub{color:var(--ink-3);font-size:17px;margin:0 0 24px;line-height:1.7}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:14px}
+.card{background:#fff;border-radius:28px;box-shadow:var(--shadow-card);padding:12px;display:flex;flex-direction:column;transition:box-shadow .35s var(--ease),transform .35s var(--ease)}
+.card:hover{box-shadow:var(--shadow-card),0 30px 50px -34px rgba(31,61,99,.45);transform:translateY(-3px)}
+.media{aspect-ratio:16/9;border-radius:18px;overflow:hidden;position:relative;container-type:inline-size;background:#000;isolation:isolate}
+.layer{position:absolute;inset:0;transition:opacity .35s var(--ease)}
+.layer.real{opacity:0;pointer-events:none}
+.card.show-real .layer.real{opacity:1;pointer-events:auto}
+.card.show-real .layer.live{opacity:0}
+.layer svg,.tile svg{display:block;width:100%;height:100%}
+.real .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:blur(22px);transform:scale(1.25);opacity:.75}
+.real video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+.tag{position:absolute;bottom:10px;inset-inline-end:10px;font-size:12px;font-weight:600;background:rgba(0,0,0,.6);color:#fff;border-radius:999px;padding:5px 10px;pointer-events:none}
+.tog{display:inline-flex;background:var(--offwhite);border-radius:999px;padding:3px}
+.tog button{all:unset;cursor:pointer;font-size:12px;font-weight:600;padding:5px 11px;border-radius:999px;color:var(--ink-3)}
+.tog button[aria-pressed=true]{background:#000;color:#fff}
+.cb{padding:14px 8px 4px;display:flex;flex-direction:column;gap:6px;flex:1}
+.cb-top{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.cb h3{font-size:20px;font-weight:700;margin:0}
+.ease{font-size:12px;font-weight:600;border-radius:999px;padding:4px 10px;white-space:nowrap}
+.ease.e1{background:rgba(46,165,124,.16);color:#1d7a59}
+.ease.e2{background:rgba(255,179,0,.25);color:#7a5600}
+.ease.e3{background:rgba(255,79,92,.16);color:#b8303b}
+.en{font-size:12px;color:var(--ink-3);text-align:right}
+.use{font-size:15px;color:var(--ink-2);margin:2px 0 0;line-height:1.6}
+.look{font-size:14px;color:var(--ink-3);margin:0;line-height:1.65}
+.look b{color:var(--ink);font-weight:600}
+.links{display:flex;gap:6px;flex-wrap:wrap;margin-top:auto;padding-top:10px}
+.lk{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;text-decoration:none;border-radius:999px;padding:6px 12px;box-shadow:inset 0 0 0 1px var(--line);color:var(--ink-2);transition:background .2s}
+.lk:hover{background:var(--offwhite)}
+.lk svg{width:12px;height:12px}
+
+.desc{padding:56px;position:relative}
+.desc h2{font-size:clamp(28px,3vw,42px);font-weight:700;margin:16px 0 8px;line-height:1.25}
+.desc h2 .am{color:var(--amber)}
+.desc .lead{color:var(--on-band-2);font-size:18px;line-height:1.75;margin:0 0 28px;max-width:44em}
+.four{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.four .c{background:#fff;color:#000;border-radius:24px;padding:18px}
+.four .c .num{font-size:28px;font-weight:600}
+.four .c h4{margin:8px 0 6px;font-size:19px;font-weight:700}
+.four .c p{margin:0;font-size:15px;color:var(--ink-2);line-height:1.65}
+.example{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:14px;margin-top:14px}
+.ex-prompt{background:var(--amber);color:#000;border-radius:24px;padding:22px;font-size:16px;line-height:1.85;font-weight:500}
+.ex-prompt small{display:block;font-family:"IBM Plex Mono",monospace;font-size:12px;opacity:.7;margin-bottom:6px}
+.ex-prompt mark{background:rgba(255,255,255,.55);border-radius:6px;padding:0 4px}
+.ex-repo{background:var(--veil);box-shadow:inset 0 0 0 1px var(--band-line);border-radius:24px;padding:22px;display:flex;flex-direction:column;gap:10px}
+.ex-repo h4{margin:0;font-size:19px}
+.ex-repo p{margin:0;color:var(--on-band-2);line-height:1.7;font-size:15px}
+.ex-repo a{align-self:flex-start;margin-top:auto;text-decoration:none}
+.foot{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-top:40px;padding-top:24px;border-top:1px solid rgba(255,255,255,.2)}
+.foot .logo svg{height:34px}
+.foot a{color:var(--on-band-2);text-decoration:none;font-size:15px}
+
+/* HTML scenes */
+.sy{position:absolute;inset:0;background:#F3F2EE;background-image:linear-gradient(rgba(31,61,99,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(31,61,99,.06) 1px,transparent 1px);background-size:6cqw 6cqw;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:4cqw;padding:0 8cqw}
+.sy-t{font-weight:700;font-size:6.6cqw;line-height:1.7;text-align:center;color:rgba(31,61,99,.25)}
+.sy-t span{display:inline-block;border-radius:1.4cqw;padding:0 .9cqw;background:rgba(255,179,0,0)}
+.sy-w{display:flex;gap:.9cqw;align-items:center;height:8cqw}
+.sy-w b{width:1.1cqw;height:100%;background:#0056D2;border-radius:1cqw;transform:scaleY(.12);display:block}
+.sy-bar{width:62%;height:.7cqw;background:rgba(31,61,99,.12);border-radius:1cqw;overflow:hidden}
+.sy-bar i{display:block;height:100%;background:#0056D2;transform-origin:right;transform:scaleX(0)}
+.c3{position:absolute;inset:0;background:#1F3D63;perspective:110cqw;overflow:hidden}
+.c3 .sc{position:absolute;left:50%;top:50%;width:0;height:0;transform-style:preserve-3d}
+.c3 .slot{position:absolute;transform-style:preserve-3d}
+.c3 .cube{position:absolute;width:17cqw;height:17cqw;left:-8.5cqw;top:-8.5cqw;transform-style:preserve-3d}
+.c3 .cube span{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:700;color:#fff;font-size:6.4cqw;line-height:1;backface-visibility:hidden}
+.c3 .cube span small{font-size:2.4cqw;font-weight:600;margin-top:.8cqw;opacity:.9}
+.c3 .sh{position:absolute;width:20cqw;height:6cqw;left:-10cqw;top:9cqw;border-radius:50%;background:rgba(0,0,0,.35);filter:blur(1.2cqw)}
+.c3 .cap{position:absolute;inset-inline:0;bottom:5cqw;text-align:center;color:#F3F2EE;font-weight:700;font-size:4.4cqw}
+.gl{position:absolute;inset:0;background:#fff;overflow:hidden}
+.gl .blob{position:absolute;border-radius:50%}
+.gl .gc{position:absolute;left:50%;top:50%;width:62cqw;padding:3.2cqw 3.6cqw;border-radius:4.2cqw;background:rgba(255,255,255,.34);backdrop-filter:blur(2.6cqw) saturate(1.5);-webkit-backdrop-filter:blur(2.6cqw) saturate(1.5);box-shadow:inset 0 0 0 1px rgba(255,255,255,.85),0 2cqw 6cqw rgba(31,61,99,.18);display:flex;gap:3cqw;align-items:center}
+.gl .ic{width:10cqw;height:10cqw;border-radius:50%;background:rgba(255,255,255,.75);display:grid;place-items:center;flex:none}
+.gl .ic svg{width:5.6cqw;height:5.6cqw}
+.gl h5{margin:0;font-size:4.6cqw;font-weight:700;color:#000;line-height:1.3}
+.gl p{margin:.6cqw 0 0;font-size:3cqw;color:#1F3D63}
+.gl .pb{height:1.4cqw;border-radius:1cqw;background:rgba(31,61,99,.15);margin-top:1.6cqw;overflow:hidden;width:34cqw}
+.gl .pb i{display:block;height:100%;background:#0056D2;transform-origin:right;transform:scaleX(0)}
+.mo{position:absolute;inset:0;background:#F3F2EE;overflow:hidden}
+.mo .orb{position:absolute;left:50%;top:46%;width:0;height:0}
+.mo .s{position:absolute;width:16cqw;height:16cqw;left:-8cqw;top:-8cqw;border-radius:50%}
+.mo .cap{position:absolute;inset-inline:0;bottom:5cqw;text-align:center;font-weight:700;font-size:4.6cqw;color:#000}
+
+@media (max-width:980px){
+  .hero{grid-template-columns:1fr;padding:28px 24px 48px}
+  .stage{max-width:560px}
+  .four{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .example{grid-template-columns:1fr}
+  .desc{padding:36px 24px}
+}
+@media (max-width:560px){
+  .band{margin:8px;border-radius:28px}
+  .four{grid-template-columns:1fr}
+  .grid{grid-template-columns:1fr}
+  .float.prompt{display:none}
+  .bar{position:static}
+  .bar-in{padding:10px 16px}
+  .fams{flex:1 1 100%;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin:0 -16px;padding:0 16px}
+  .chip{white-space:nowrap}
+  main{padding:0 16px 32px}
+}
+</style>
+</head>
+<body>
+
+<header class="band blue">
+  <div class="hero">
+    <div>
+      <div class="logo"><svg version="1.1" aria-label="متعلم" role="img" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 450 149.56" style="enable-background:new 0 0 450 149.56;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#0056D2;}
+	.st1{fill:#FFFFFF;}
+	g > path:not([class]){fill:#FFFFFF;}
+</style>
+<g>
+	<g>
+		<circle class="st0" cx="375.22" cy="74.78" r="74.78"/>
+		<g>
+			<g>
+				<path class="st1" d="M375.23,125.13c-22.9,0-41.51-18.62-41.51-41.5v-25.9c0-3.68,2.98-6.66,6.66-6.66
+					c12.53,0,24.15,5.65,31.89,15.51l2.97,3.77l2.95-3.77c7.74-9.86,19.36-15.51,31.89-15.51c3.68,0,6.66,2.98,6.66,6.66v25.9
+					C416.73,106.51,398.11,125.13,375.23,125.13z M347.03,65.21v18.42c0,15.53,12.65,28.18,28.19,28.18
+					c15.53,0,28.18-12.65,28.18-28.18V65.21c-5.79,1.44-10.95,4.76-14.74,9.59l-8.2,10.45c-2.52,3.23-7.94,3.23-10.49,0l-8.21-10.45
+					C357.99,69.97,352.82,66.65,347.03,65.21z"/>
+			</g>
+			<g>
+				<path class="st1" d="M396.06,49.83c-1.13,0-2.28-0.29-3.33-0.88l-17.64-10.17l-17.63,10.17c-3.21,1.81-7.27,0.73-9.11-2.45
+					c-1.83-3.19-0.74-7.26,2.45-9.11l20.96-12.09c2.06-1.17,4.61-1.17,6.66,0l20.97,12.09c3.19,1.85,4.28,5.92,2.45,9.11
+					C400.6,48.63,398.36,49.83,396.06,49.83z"/>
+			</g>
+		</g>
+	</g>
+	<g>
+		<path d="M80.24,20.38c2.59,0,4.94-1.36,6.54-3.84c1.36,1.73,4.08,2.61,5.92,2.61c5.44,0,8.52-4.32,8.52-10V3.97
+			c0-2.52-2.4-4.36-4.84-3.69l-0.01,0c-1.66,0.46-2.81,1.97-2.81,3.69v5.17c0,1.47-0.61,2.22-1.97,2.22c-1.11,0-1.85-0.61-1.85-1.84
+			V7.26c0-2.55-2.44-4.38-4.89-3.67l0,0c-1.63,0.47-2.76,1.97-2.76,3.67v3.35c0,1.49-0.61,2.1-1.85,2.1c-1.23,0-1.84-0.61-1.84-1.97
+			v-0.43c0-2.5-2.36-4.33-4.78-3.7l-0.01,0c-1.69,0.44-2.87,1.96-2.87,3.7v0.43C70.74,16.3,74.81,20.38,80.24,20.38z"/>
+		<path d="M211.62,2.92l-30.66,5.65c-1.47,0.27-2.63,1.42-2.91,2.89l-0.02,0.11c-0.47,2.5,1.71,4.69,4.21,4.23l30.68-5.76
+			c1.47-0.27,2.62-1.42,2.89-2.89v0C216.29,4.66,214.11,2.47,211.62,2.92z"/>
+		<path d="M188,43.96c4.87,0,8.92-3.95,8.92-8.92c0-4.76-4.05-8.92-8.92-8.92c-4.87,0-9.02,4.16-9.02,8.92
+			C178.98,40.02,183.13,43.96,188,43.96z"/>
+		<path d="M202.4,35.04c0,4.97,4.15,8.92,9.02,8.92c4.87,0,8.92-3.95,8.92-8.92c0-4.76-4.05-8.92-8.92-8.92
+			C206.55,26.12,202.4,30.28,202.4,35.04z"/>
+		<path d="M266.7,9.36c-5.53,0-9.99,4.46-9.99,9.97c0,1.98,0.53,3.81,1.59,5.39l-11.71,3.54c-1.6,0.49-2.69,1.97-2.69,3.64v0
+			c0,2.57,2.5,4.4,4.95,3.63l19.49-6.05c4.72-1.61,8.2-5.15,8.2-10.15C276.55,13.82,272.21,9.36,266.7,9.36z M266.96,23.13
+			c-2.1,0-3.68-1.57-3.68-3.92c0-1.98,1.59-3.55,3.68-3.55c1.96,0,3.55,1.57,3.55,3.55C270.51,21.57,268.92,23.13,266.96,23.13z"/>
+		<path d="M262.14,46.09h-1.01c-13.59,0-23.83,10.34-23.83,23.91v8.83c0,2.74-1.73,4.56-4.45,4.56h-18.9
+			c-6.39,0-7.51-3.86-7.51-8.22v-2.72c0.11-1.33,0.11-2.54,0.11-3.55V58.51c0-4.28-3.47-7.76-7.76-7.76h0
+			c-4.28,0-7.76,3.47-7.76,7.76v16.66c0,4.36-0.81,8.22-7.3,8.22h-21.45c-3.15,0-6.18-0.31-9.02-0.7
+			c4.76-4.77,8.52-7.82,10.95-14.09c0.81-2.04,1.31-4.56,1.31-6.29c0-9.93-10.85-15.91-26.16-15.91c-6.42,0-12.66,0.79-19.7,2.69
+			c-4.45,1.21-7.57,5.22-7.57,9.83v0c0,2.32,0.79,4.57,2.24,6.37l13.98,17.39c-0.71,0.4-7.19,0.7-8,0.7h-18.79
+			c-6.39,0-7.49-3.86-7.49-8.22v-2.63c0.1-1.31,0.1-2.54,0.1-3.55V35.99c0-4.27-3.46-7.74-7.74-7.74h0c-4.29,0-7.76,3.48-7.74,7.77
+			l0.07,16.25v22.91c0,4.36-1.02,8.22-7.3,8.22H66.6c-2.54,0-4.16-1.62-4.16-4.26v-9.38c0-13.24-10.65-24.16-23.89-24.17
+			C24.85,45.57,14.6,55.92,14.6,69.61v9.34C5.88,81.58,0,89.27,0,98.91l0,27.83c0,4.28,3.47,7.76,7.76,7.76h0
+			c4.28,0,7.76-3.47,7.76-7.76V98.91c0-2.74,1.31-4.67,3.75-5.28c4.97,4.67,11.16,6.69,19.26,6.69c6.28,0,11.75-2.22,15.91-6.08
+			c3.14,2.83,7.4,4.56,12.16,4.56h4.62c6.99,0,11.86-2.33,15.31-5.78c3.45,3.46,7.9,5.78,12.77,5.78h25.18
+			c4.26,0,9.52-1.31,13.98-5.88c3.55,4.56,8.52,5.88,13.28,5.88h31.9c7,0,11.86-2.33,15.3-5.78c3.45,3.46,7.91,5.78,12.78,5.78
+			h21.13c5.46,0,10.13-2.02,13.48-5.37c4.67,3.24,10.33,5.06,16.31,5.06c12.88,0,23.32-10.85,23.32-23.92v-4.57
+			C285.96,56.44,275.73,46.09,262.14,46.09z M47.44,75.99c0,4.93-3.99,8.92-8.92,8.92s-8.92-3.99-8.92-8.92v-6.08
+			c0-4.93,3.99-8.92,8.92-8.92c2.46,0,4.69,1,6.31,2.61c1.62,1.62,2.61,3.85,2.61,6.31V75.99z M130.92,65.06
+			c-1.13-1.4-0.33-3.5,1.44-3.8c2.19-0.38,4.42-0.58,6.52-0.58c6.39,0,8.52,1.32,8.52,3.05c0,0.9-0.1,1.41-0.71,2.74
+			c-1.25,3.05-2.92,5.25-4.92,7.59c-0.96,1.12-2.7,1.1-3.63-0.05L130.92,65.06z M270.56,74.06c0,4.93-3.99,8.92-8.92,8.92
+			c-4.93,0-8.92-3.99-8.92-8.92v-3.64c0-4.93,3.99-8.92,8.92-8.92c2.46,0,4.69,1,6.31,2.61c1.62,1.62,2.61,3.85,2.61,6.31V74.06z"/>
+		<g>
+			<path d="M43.89,129.13c0-2.84,2.61-4.22,5.93-3.7c1.17,0.18,2.25-0.69,2.25-1.88v-0.16c0-0.88-0.6-1.66-1.46-1.86
+				c-5.67-1.37-11.66,0.98-11.66,7.51c0,1.89,0.76,3.61,2.36,4.8c-2.42,1.34-3.99,3.78-3.99,6.95c0,6.45,6.59,9.94,13.01,7.56
+				c0.75-0.28,1.25-1,1.25-1.8v-0.18c0-1.21-1.11-2.11-2.29-1.88c-3.94,0.78-7.54-0.84-7.54-3.7c0-2.5,1.83-3.7,4.22-3.7h4.22
+				c1.06,0,1.92-0.86,1.92-1.92v-0.65c0-1.06-0.86-1.92-1.92-1.92h-2.33C45.54,132.62,43.89,131.75,43.89,129.13z"/>
+			<path d="M57.62,137.11h0.59c1.06,0,1.92-0.86,1.92-1.92v-20.18c0-1.06-0.86-1.92-1.92-1.92h-0.59c-1.06,0-1.92,0.86-1.92,1.92
+				v20.18C55.7,136.25,56.56,137.11,57.62,137.11z"/>
+			<path d="M102.15,140.69c-1.4,0-2.59,1.19-2.59,2.56c0,1.43,1.19,2.56,2.59,2.56c1.4,0,2.56-1.13,2.56-2.56
+				C104.71,141.88,103.54,140.69,102.15,140.69z"/>
+			<path d="M100.92,131.49c0,0.9-0.64,1.19-1.05,1.19h-1.83h-0.79h-5.65h-0.58h-5.85H84.6h-5.85h-0.58h-2.53v-3.64
+				c0-3.86-3.13-6.98-6.98-6.98h-1.84c-1.06,0-1.92,0.86-1.92,1.92v0.62c0,1.06,0.86,1.92,1.92,1.92h1.84c1.4,0,2.53,1.13,2.53,2.53
+				v3.64h-5.82c-1.06,0-1.92,0.86-1.92,1.92v0.59c0,1.06,0.86,1.92,1.92,1.92h12.81h0.58h5.85h0.58h5.85h0.58h5.65h0.79h3.35
+				c2.24,0,3.99-1.72,3.99-3.99v-7.89c0-1.06-0.86-1.92-1.92-1.92h-0.62c-1.06,0-1.92,0.86-1.92,1.92V131.49z"/>
+			<path d="M121.06,131.49c0,0.9-0.64,1.19-1.05,1.19h-3.46v-15.92c0-1.06-0.86-1.92-1.92-1.92h-0.62c-1.06,0-1.92,0.86-1.92,1.92
+				v15.92h-1.72c-1.06,0-1.92,0.86-1.92,1.92v0.59c0,1.06,0.86,1.92,1.92,1.92h11.15c2.2,0,3.99-1.78,3.99-3.99v-18.1
+				c0-1.06-0.86-1.92-1.92-1.92h-0.62c-1.06,0-1.92,0.86-1.92,1.92V131.49z"/>
+			<path d="M113,141.99c0-0.52,0.38-0.81,0.9-0.81c0.39,0,0.75,0.25,0.93,0.66c0.13,0.3,0.44,0.47,0.76,0.47h0.59
+				c0.54,0,0.96-0.5,0.84-1.02c-0.38-1.6-1.53-2.5-3.18-2.5c-2.01,0-3.11,1.25-3.11,2.94c0,0.79,0.26,1.37,0.67,1.83h-0.17
+				c-0.47,0-0.85,0.38-0.85,0.85v0.71c0,0.47,0.38,0.85,0.85,0.85h5.25c0.47,0,0.85-0.38,0.85-0.85v-0.71
+				c0-0.47-0.38-0.85-0.85-0.85h-2.16c-0.22,0-0.44-0.07-0.61-0.22C113.15,142.88,113,142.3,113,141.99z"/>
+			<path d="M131.21,137.11h0.59c1.06,0,1.92-0.86,1.92-1.92v-20.18c0-1.06-0.86-1.92-1.92-1.92h-0.59c-1.06,0-1.92,0.86-1.92,1.92
+				v20.18C129.3,136.25,130.15,137.11,131.21,137.11z"/>
+			<path d="M156.97,123.02c1.37,0,2.56-1.13,2.56-2.56c0-1.37-1.19-2.56-2.56-2.56c-1.4,0-2.59,1.19-2.59,2.56
+				C154.38,121.89,155.57,123.02,156.97,123.02z"/>
+			<path d="M150.25,123.02c1.4,0,2.56-1.13,2.56-2.56c0-1.37-1.16-2.56-2.56-2.56c-1.4,0-2.59,1.19-2.59,2.56
+				C147.66,121.89,148.85,123.02,150.25,123.02z"/>
+			<path d="M198.82,120c1.4,0,2.56-1.16,2.56-2.59c0-1.37-1.16-2.56-2.56-2.56c-1.4,0-2.59,1.19-2.59,2.56
+				C196.23,118.83,197.42,120,198.82,120z"/>
+			<path d="M192.1,120c1.4,0,2.56-1.16,2.56-2.59c0-1.37-1.16-2.56-2.56-2.56s-2.56,1.19-2.56,2.56
+				C189.54,118.83,190.7,120,192.1,120z"/>
+			<path d="M195.76,122.03h-0.29c-3.87,0-6.84,2.97-6.84,6.87v1.31c0,0.9,0.26,1.78,0.64,2.47h-1.85h-0.55h-6.01h-0.58h-5.85h-0.58
+				h-5.88h-0.55h-0.15c-1.83,0-2.15-1.11-2.15-2.36v-0.79c0.03-0.35,0.03-0.7,0.03-1.02v-3.29c0-1.06-0.86-1.92-1.92-1.92h-0.61
+				c-1.06,0-1.92,0.87-1.92,1.93l0.01,1.74v3.35c0,1.25-0.32,2.36-2.15,2.36h-9.4c-1.27,0-2.3-1.03-2.3-2.3v-1.95
+				c0-1.06-0.86-1.92-1.92-1.92h-0.59c-1.06,0-1.92,0.86-1.92,1.92v1.95c0,3.84,2.91,6.72,6.72,6.72h9.37
+				c2.04,0,3.46-0.67,4.42-1.66c0.99,0.99,2.27,1.66,3.67,1.66h0.79h0.55h5.88h0.58h5.85h0.58h6.08h0.35h9.02
+				c3.46,0,6.29-2.82,6.29-6.31v-1.89C202.6,125,199.63,122.03,195.76,122.03z M198.18,130.36c0,1.28-1.05,2.3-2.3,2.3h-0.58
+				c-1.19,0-2.21-1.08-2.21-2.44v-1.31c0-1.45,0.96-2.42,2.39-2.42h0.29c1.45,0,2.42,0.96,2.42,2.42V130.36z"/>
+			<path d="M212.61,122h-0.23c-3.93,0-6.84,2.97-6.84,6.87v1.31c0,3.75,2.94,6.84,6.61,6.87h2.91v0.23c0,1.61-1.2,2.97-5.39,2.44
+				c-1.14-0.14-2.14,0.75-2.14,1.9v0.33c0,0.91,0.64,1.69,1.53,1.88c6.67,1.39,10.43-1.6,10.43-5.45v-9.51
+				C219.48,125.08,216.4,122,212.61,122z M215.06,132.62h-2.85c-1.19,0-2.24-1.11-2.24-2.44v-1.31c0-1.48,0.96-2.44,2.42-2.44h0.29
+				c1.43,0,2.39,0.96,2.39,2.44V132.62z"/>
+			<path d="M241.6,136.23c0,2.68-1.8,4.48-4.45,4.48h-0.23c-2.65,0-4.45-1.8-4.45-4.48v-3.58c0-1.06-0.86-1.92-1.92-1.92h-0.59
+				c-1.06,0-1.92,0.86-1.92,1.92v3.58c0,4.92,3.99,8.9,8.9,8.9h0.2c4.92,0,8.9-3.99,8.9-8.9v-11.18c0-1.06-0.86-1.92-1.92-1.92
+				h-0.62c-1.06,0-1.92,0.86-1.92,1.92V136.23z"/>
+			<path d="M235.75,124.97c1.4,0,2.59-1.16,2.59-2.56c0-1.37-1.19-2.56-2.59-2.56c-1.4,0-2.56,1.19-2.56,2.56
+				C233.19,123.81,234.35,124.97,235.75,124.97z"/>
+			<path d="M283.18,129.6c-2.73-5.32-6.66-8.18-11.59-7.19c-0.88,0.18-1.5,0.97-1.5,1.87v0.17c0,1.16,1.02,2.03,2.16,1.9
+				c2.93-0.34,4.51,1.42,6.01,3.89c0.58,0.96,1.16,1.92,1.51,2.44h-10.53h-0.35h-6.08h-0.58h-5.88h-0.55h-0.7
+				c-0.44,0-1.08-0.29-1.08-1.19v-16.47c0-1.06-0.86-1.92-1.92-1.92h-0.62c-1.06,0-1.92,0.86-1.92,1.92v18.1
+				c0,2.27,1.77,3.99,4.02,3.99h2.21h0.55h5.88h0.58h6.08h0.35h14.73c1.06,0,1.92-0.86,1.92-1.92v-1.32c0-0.62-0.31-1.18-0.8-1.55
+				C284.61,131.96,283.97,131.2,283.18,129.6z"/>
+		</g>
+	</g>
+</g>
+</svg></div>
+      <div style="margin-top:34px"><span class="pill veil"><span class="sq" style="background:var(--amber)"></span>تعلّم الموشن · متعلم</span></div>
+      <h1>ستايلات الموشن جرافيك.<span class="am">فكرة واحدة، 26 ستايلًا.</span></h1>
+      <p class="lead">كل الأمثلة هنا تشرح الفكرة نفسها: قاعدة 20-20-20 لحماية العين. كل 20 دقيقة، انظر إلى شيء بعيد لمدة 20 ثانية. شاهد كيف يغيّر الستايل شكل الفكرة نفسها، ثم اختر ما يناسبك.</p>
+      <div class="stats">
+        <span class="pill white"><b>26</b> ستايل</span>
+        <span class="pill white"><b>6</b> عائلات</span>
+        <span class="pill white"><span class="sq" style="background:var(--green)"></span><b id="easyCount">0</b> سهل بالكود</span>
+      </div>
+    </div>
+    <div class="stage" aria-hidden="true">
+      <div class="win">
+        <div class="chrome"><i></i><i></i><i></i><span class="url mono ltr">pinterest.com/search?q=motion+style</span></div>
+        <div class="tiles" id="tiles"></div>
+      </div>
+      <div class="float ok"><span class="dot">✓</span>الستايل المناسب لفكرتك</div>
+      <div class="float prompt"><small>إلى الوكيل</small>هذه صورة مرجعية للأسلوب الذي أريده.</div>
+    </div>
+  </div>
+</header>
+
+<nav class="bar" aria-label="العائلات والعرض">
+  <div class="bar-in">
+    <div class="fams" id="fams"></div>
+    <span class="seg-lab">الصعوبة بالكود</span>
+    <div class="seg" id="easeSeg">
+      <button data-e="all" aria-pressed="true">الكل</button>
+      <button data-e="1" aria-pressed="false">سهل</button>
+      <button data-e="2" aria-pressed="false">متوسط</button>
+      <button data-e="3" aria-pressed="false">صعب</button>
+    </div>
+    <span class="seg-lab">العرض</span>
+    <div class="seg" id="viewSeg">
+      <button data-v="live" aria-pressed="true">حي</button>
+      <button data-v="real" aria-pressed="false">فيديو المكتبة</button>
+    </div>
+  </div>
+</nav>
+
+<main id="main"></main>
+
+<section class="band navy">
+  <div class="desc">
+    <span class="pill veil"><span class="sq" style="background:var(--amber)"></span>بعد أن تختار الستايل</span>
+    <h2>كيف تصف الستايل <span class="am">للذكاء الاصطناعي؟</span></h2>
+    <p class="lead">الصورة المرجعية وحدها لا تكفي. أرفقها، ثم صف الستايل في أربعة أشياء، حتى يفهم الوكيل ما تريده بالضبط.</p>
+    <div class="four">
+      <div class="c"><span class="num mono" style="color:var(--coral)">01</span><h4>الألوان</h4><p>كم لونًا؟ وهل الخلفية فاتحة أم داكنة؟ «خلفية بيضاء، وثلاثة ألوان فقط: أزرق وأصفر وأسود».</p></div>
+      <div class="c"><span class="num mono" style="color:var(--blue)">02</span><h4>الرسم</h4><p>مسطح أم بعمق؟ وما سمك الخطوط؟ «رسومات مسطحة، وخطوط سوداء رفيعة».</p></div>
+      <div class="c"><span class="num mono" style="color:var(--green)">03</span><h4>الملمس</h4><p>نظيف، أم فيه حبيبات وورق؟ «ملمس ورق قديم خفيف».</p></div>
+      <div class="c"><span class="num mono" style="color:var(--orange)">04</span><h4>الحركة</h4><p>هادئة وناعمة، أم سريعة وتقفز؟ «حركة هادئة، وكل عنصر يظهر مع كلمته».</p></div>
+    </div>
+    <div class="example">
+      <div class="ex-prompt"><small>مثال على الطلب</small>هذه صورة مرجعية للأسلوب الذي أريده. فكرتي: فيديو مدته 40 ثانية يشرح قاعدة 20-20-20 لحماية العين. الأسلوب: <mark>السبورة البيضاء</mark>، و<mark>خلفية بيضاء بثلاثة ألوان</mark>، و<mark>خطوط سوداء مرسومة باليد</mark>، و<mark>حركة هادئة</mark>. أولًا: اكتب السكريبت فقط، بالعربية الفصحى البسيطة، وقسّمه إلى أجزاء قصيرة.</div>
+      <div class="ex-repo">
+        <h4>تريد ستايلات جاهزة؟</h4>
+        <p>عشرة من هذه الستايلات جاهزة في هذا الريبو، وكل ما تحتاجه هو رابط وجملة واحدة.</p>
+        <a class="pill white mono ltr" href="https://github.com/motalim-ai/motion-starter-kit" target="_blank" rel="noopener">motion-starter-kit ↗</a>
+      </div>
+    </div>
+    <div class="foot">
+      <div class="logo"><svg version="1.1" aria-label="متعلم" role="img" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 450 149.56" style="enable-background:new 0 0 450 149.56;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#0056D2;}
+	.st1{fill:#FFFFFF;}
+	g > path:not([class]){fill:#FFFFFF;}
+</style>
+<g>
+	<g>
+		<circle class="st0" cx="375.22" cy="74.78" r="74.78"/>
+		<g>
+			<g>
+				<path class="st1" d="M375.23,125.13c-22.9,0-41.51-18.62-41.51-41.5v-25.9c0-3.68,2.98-6.66,6.66-6.66
+					c12.53,0,24.15,5.65,31.89,15.51l2.97,3.77l2.95-3.77c7.74-9.86,19.36-15.51,31.89-15.51c3.68,0,6.66,2.98,6.66,6.66v25.9
+					C416.73,106.51,398.11,125.13,375.23,125.13z M347.03,65.21v18.42c0,15.53,12.65,28.18,28.19,28.18
+					c15.53,0,28.18-12.65,28.18-28.18V65.21c-5.79,1.44-10.95,4.76-14.74,9.59l-8.2,10.45c-2.52,3.23-7.94,3.23-10.49,0l-8.21-10.45
+					C357.99,69.97,352.82,66.65,347.03,65.21z"/>
+			</g>
+			<g>
+				<path class="st1" d="M396.06,49.83c-1.13,0-2.28-0.29-3.33-0.88l-17.64-10.17l-17.63,10.17c-3.21,1.81-7.27,0.73-9.11-2.45
+					c-1.83-3.19-0.74-7.26,2.45-9.11l20.96-12.09c2.06-1.17,4.61-1.17,6.66,0l20.97,12.09c3.19,1.85,4.28,5.92,2.45,9.11
+					C400.6,48.63,398.36,49.83,396.06,49.83z"/>
+			</g>
+		</g>
+	</g>
+	<g>
+		<path d="M80.24,20.38c2.59,0,4.94-1.36,6.54-3.84c1.36,1.73,4.08,2.61,5.92,2.61c5.44,0,8.52-4.32,8.52-10V3.97
+			c0-2.52-2.4-4.36-4.84-3.69l-0.01,0c-1.66,0.46-2.81,1.97-2.81,3.69v5.17c0,1.47-0.61,2.22-1.97,2.22c-1.11,0-1.85-0.61-1.85-1.84
+			V7.26c0-2.55-2.44-4.38-4.89-3.67l0,0c-1.63,0.47-2.76,1.97-2.76,3.67v3.35c0,1.49-0.61,2.1-1.85,2.1c-1.23,0-1.84-0.61-1.84-1.97
+			v-0.43c0-2.5-2.36-4.33-4.78-3.7l-0.01,0c-1.69,0.44-2.87,1.96-2.87,3.7v0.43C70.74,16.3,74.81,20.38,80.24,20.38z"/>
+		<path d="M211.62,2.92l-30.66,5.65c-1.47,0.27-2.63,1.42-2.91,2.89l-0.02,0.11c-0.47,2.5,1.71,4.69,4.21,4.23l30.68-5.76
+			c1.47-0.27,2.62-1.42,2.89-2.89v0C216.29,4.66,214.11,2.47,211.62,2.92z"/>
+		<path d="M188,43.96c4.87,0,8.92-3.95,8.92-8.92c0-4.76-4.05-8.92-8.92-8.92c-4.87,0-9.02,4.16-9.02,8.92
+			C178.98,40.02,183.13,43.96,188,43.96z"/>
+		<path d="M202.4,35.04c0,4.97,4.15,8.92,9.02,8.92c4.87,0,8.92-3.95,8.92-8.92c0-4.76-4.05-8.92-8.92-8.92
+			C206.55,26.12,202.4,30.28,202.4,35.04z"/>
+		<path d="M266.7,9.36c-5.53,0-9.99,4.46-9.99,9.97c0,1.98,0.53,3.81,1.59,5.39l-11.71,3.54c-1.6,0.49-2.69,1.97-2.69,3.64v0
+			c0,2.57,2.5,4.4,4.95,3.63l19.49-6.05c4.72-1.61,8.2-5.15,8.2-10.15C276.55,13.82,272.21,9.36,266.7,9.36z M266.96,23.13
+			c-2.1,0-3.68-1.57-3.68-3.92c0-1.98,1.59-3.55,3.68-3.55c1.96,0,3.55,1.57,3.55,3.55C270.51,21.57,268.92,23.13,266.96,23.13z"/>
+		<path d="M262.14,46.09h-1.01c-13.59,0-23.83,10.34-23.83,23.91v8.83c0,2.74-1.73,4.56-4.45,4.56h-18.9
+			c-6.39,0-7.51-3.86-7.51-8.22v-2.72c0.11-1.33,0.11-2.54,0.11-3.55V58.51c0-4.28-3.47-7.76-7.76-7.76h0
+			c-4.28,0-7.76,3.47-7.76,7.76v16.66c0,4.36-0.81,8.22-7.3,8.22h-21.45c-3.15,0-6.18-0.31-9.02-0.7
+			c4.76-4.77,8.52-7.82,10.95-14.09c0.81-2.04,1.31-4.56,1.31-6.29c0-9.93-10.85-15.91-26.16-15.91c-6.42,0-12.66,0.79-19.7,2.69
+			c-4.45,1.21-7.57,5.22-7.57,9.83v0c0,2.32,0.79,4.57,2.24,6.37l13.98,17.39c-0.71,0.4-7.19,0.7-8,0.7h-18.79
+			c-6.39,0-7.49-3.86-7.49-8.22v-2.63c0.1-1.31,0.1-2.54,0.1-3.55V35.99c0-4.27-3.46-7.74-7.74-7.74h0c-4.29,0-7.76,3.48-7.74,7.77
+			l0.07,16.25v22.91c0,4.36-1.02,8.22-7.3,8.22H66.6c-2.54,0-4.16-1.62-4.16-4.26v-9.38c0-13.24-10.65-24.16-23.89-24.17
+			C24.85,45.57,14.6,55.92,14.6,69.61v9.34C5.88,81.58,0,89.27,0,98.91l0,27.83c0,4.28,3.47,7.76,7.76,7.76h0
+			c4.28,0,7.76-3.47,7.76-7.76V98.91c0-2.74,1.31-4.67,3.75-5.28c4.97,4.67,11.16,6.69,19.26,6.69c6.28,0,11.75-2.22,15.91-6.08
+			c3.14,2.83,7.4,4.56,12.16,4.56h4.62c6.99,0,11.86-2.33,15.31-5.78c3.45,3.46,7.9,5.78,12.77,5.78h25.18
+			c4.26,0,9.52-1.31,13.98-5.88c3.55,4.56,8.52,5.88,13.28,5.88h31.9c7,0,11.86-2.33,15.3-5.78c3.45,3.46,7.91,5.78,12.78,5.78
+			h21.13c5.46,0,10.13-2.02,13.48-5.37c4.67,3.24,10.33,5.06,16.31,5.06c12.88,0,23.32-10.85,23.32-23.92v-4.57
+			C285.96,56.44,275.73,46.09,262.14,46.09z M47.44,75.99c0,4.93-3.99,8.92-8.92,8.92s-8.92-3.99-8.92-8.92v-6.08
+			c0-4.93,3.99-8.92,8.92-8.92c2.46,0,4.69,1,6.31,2.61c1.62,1.62,2.61,3.85,2.61,6.31V75.99z M130.92,65.06
+			c-1.13-1.4-0.33-3.5,1.44-3.8c2.19-0.38,4.42-0.58,6.52-0.58c6.39,0,8.52,1.32,8.52,3.05c0,0.9-0.1,1.41-0.71,2.74
+			c-1.25,3.05-2.92,5.25-4.92,7.59c-0.96,1.12-2.7,1.1-3.63-0.05L130.92,65.06z M270.56,74.06c0,4.93-3.99,8.92-8.92,8.92
+			c-4.93,0-8.92-3.99-8.92-8.92v-3.64c0-4.93,3.99-8.92,8.92-8.92c2.46,0,4.69,1,6.31,2.61c1.62,1.62,2.61,3.85,2.61,6.31V74.06z"/>
+		<g>
+			<path d="M43.89,129.13c0-2.84,2.61-4.22,5.93-3.7c1.17,0.18,2.25-0.69,2.25-1.88v-0.16c0-0.88-0.6-1.66-1.46-1.86
+				c-5.67-1.37-11.66,0.98-11.66,7.51c0,1.89,0.76,3.61,2.36,4.8c-2.42,1.34-3.99,3.78-3.99,6.95c0,6.45,6.59,9.94,13.01,7.56
+				c0.75-0.28,1.25-1,1.25-1.8v-0.18c0-1.21-1.11-2.11-2.29-1.88c-3.94,0.78-7.54-0.84-7.54-3.7c0-2.5,1.83-3.7,4.22-3.7h4.22
+				c1.06,0,1.92-0.86,1.92-1.92v-0.65c0-1.06-0.86-1.92-1.92-1.92h-2.33C45.54,132.62,43.89,131.75,43.89,129.13z"/>
+			<path d="M57.62,137.11h0.59c1.06,0,1.92-0.86,1.92-1.92v-20.18c0-1.06-0.86-1.92-1.92-1.92h-0.59c-1.06,0-1.92,0.86-1.92,1.92
+				v20.18C55.7,136.25,56.56,137.11,57.62,137.11z"/>
+			<path d="M102.15,140.69c-1.4,0-2.59,1.19-2.59,2.56c0,1.43,1.19,2.56,2.59,2.56c1.4,0,2.56-1.13,2.56-2.56
+				C104.71,141.88,103.54,140.69,102.15,140.69z"/>
+			<path d="M100.92,131.49c0,0.9-0.64,1.19-1.05,1.19h-1.83h-0.79h-5.65h-0.58h-5.85H84.6h-5.85h-0.58h-2.53v-3.64
+				c0-3.86-3.13-6.98-6.98-6.98h-1.84c-1.06,0-1.92,0.86-1.92,1.92v0.62c0,1.06,0.86,1.92,1.92,1.92h1.84c1.4,0,2.53,1.13,2.53,2.53
+				v3.64h-5.82c-1.06,0-1.92,0.86-1.92,1.92v0.59c0,1.06,0.86,1.92,1.92,1.92h12.81h0.58h5.85h0.58h5.85h0.58h5.65h0.79h3.35
+				c2.24,0,3.99-1.72,3.99-3.99v-7.89c0-1.06-0.86-1.92-1.92-1.92h-0.62c-1.06,0-1.92,0.86-1.92,1.92V131.49z"/>
+			<path d="M121.06,131.49c0,0.9-0.64,1.19-1.05,1.19h-3.46v-15.92c0-1.06-0.86-1.92-1.92-1.92h-0.62c-1.06,0-1.92,0.86-1.92,1.92
+				v15.92h-1.72c-1.06,0-1.92,0.86-1.92,1.92v0.59c0,1.06,0.86,1.92,1.92,1.92h11.15c2.2,0,3.99-1.78,3.99-3.99v-18.1
+				c0-1.06-0.86-1.92-1.92-1.92h-0.62c-1.06,0-1.92,0.86-1.92,1.92V131.49z"/>
+			<path d="M113,141.99c0-0.52,0.38-0.81,0.9-0.81c0.39,0,0.75,0.25,0.93,0.66c0.13,0.3,0.44,0.47,0.76,0.47h0.59
+				c0.54,0,0.96-0.5,0.84-1.02c-0.38-1.6-1.53-2.5-3.18-2.5c-2.01,0-3.11,1.25-3.11,2.94c0,0.79,0.26,1.37,0.67,1.83h-0.17
+				c-0.47,0-0.85,0.38-0.85,0.85v0.71c0,0.47,0.38,0.85,0.85,0.85h5.25c0.47,0,0.85-0.38,0.85-0.85v-0.71
+				c0-0.47-0.38-0.85-0.85-0.85h-2.16c-0.22,0-0.44-0.07-0.61-0.22C113.15,142.88,113,142.3,113,141.99z"/>
+			<path d="M131.21,137.11h0.59c1.06,0,1.92-0.86,1.92-1.92v-20.18c0-1.06-0.86-1.92-1.92-1.92h-0.59c-1.06,0-1.92,0.86-1.92,1.92
+				v20.18C129.3,136.25,130.15,137.11,131.21,137.11z"/>
+			<path d="M156.97,123.02c1.37,0,2.56-1.13,2.56-2.56c0-1.37-1.19-2.56-2.56-2.56c-1.4,0-2.59,1.19-2.59,2.56
+				C154.38,121.89,155.57,123.02,156.97,123.02z"/>
+			<path d="M150.25,123.02c1.4,0,2.56-1.13,2.56-2.56c0-1.37-1.16-2.56-2.56-2.56c-1.4,0-2.59,1.19-2.59,2.56
+				C147.66,121.89,148.85,123.02,150.25,123.02z"/>
+			<path d="M198.82,120c1.4,0,2.56-1.16,2.56-2.59c0-1.37-1.16-2.56-2.56-2.56c-1.4,0-2.59,1.19-2.59,2.56
+				C196.23,118.83,197.42,120,198.82,120z"/>
+			<path d="M192.1,120c1.4,0,2.56-1.16,2.56-2.59c0-1.37-1.16-2.56-2.56-2.56s-2.56,1.19-2.56,2.56
+				C189.54,118.83,190.7,120,192.1,120z"/>
+			<path d="M195.76,122.03h-0.29c-3.87,0-6.84,2.97-6.84,6.87v1.31c0,0.9,0.26,1.78,0.64,2.47h-1.85h-0.55h-6.01h-0.58h-5.85h-0.58
+				h-5.88h-0.55h-0.15c-1.83,0-2.15-1.11-2.15-2.36v-0.79c0.03-0.35,0.03-0.7,0.03-1.02v-3.29c0-1.06-0.86-1.92-1.92-1.92h-0.61
+				c-1.06,0-1.92,0.87-1.92,1.93l0.01,1.74v3.35c0,1.25-0.32,2.36-2.15,2.36h-9.4c-1.27,0-2.3-1.03-2.3-2.3v-1.95
+				c0-1.06-0.86-1.92-1.92-1.92h-0.59c-1.06,0-1.92,0.86-1.92,1.92v1.95c0,3.84,2.91,6.72,6.72,6.72h9.37
+				c2.04,0,3.46-0.67,4.42-1.66c0.99,0.99,2.27,1.66,3.67,1.66h0.79h0.55h5.88h0.58h5.85h0.58h6.08h0.35h9.02
+				c3.46,0,6.29-2.82,6.29-6.31v-1.89C202.6,125,199.63,122.03,195.76,122.03z M198.18,130.36c0,1.28-1.05,2.3-2.3,2.3h-0.58
+				c-1.19,0-2.21-1.08-2.21-2.44v-1.31c0-1.45,0.96-2.42,2.39-2.42h0.29c1.45,0,2.42,0.96,2.42,2.42V130.36z"/>
+			<path d="M212.61,122h-0.23c-3.93,0-6.84,2.97-6.84,6.87v1.31c0,3.75,2.94,6.84,6.61,6.87h2.91v0.23c0,1.61-1.2,2.97-5.39,2.44
+				c-1.14-0.14-2.14,0.75-2.14,1.9v0.33c0,0.91,0.64,1.69,1.53,1.88c6.67,1.39,10.43-1.6,10.43-5.45v-9.51
+				C219.48,125.08,216.4,122,212.61,122z M215.06,132.62h-2.85c-1.19,0-2.24-1.11-2.24-2.44v-1.31c0-1.48,0.96-2.44,2.42-2.44h0.29
+				c1.43,0,2.39,0.96,2.39,2.44V132.62z"/>
+			<path d="M241.6,136.23c0,2.68-1.8,4.48-4.45,4.48h-0.23c-2.65,0-4.45-1.8-4.45-4.48v-3.58c0-1.06-0.86-1.92-1.92-1.92h-0.59
+				c-1.06,0-1.92,0.86-1.92,1.92v3.58c0,4.92,3.99,8.9,8.9,8.9h0.2c4.92,0,8.9-3.99,8.9-8.9v-11.18c0-1.06-0.86-1.92-1.92-1.92
+				h-0.62c-1.06,0-1.92,0.86-1.92,1.92V136.23z"/>
+			<path d="M235.75,124.97c1.4,0,2.59-1.16,2.59-2.56c0-1.37-1.19-2.56-2.59-2.56c-1.4,0-2.56,1.19-2.56,2.56
+				C233.19,123.81,234.35,124.97,235.75,124.97z"/>
+			<path d="M283.18,129.6c-2.73-5.32-6.66-8.18-11.59-7.19c-0.88,0.18-1.5,0.97-1.5,1.87v0.17c0,1.16,1.02,2.03,2.16,1.9
+				c2.93-0.34,4.51,1.42,6.01,3.89c0.58,0.96,1.16,1.92,1.51,2.44h-10.53h-0.35h-6.08h-0.58h-5.88h-0.55h-0.7
+				c-0.44,0-1.08-0.29-1.08-1.19v-16.47c0-1.06-0.86-1.92-1.92-1.92h-0.62c-1.06,0-1.92,0.86-1.92,1.92v18.1
+				c0,2.27,1.77,3.99,4.02,3.99h2.21h0.55h5.88h0.58h6.08h0.35h14.73c1.06,0,1.92-0.86,1.92-1.92v-1.32c0-0.62-0.31-1.18-0.8-1.55
+				C284.61,131.96,283.97,131.2,283.18,129.6z"/>
+		</g>
+	</g>
+</g>
+</svg></div>
+      <a class="ltr" href="https://www.youtube.com/@motalim-ai?sub_confirmation=1" target="_blank" rel="noopener">youtube.com/@motalim-ai</a>
+    </div>
+  </div>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script>
+/* ---------- palette & helpers ---------- */
+const BL='#0056D2',SK='#00B6FF',TE='#47B6CC',GR='#2EA57C',CO='#FF4F5C',AM='#FFB300',OR='#EE702E',NV='#1F3D63',OF='#F3F2EE';
+const sh=a=>`rgba(31,61,99,${a})`;
+let UID=0;
+const SV=inner=>`<svg viewBox="0 0 320 180" preserveAspectRatio="xMidYMid slice">${inner}</svg>`;
+const $=(r,s)=>r.querySelector(s), $$=(r,s)=>[...r.querySelectorAll(s)];
+const T=(x,y,size,fill,txt,extra='')=>`<text x="${x}" y="${y}" text-anchor="middle" font-size="${size}" font-weight="700" fill="${fill}" ${extra}>${txt}</text>`;
+const newTL=()=>gsap.timeline({repeat:-1,repeatDelay:.5,paused:true});
+const list=x=>x instanceof Element?[x]:[...x];
+function prep(el){const L=el.getTotalLength();el.style.strokeDasharray=L+' '+L;el.style.strokeDashoffset=L;return L;}
+function draw(tl,els,dur,pos,ease='power1.inOut',stagger=0){const a=list(els);a.forEach(prep);tl.to(a,{strokeDashoffset:0,duration:dur,ease,stagger},pos);}
+function drawFollow(tl,el,f,dur,pos,ease='power1.inOut'){const L=prep(el);tl.to(el,{strokeDashoffset:0,duration:dur,ease,onUpdate(){const d=parseFloat(el.style.strokeDashoffset)||0;const p=el.getPointAtLength(Math.max(0,L-d));gsap.set(f,{x:p.x,y:p.y});}},pos);}
+function count(tl,els,from,to,dur,pos){const a=list(els);const o={v:from};const set=v=>a.forEach(e=>e.textContent=v);tl.call(()=>set(from),null,pos);tl.to(o,{v:to,duration:dur,ease:'none',onUpdate:()=>set(Math.round(o.v))},pos);}
+
+/* ---------- scenes: every one explains the same 20-20-20 idea ---------- */
+const SC={
+
+kinetic(r){
+  r.innerHTML=SV(`<rect width="320" height="180" fill="#000"/>
+  <g class="ln" stroke="rgba(255,255,255,.22)" stroke-width="1"><line x1="0" y1="0" x2="160" y2="92"/><line x1="320" y1="0" x2="160" y2="92"/><line x1="0" y1="180" x2="160" y2="92"/><line x1="320" y1="180" x2="160" y2="92"/></g>
+  <g opacity="0" class="a">${T(160,60,30,'#fff','كل')}</g>
+  <g opacity="0" class="b">${T(160,122,86,AM,'20')}</g>
+  <g opacity="0" class="c">${T(160,160,26,'#fff','دقيقة')}</g>
+  <g opacity="0" class="d">${T(160,104,48,'#fff','انظر')}</g>
+  <g opacity="0" class="e">${T(160,106,42,SK,'بعيدًا')}</g>
+  <g opacity="0" class="f">${T(160,120,86,AM,'0','class="fn"')}</g>
+  <g opacity="0" class="g">${T(160,158,26,'#fff','ثانية')}</g>
+  <g opacity="0" class="h">${T(160,74,20,'rgba(255,255,255,.7)','قاعدة')}</g>
+  <g opacity="0" class="i">${T(160,120,50,'#fff','20-20-20','direction="ltr"')}</g>`);
+  const q=s=>$(r,s),tl=newTL();
+  gsap.set($$(r,'g[class]'),{transformOrigin:'50% 50%'});
+  tl.fromTo(q('.a'),{opacity:0,scale:0},{opacity:1,scale:1,duration:.35,ease:'back.out(3)'})
+    .fromTo(q('.b'),{opacity:0,scale:3},{opacity:1,scale:1,duration:.5,ease:'power4.out'},'-=.05')
+    .fromTo(q('.c'),{opacity:0,x:-50},{opacity:1,x:0,duration:.4,ease:'power3.out'},'-=.25')
+    .to(q('.b'),{scale:1.1,duration:.12,yoyo:true,repeat:1},'+=.15')
+    .to([q('.a'),q('.c')],{opacity:0,y:-24,duration:.3,ease:'power2.in'},'+=.6')
+    .to(q('.b'),{opacity:0,rotation:-90,scale:.2,duration:.35,ease:'power3.in'},'<')
+    .fromTo(q('.d'),{opacity:0,scale:.5},{opacity:1,scale:1,duration:.4,ease:'back.out(2)'})
+    .to(q('.d'),{y:-40,scale:.6,duration:.45,ease:'power2.inOut'},'+=.25');
+  draw(tl,$$(r,'.ln line'),.7,'<');
+  tl.fromTo(q('.e'),{opacity:0,scale:1.9},{opacity:1,scale:.45,duration:1.5,ease:'power2.out'},'<')
+    .to([q('.d'),q('.e'),q('.ln')],{opacity:0,duration:.3},'+=.3')
+    .to(q('.f'),{opacity:1,duration:.1});
+  count(tl,q('.fn'),0,20,.9,'<');
+  tl.fromTo(q('.g'),{opacity:0,y:20},{opacity:1,y:0,duration:.4,ease:'power3.out'},'<.3')
+    .to([q('.f'),q('.g')],{opacity:0,scale:.8,duration:.3},'+=.7')
+    .fromTo(q('.h'),{opacity:0,y:10},{opacity:1,y:0,duration:.4})
+    .fromTo(q('.i'),{opacity:0,scale:.7},{opacity:1,scale:1,duration:.5,ease:'back.out(2)'},'<.1')
+    .to([q('.h'),q('.i')],{opacity:0,duration:.4},'+=1.1');
+  return tl;
+},
+
+synced(r){
+  const words=['كل','20','دقيقة،','انظر','إلى','شيء','بعيد','لمدة','20','ثانية.'];
+  r.innerHTML=`<div class="sy"><div class="sy-t">${words.map(w=>`<span>${w}</span>`).join(' ')}</div><div class="sy-bar"><i></i></div><div class="sy-w">${'<b></b>'.repeat(30)}</div></div>`;
+  const sp=$$(r,'.sy-t span'),bars=$$(r,'.sy-w b'),tl=newTL(),st=.38;
+  tl.fromTo($(r,'.sy-bar i'),{scaleX:0},{scaleX:1,duration:words.length*st,ease:'none'},0);
+  words.forEach((w,i)=>{
+    const t=i*st;
+    tl.to(sp[i],{color:'#000',duration:.12},t);
+    if(w==='20') tl.to(sp[i],{backgroundColor:'rgba(255,179,0,1)',scale:1.18,duration:.2,ease:'back.out(3)'},t).to(sp[i],{scale:1,duration:.2},t+.2);
+    tl.to(bars,{scaleY:()=>gsap.utils.random(.18,1),duration:.19,stagger:.005,ease:'power1.out'},t);
+  });
+  tl.to(bars,{scaleY:.12,duration:.3},'+=.1')
+    .to(sp,{color:'rgba(31,61,99,.25)',backgroundColor:'rgba(255,179,0,0)',duration:.4},'+=1.2');
+  return tl;
+},
+
+flat(r){
+  const u=++UID;
+  r.innerHTML=SV(`<defs><clipPath id="wc${u}"><rect x="405" y="27" width="170" height="104"/></clipPath></defs>
+  <g class="w">
+   <rect width="640" height="180" fill="${OF}"/><rect y="142" width="640" height="38" fill="${sh(.08)}"/>
+   <rect x="50" y="112" width="150" height="7" rx="2" fill="${NV}"/><rect x="60" y="119" width="5" height="23" fill="${NV}"/><rect x="185" y="119" width="5" height="23" fill="${NV}"/>
+   <rect x="92" y="70" width="74" height="44" rx="4" fill="${NV}"/><rect class="scr" x="97" y="75" width="64" height="34" rx="2" fill="${SK}"/><rect x="84" y="112" width="90" height="4" rx="2" fill="${NV}"/>
+   <rect x="103" y="82" width="40" height="4" rx="2" fill="rgba(255,255,255,.85)"/><rect x="103" y="90" width="50" height="4" rx="2" fill="rgba(255,255,255,.6)"/><rect x="103" y="98" width="30" height="4" rx="2" fill="rgba(255,255,255,.6)"/>
+   <rect x="180" y="96" width="12" height="16" rx="2" fill="${OR}"/><ellipse cx="186" cy="89" rx="8" ry="10" fill="${GR}"/>
+   <circle cx="255" cy="52" r="20" fill="#fff" stroke="${NV}" stroke-width="3"/><line class="hh" x1="255" y1="52" x2="255" y2="42" stroke="${NV}" stroke-width="3" stroke-linecap="round"/><line class="mh" x1="255" y1="52" x2="255" y2="36" stroke="${CO}" stroke-width="2.5" stroke-linecap="round"/><circle cx="255" cy="52" r="2.5" fill="${NV}"/>
+   <g clip-path="url(#wc${u})"><rect x="405" y="27" width="170" height="104" fill="#fff"/><rect x="405" y="27" width="170" height="104" fill="rgba(0,182,255,.25)"/><circle class="sun" cx="530" cy="62" r="14" fill="${AM}"/><path d="M405 131 L450 80 L480 105 L515 70 L575 131Z" fill="${TE}"/><path d="M405 131 Q470 100 575 118 V131Z" fill="${GR}"/></g>
+   <rect x="402" y="24" width="176" height="110" rx="6" fill="none" stroke="${NV}" stroke-width="5"/><rect x="394" y="134" width="192" height="8" rx="2" fill="${NV}"/>
+  </g>
+  <g class="p1" opacity="0"><rect x="95" y="146" width="130" height="24" rx="12" fill="#000"/>${T(160,162.5,12,'#fff','كل 20 دقيقة')}</g>
+  <g class="p2" opacity="0"><rect x="80" y="146" width="160" height="24" rx="12" fill="#000"/>${T(160,162.5,12,'#fff','انظر إلى شيء بعيد')}</g>
+  <g class="p3" opacity="0"><rect x="95" y="146" width="130" height="24" rx="12" fill="#000"/>${T(160,162.5,12,'#fff','لمدة 20 ثانية')}</g>
+  <g class="tm" opacity="0"><circle cx="46" cy="44" r="23" fill="#fff"/><circle cx="46" cy="44" r="18" fill="none" stroke="${sh(.15)}" stroke-width="4"/><circle class="pr" cx="46" cy="44" r="18" fill="none" stroke="${BL}" stroke-width="4" stroke-linecap="round" transform="rotate(-90 46 44)"/>${T(46,49,14,NV,'20','class="tt"')}</g>`);
+  const q=s=>$(r,s),tl=newTL();
+  prep(q('.pr'));
+  tl.fromTo(q('.p1'),{opacity:0,y:10},{opacity:1,y:0,duration:.4})
+    .to(q('.mh'),{rotation:720,svgOrigin:'255 52',duration:1.8,ease:'power1.inOut'},'<')
+    .to(q('.hh'),{rotation:60,svgOrigin:'255 52',duration:1.8,ease:'power1.inOut'},'<')
+    .to(q('.scr'),{fill:TE,duration:.15,yoyo:true,repeat:5},'<')
+    .to(q('.p1'),{opacity:0,duration:.25},'+=.2')
+    .to(q('.w'),{x:-320,duration:1.3,ease:'power2.inOut'})
+    .fromTo(q('.sun'),{y:22},{y:0,duration:1,ease:'power2.out'},'<.4')
+    .fromTo(q('.p2'),{opacity:0,y:10},{opacity:1,y:0,duration:.4},'<.5')
+    .to(q('.p2'),{opacity:0,duration:.25},'+=.9')
+    .fromTo(q('.tm'),{opacity:0,scale:.5,transformOrigin:'50% 50%'},{opacity:1,scale:1,duration:.4,ease:'back.out(2)'})
+    .fromTo(q('.p3'),{opacity:0,y:10},{opacity:1,y:0,duration:.4},'<')
+    .to(q('.pr'),{strokeDashoffset:0,duration:2,ease:'none'});
+  count(tl,q('.tt'),20,0,2,'<');
+  tl.to([q('.tm'),q('.p3')],{opacity:0,duration:.3},'+=.2').to(q('.w'),{x:0,duration:1,ease:'power2.inOut'});
+  return tl;
+},
+
+character(r){
+  r.innerHTML=SV(`<rect width="320" height="180" fill="#fff"/><rect width="320" height="180" fill="rgba(0,182,255,.14)"/>
+  <rect x="22" y="30" width="70" height="60" rx="5" fill="#fff" stroke="${NV}" stroke-width="4"/><circle cx="76" cy="44" r="7" fill="${AM}"/><path d="M26 86 L45 60 L58 74 L70 56 L88 86Z" fill="${GR}"/>
+  <rect y="139" width="320" height="41" fill="${sh(.1)}"/>
+  <rect x="220" y="96" width="64" height="40" rx="4" fill="${NV}"/><rect class="scr" x="225" y="101" width="54" height="30" rx="2" fill="${SK}"/><rect x="212" y="134" width="80" height="5" rx="2" fill="${NV}"/>
+  <ellipse cx="150" cy="148" rx="38" ry="6" fill="${sh(.12)}"/>
+  <g class="ch">
+   <ellipse class="bd" cx="150" cy="110" rx="40" ry="38" fill="${AM}"/>
+   <circle cx="128" cy="116" r="5" fill="rgba(255,79,92,.55)"/><circle cx="172" cy="116" r="5" fill="rgba(255,79,92,.55)"/>
+   <ellipse cx="137" cy="98" rx="10" ry="11" fill="#fff"/><ellipse cx="163" cy="98" rx="10" ry="11" fill="#fff"/>
+   <g class="pu"><circle cx="137" cy="99" r="5" fill="${NV}"/><circle cx="163" cy="99" r="5" fill="${NV}"/></g>
+   <rect class="ld" x="125" y="86" width="24" height="13" fill="${AM}"/><rect class="ld" x="151" y="86" width="24" height="13" fill="${AM}"/>
+   <path class="m1" d="M141 122 L159 122" stroke="${NV}" stroke-width="3" stroke-linecap="round"/>
+   <path class="m2" d="M139 119 Q150 131 161 119" stroke="${NV}" stroke-width="3" fill="none" stroke-linecap="round" opacity="0"/>
+  </g>
+  <g class="bb" opacity="0"><rect x="174" y="38" width="94" height="28" rx="14" fill="#000"/><path d="M188 64 L182 74 L198 64Z" fill="#000"/>${T(221,56.5,12,'#fff','مرّت 20 دقيقة')}</g>
+  <g class="cb" opacity="0"><rect x="96" y="24" width="56" height="28" rx="14" fill="${BL}"/>${T(124,43,14,'#fff','20','class="ct"')}</g>`);
+  const q=s=>$(r,s),qa=s=>$$(r,s),tl=newTL();
+  gsap.set(qa('.ld'),{scaleY:0,transformOrigin:'50% 0%'}); gsap.set(q('.pu'),{x:5});
+  tl.to(q('.scr'),{fill:TE,duration:.2,repeat:3,yoyo:true})
+    .to(qa('.ld'),{scaleY:1,duration:.7,ease:'power2.inOut'},'<')
+    .to(q('.ch'),{y:5,duration:.7},'<')
+    .fromTo(q('.bb'),{opacity:0,scale:.3,transformOrigin:'15% 100%'},{opacity:1,scale:1,duration:.4,ease:'back.out(2.5)'},'+=.1')
+    .to(q('.bb'),{opacity:0,duration:.25},'+=.9')
+    .to(q('.bd'),{scaleX:1.12,scaleY:.88,transformOrigin:'50% 100%',duration:.15})
+    .to(q('.bd'),{scaleX:.95,scaleY:1.07,duration:.2,ease:'power2.out'})
+    .to(q('.ch'),{y:-6,duration:.2},'<')
+    .to(qa('.ld'),{scaleY:0,duration:.2},'<')
+    .to(q('.pu'),{x:-6,y:-2,duration:.3,ease:'power3.out'},'<')
+    .to(q('.m1'),{opacity:0,duration:.1},'<').to(q('.m2'),{opacity:1,duration:.1},'<')
+    .to(q('.bd'),{scaleX:1,scaleY:1,duration:.5,ease:'elastic.out(1,.4)'})
+    .fromTo(q('.cb'),{opacity:0,y:8},{opacity:1,y:0,duration:.3},'<');
+  count(tl,q('.ct'),20,0,1.8,'<');
+  tl.to(qa('.ld'),{scaleY:1.95,duration:.08,yoyo:true,repeat:1},'<.9')
+    .to(q('.cb'),{opacity:0,duration:.25},'+=.9')
+    .to(q('.pu'),{x:5,y:0,duration:.4}).to(q('.m2'),{opacity:0,duration:.1},'<').to(q('.m1'),{opacity:1,duration:.1},'<').to(q('.ch'),{y:0,duration:.4},'<');
+  return tl;
+},
+
+doodle(r){
+  const u=++UID;
+  r.innerHTML=SV(`<defs><filter id="bo${u}" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence class="turb" type="fractalNoise" baseFrequency=".035" numOctaves="2" seed="1" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3.2"/></filter>
+  <clipPath id="c1${u}"><rect class="cr1" x="168" y="66" width="130" height="40"/></clipPath><clipPath id="c3${u}"><rect class="cr3" x="196" y="70" width="110" height="40"/></clipPath></defs>
+  <rect width="320" height="180" fill="#fff"/>
+  ${[24,44,64,84,104,124,144,164].map(y=>`<line x1="0" y1="${y}" x2="320" y2="${y}" stroke="rgba(0,86,210,.12)"/>`).join('')}<line x1="296" y1="0" x2="296" y2="180" stroke="rgba(255,79,92,.35)"/>
+  <g filter="url(#bo${u})" stroke="#000" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <g class="g1"><path class="d1" d="M112 48 C92 48 76 64 76 84 C76 104 92 120 112 120 C132 120 148 104 148 84 C148 64 132 48 112 48 Z"/><path class="d1" d="M112 84 L112 62 M112 84 L128 92"/>
+    <g clip-path="url(#c1${u})">${T(232,96,26,'#000','20 دقيقة','stroke="none"')}</g></g>
+   <g class="g2"><path class="d2" d="M30 92 Q70 62 110 92 Q70 122 30 92 Z"/><circle class="d2" cx="70" cy="92" r="11"/><path class="d2" d="M40 74 l-4 -8 M58 68 l-2 -9 M78 68 l2 -9 M98 74 l4 -8"/>
+    <path class="d2" d="M122 90 C160 66 196 66 232 84 M222 74 L234 85 L220 92"/>
+    <path class="d2" d="M262 86 C250 84 250 68 264 68 C266 56 284 58 284 70 C296 70 296 86 284 86 Z M273 86 L273 104 M252 104 L296 104"/>
+    <g class="t2" opacity="0">${T(272,130,17,'#000','بعيدًا','stroke="none"')}</g></g>
+   <g class="g3"><path class="d3" d="M110 46 L160 46 L138 88 L160 130 L110 130 L132 88 Z"/>
+    <path class="s1" d="M117 52 L153 52 L135 84Z" fill="${AM}" stroke="none"/><path class="s2" d="M122 126 L148 126 L135 106Z" fill="${AM}" stroke="none"/>
+    <g clip-path="url(#c3${u})">${T(250,100,24,'#000','20 ثانية','stroke="none"')}</g></g>
+  </g>`);
+  const q=s=>$(r,s),tl=newTL(),turb=q('.turb');let last=0;
+  gsap.set([q('.cr1'),q('.cr3')],{scaleX:0,transformOrigin:'100% 50%'});
+  gsap.set(q('.s2'),{scaleY:0,transformOrigin:'50% 100%'});gsap.set(q('.s1'),{opacity:0});
+  draw(tl,$$(r,'.d1'),1.1,0);
+  tl.to(q('.cr1'),{scaleX:1,duration:.7,ease:'power1.inOut'}).to(q('.g1'),{opacity:0,duration:.3},'+=.7');
+  draw(tl,$$(r,'.d2'),.55,'>','power1.inOut',.18);
+  tl.to(q('.t2'),{opacity:1,duration:.3}).to(q('.g2'),{opacity:0,duration:.3},'+=.8');
+  draw(tl,$$(r,'.d3'),.9,'>');
+  tl.to(q('.cr3'),{scaleX:1,duration:.6},'<.4')
+    .to(q('.s1'),{opacity:1,duration:.2},'<')
+    .to(q('.s1'),{scaleY:0,transformOrigin:'50% 100%',duration:1.6,ease:'none'})
+    .to(q('.s2'),{scaleY:1,duration:1.6,ease:'none'},'<')
+    .to(q('.g3'),{opacity:0,duration:.3},'+=.4');
+  tl.eventCallback('onUpdate',()=>{const s=Math.floor(tl.time()*7)%4+1;if(s!==last){turb.setAttribute('seed',s);last=s;}});
+  return tl;
+},
+
+whiteboard(r){
+  const u=++UID;
+  r.innerHTML=SV(`<defs><clipPath id="wt${u}"><rect class="cr" x="196" y="54" width="80" height="60"/></clipPath><clipPath id="wu${u}"><rect class="cr2" x="860" y="66" width="80" height="44"/></clipPath></defs>
+  <rect width="320" height="180" fill="#fff"/>
+  <g class="w" stroke-linecap="round" stroke-linejoin="round">
+   <circle class="f1" cx="120" cy="88" r="40" fill="${AM}" opacity="0"/>
+   <circle class="p1" cx="120" cy="88" r="40" fill="none" stroke="#000" stroke-width="3"/>
+   <path class="p1b" d="M120 88 L120 62 M120 88 L138 98" fill="none" stroke="#000" stroke-width="3"/>
+   <g clip-path="url(#wt${u})">${T(236,108,56,'#000','20')}</g>
+   <path class="f2" d="M360 90 Q410 50 460 90 Q410 130 360 90Z" fill="rgba(0,182,255,.35)" opacity="0"/>
+   <path class="p2" d="M360 90 Q410 50 460 90 Q410 130 360 90Z" fill="none" stroke="#000" stroke-width="3"/>
+   <circle class="p2b" cx="410" cy="90" r="15" fill="none" stroke="#000" stroke-width="3"/>
+   <path class="p2c" d="M478 90 L548 90 M536 80 L550 90 L536 100" fill="none" stroke="#000" stroke-width="3"/>
+   <path class="f3" d="M560 132 L590 82 L620 132 Z" fill="${GR}" opacity="0"/>
+   <path class="p3" d="M560 132 L590 82 L620 132 Z" fill="none" stroke="#000" stroke-width="3"/>
+   <path class="f4" d="M766 50 L834 50 L806 88Z" fill="${AM}" opacity="0"/>
+   <path class="p4" d="M760 44 L840 44 L806 90 L840 136 L760 136 L794 90 Z" fill="none" stroke="#000" stroke-width="3"/>
+   <g clip-path="url(#wu${u})">${T(900,100,30,'#000','20 ث')}</g>
+   <g class="mk"><g transform="rotate(-35)"><rect x="-4.5" y="-48" width="9" height="34" rx="2" fill="${NV}"/><rect x="-4.5" y="-16" width="9" height="9" fill="${BL}"/><path d="M-4.5 -7 L4.5 -7 L1.5 2 L-1.5 2Z" fill="#000"/></g></g>
+  </g>`);
+  const q=s=>$(r,s),tl=newTL(),mk=q('.mk');
+  gsap.set(mk,{x:200,y:160});gsap.set([q('.cr'),q('.cr2')],{scaleX:0,transformOrigin:'0% 50%'});
+  tl.to(mk,{x:160,y:88,duration:.3});
+  drawFollow(tl,q('.p1'),mk,1.1,'>');drawFollow(tl,q('.p1b'),mk,.5,'>');
+  tl.to(q('.f1'),{opacity:1,duration:.4}).to(mk,{x:206,y:104,duration:.25},'<');
+  tl.to(q('.cr'),{scaleX:1,duration:.7,ease:'none'}).to(mk,{x:270,y:96,duration:.7,ease:'none'},'<');
+  tl.to(q('.w'),{x:-320,duration:.9,ease:'power2.inOut'},'+=.3');
+  drawFollow(tl,q('.p2'),mk,.9,'<.2');drawFollow(tl,q('.p2b'),mk,.45,'>');
+  tl.to(q('.f2'),{opacity:1,duration:.3});
+  drawFollow(tl,q('.p2c'),mk,.5,'<');drawFollow(tl,q('.p3'),mk,.6,'>');
+  tl.to(q('.f3'),{opacity:1,duration:.3});
+  tl.to(q('.w'),{x:-640,duration:.9,ease:'power2.inOut'},'+=.4');
+  drawFollow(tl,q('.p4'),mk,1.1,'<.2');
+  tl.to(q('.f4'),{opacity:1,duration:.3}).to(mk,{x:866,y:96,duration:.25},'<');
+  tl.to(q('.cr2'),{scaleX:1,duration:.6,ease:'none'}).to(mk,{x:940,y:92,duration:.6,ease:'none'},'<');
+  tl.to(mk,{x:980,y:200,duration:.4},'+=.4').to(q('.w'),{opacity:0,duration:.4},'+=.3');
+  return tl;
+},
+
+chalk(r){
+  const u=++UID;
+  r.innerHTML=SV(`<defs><filter id="ck${u}"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="1" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="1.8"/></filter>
+  <clipPath id="ce${u}"><rect class="ce" x="60" y="22" width="200" height="44"/></clipPath><clipPath id="cd${u}"><rect class="cd" x="90" y="114" width="146" height="12"/></clipPath></defs>
+  <rect width="320" height="180" fill="${NV}"/><rect y="168" width="320" height="12" fill="rgba(0,0,0,.25)"/>
+  <rect x="246" y="163" width="22" height="5" rx="2" fill="${OF}"/>
+  <g class="bd" filter="url(#ck${u})" fill="none" stroke="${OF}" stroke-width="2.4" stroke-linecap="round" opacity=".95">
+   <g clip-path="url(#ce${u})">${T(160,56,30,OF,'20 + 20 + 20','stroke="none" direction="ltr"')}</g>
+   <path class="ul" d="M70 68 Q160 74 250 64"/>
+   <path class="ey" d="M44 120 Q62 104 80 120 Q62 136 44 120Z M62 120 m-5 0 a5 5 0 1 0 10 0 a5 5 0 1 0 -10 0"/>
+   <g clip-path="url(#cd${u})"><path d="M92 120 L234 120" stroke-dasharray="6 7"/></g>
+   <path class="tr" d="M252 120 C240 118 240 100 254 100 C256 88 274 90 274 102 C286 102 286 120 272 120 Z M263 120 L263 138"/>
+   <path class="ms" d="M92 142 L234 142 M92 136 L92 148 M234 136 L234 148"/>
+   <g class="lb" opacity="0">${T(163,162,14,OF,'6 أمتار','stroke="none"')}</g>
+   <ellipse class="el" cx="160" cy="46" rx="110" ry="27" stroke="${AM}"/>
+  </g>
+  <g class="dust" fill="${OF}">${[0,1,2,3,4,5].map(i=>`<circle cx="${70+i*34}" cy="62" r="1.4" opacity="0"/>`).join('')}</g>`);
+  const q=s=>$(r,s),tl=newTL();
+  gsap.set(q('.ce'),{scaleX:0,transformOrigin:'0% 50%'});gsap.set(q('.cd'),{scaleX:0,transformOrigin:'0% 50%'});
+  tl.to(q('.ce'),{scaleX:1,duration:1.5,ease:'none'})
+    .fromTo($$(r,'.dust circle'),{opacity:0,y:0},{opacity:.8,y:16,duration:.5,stagger:.22,ease:'power1.in'},'<')
+    .to($$(r,'.dust circle'),{opacity:0,duration:.3,stagger:.22},'<.4');
+  draw(tl,q('.ul'),.4,'>');
+  draw(tl,q('.ey'),.6,'+=.2');
+  tl.to(q('.cd'),{scaleX:1,duration:.8,ease:'none'});
+  draw(tl,q('.tr'),.7,'>');draw(tl,q('.ms'),.5,'>');
+  tl.to(q('.lb'),{opacity:1,duration:.3});
+  draw(tl,q('.el'),.7,'+=.2','power2.inOut');
+  tl.to(q('.bd'),{opacity:0,duration:.4},'+=1.2');
+  return tl;
+},
+
+stick(r){
+  r.innerHTML=SV(`<rect width="320" height="180" fill="#fff"/><line x1="0" y1="140" x2="320" y2="140" stroke="#000" stroke-width="2"/>
+  <g stroke="#000" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path d="M56 112 H140 M64 112 V140 M132 112 V140"/><path d="M78 112 L84 88 L122 88 L116 112Z" fill="${OF}"/>
+   <path d="M154 114 H176 M172 114 V140 M176 114 V86"/>
+   <g class="ck"><circle cx="60" cy="40" r="15" fill="#fff"/><path d="M60 40 V30 M60 40 L68 44"/></g>
+   <path d="M278 140 L292 114 L306 140Z" fill="rgba(46,165,124,.3)"/>
+   <g class="sm">
+    <circle cx="0" cy="-46" r="9" fill="#fff"/><line x1="0" y1="-37" x2="0" y2="0"/>
+    <g class="aA"><path d="M0 -30 L-14 -18 L-27 -20"/></g>
+    <g class="aB" opacity="0"><path d="M0 -30 L12 -40 L4 -50"/></g>
+    <g class="aC"><path d="M0 -30 L7 -14 L9 0"/></g>
+    <g class="lS"><path d="M0 0 L-18 0 L-18 26 M0 2 L-15 6 L-13 26"/></g>
+    <g class="lT" opacity="0"><path d="M0 0 L-7 32 M0 0 L7 32"/></g>
+   </g>
+  </g>
+  <g class="ex" opacity="0">${T(0,0,22,CO,'!')}</g>
+  <g class="ct" opacity="0"><rect x="-22" y="-14" width="44" height="22" rx="11" fill="${BL}"/>${T(0,2,12,'#fff','20','class="cn"')}</g>`);
+  const q=s=>$(r,s),tl=newTL(),sm=q('.sm');
+  gsap.set(sm,{x:160,y:112});gsap.set(q('.ex'),{x:160,y:46});gsap.set(q('.ct'),{x:230,y:40});
+  tl.to(q('.aA'),{rotation:12,transformOrigin:'100% 0%',duration:.12,yoyo:true,repeat:9})
+    .to(q('.ck'),{rotation:14,transformOrigin:'50% 50%',duration:.06,yoyo:true,repeat:9},'<.4')
+    .fromTo(q('.ex'),{opacity:0,scale:0},{opacity:1,scale:1,transformOrigin:'50% 50%',duration:.3,ease:'back.out(3)'},'<')
+    .to(q('.ex'),{opacity:0,duration:.2},'+=.3')
+    .to(sm,{y:96,duration:.25,ease:'power2.out'})
+    .to(q('.lS'),{opacity:0,duration:.05},'<').to(q('.lT'),{opacity:1,duration:.05},'<')
+    .to(q('.aA'),{opacity:0,duration:.05},'<').to(q('.aC'),{opacity:1,duration:.05},'<')
+    .to(sm,{x:236,duration:1,ease:'none'})
+    .to(sm,{y:92,duration:.125,yoyo:true,repeat:7,ease:'sine.inOut'},'<')
+    .to(q('.aC'),{opacity:0,duration:.05}).to(q('.aB'),{opacity:1,duration:.05},'<')
+    .to(sm,{rotation:-6,transformOrigin:'50% 100%',duration:.2},'<')
+    .fromTo(q('.ct'),{opacity:0,y:50},{opacity:1,y:40,duration:.3},'<');
+  count(tl,q('.cn'),20,0,1.8,'<');
+  tl.to(q('.ct'),{opacity:0,duration:.2},'+=.1')
+    .to(sm,{rotation:0,duration:.2},'<').to(q('.aB'),{opacity:0,duration:.05},'<').to(q('.aC'),{opacity:1,duration:.05},'<')
+    .to(sm,{x:160,duration:1,ease:'none'})
+    .to(sm,{y:92,duration:.125,yoyo:true,repeat:7,ease:'sine.inOut'},'<')
+    .to(sm,{y:112,duration:.2})
+    .to(q('.lT'),{opacity:0,duration:.05},'<').to(q('.lS'),{opacity:1,duration:.05},'<')
+    .to(q('.aC'),{opacity:1,duration:.05},'<').to(q('.aA'),{opacity:1,duration:.05},'<');
+  return tl;
+},
+
+line(r){
+  r.innerHTML=SV(`<rect width="320" height="180" fill="${OF}"/>
+  <g fill="none" stroke="${NV}" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+   <path class="i1" d="M112 46 H208 V108 H112 Z M150 108 L144 124 M170 108 L176 124 M134 124 H186"/>
+   <path class="i2" d="M100 82 Q160 34 220 82 Q160 130 100 82 Z M160 82 m-17 0 a17 17 0 1 0 34 0 a17 17 0 1 0 -34 0"/>
+   <path class="i3" d="M92 122 L138 62 L164 96 L186 74 L228 122 Z M206 52 m-10 0 a10 10 0 1 0 20 0 a10 10 0 1 0 -20 0"/>
+  </g>
+  <circle class="dot" r="3.6" fill="${CO}"/>
+  <line x1="110" y1="144" x2="210" y2="144" stroke="${sh(.2)}"/>
+  <g class="l1" opacity="0">${T(160,164,13,NV,'كل 20 دقيقة')}</g><g class="l2" opacity="0">${T(160,164,13,NV,'انظر إلى شيء بعيد')}</g><g class="l3" opacity="0">${T(160,164,13,NV,'لمدة 20 ثانية')}</g>`);
+  const q=s=>$(r,s),tl=newTL(),dot=q('.dot');
+  gsap.set(dot,{x:112,y:46});
+  ['1','2','3'].forEach(n=>{
+    drawFollow(tl,q('.i'+n),dot,1.5,'>');
+    tl.fromTo(q('.l'+n),{opacity:0,y:6},{opacity:1,y:0,duration:.35},'<.5')
+      .to([q('.i'+n),q('.l'+n)],{opacity:0,duration:.35},'+=.9');
+  });
+  return tl;
+},
+
+paper(r){
+  const shd='rgba(31,61,99,.22)';
+  r.innerHTML=SV(`<rect width="320" height="180" fill="#fff"/><rect width="320" height="180" fill="rgba(255,179,0,.28)"/>
+  <g class="sun"><circle cx="253" cy="43" r="17" fill="${shd}"/><circle cx="250" cy="40" r="17" fill="${OR}"/></g>
+  <g class="cl1"><ellipse cx="73" cy="37" rx="22" ry="10" fill="${shd}"/><ellipse cx="70" cy="34" rx="22" ry="10" fill="#fff"/></g>
+  <g class="cl2"><ellipse cx="173" cy="27" rx="16" ry="7" fill="${shd}"/><ellipse cx="170" cy="24" rx="16" ry="7" fill="#fff"/></g>
+  <path d="M0 116 Q80 84 170 112 T320 104 V180 H0Z" fill="${shd}" transform="translate(3 3)"/><path d="M0 116 Q80 84 170 112 T320 104 V180 H0Z" fill="${TE}"/>
+  <path d="M0 140 Q90 116 200 138 T320 132 V180 H0Z" fill="${shd}" transform="translate(3 3)"/><path d="M0 140 Q90 116 200 138 T320 132 V180 H0Z" fill="${GR}"/>
+  <g class="tag"><line x1="52" y1="0" x2="52" y2="44" stroke="${NV}" stroke-width="1.5"/><rect x="37" y="47" width="34" height="24" rx="4" fill="${shd}"/><rect x="34" y="44" width="34" height="24" rx="4" fill="${CO}"/>${T(51,61,13,'#fff','20')}</g>
+  <g class="eye"><rect x="117" y="67" width="92" height="56" rx="10" fill="${shd}"/><rect x="114" y="64" width="92" height="56" rx="10" fill="#fff"/><path d="M128 92 Q160 70 192 92 Q160 114 128 92Z" fill="${SK}"/><circle class="pp" cx="160" cy="92" r="9" fill="${NV}"/></g>
+  <g class="bn"><rect x="93" y="141" width="140" height="28" rx="4" fill="${shd}"/><rect x="90" y="138" width="140" height="28" rx="4" fill="${NV}"/>
+   <g class="b1">${T(160,157,13,'#fff','انظر إلى شيء بعيد')}</g><g class="b2" opacity="0">${T(160,157,13,'#fff','لمدة 20 ثانية')}</g></g>`);
+  const q=s=>$(r,s),tl=newTL(),stp='steps(7)';
+  gsap.set(q('.eye'),{scaleY:0,transformOrigin:'50% 100%'});gsap.set(q('.bn'),{y:60});
+  tl.to(q('.cl1'),{x:40,duration:6,ease:'steps(18)'},0).to(q('.cl2'),{x:-30,duration:6,ease:'steps(18)'},0)
+    .to(q('.sun'),{y:-6,duration:6,ease:'steps(12)'},0)
+    .to(q('.tag'),{rotation:10,svgOrigin:'52 0',duration:.6,ease:'steps(4)',yoyo:true,repeat:9},0)
+    .to(q('.eye'),{scaleY:1,duration:.6,ease:stp},.4)
+    .to(q('.pp'),{x:-14,duration:.5,ease:'steps(4)'},'+=.3')
+    .to(q('.bn'),{y:0,duration:.5,ease:stp},'<')
+    .to(q('.pp'),{x:14,duration:.6,ease:'steps(4)'},'+=.6')
+    .to(q('.b1'),{opacity:0,duration:.1},'+=.4').to(q('.b2'),{opacity:1,duration:.1})
+    .to(q('.pp'),{x:0,duration:.4,ease:'steps(3)'},'+=.8')
+    .to(q('.eye'),{scaleY:0,duration:.5,ease:stp},'+=.4').to(q('.bn'),{y:60,duration:.5,ease:stp},'<');
+  return tl;
+},
+
+info(r){
+  r.innerHTML=SV(`<rect width="320" height="180" fill="#fff"/>
+  <circle cx="82" cy="84" r="46" fill="none" stroke="${sh(.1)}" stroke-width="9"/>
+  <circle class="rg" cx="82" cy="84" r="46" fill="none" stroke="${BL}" stroke-width="9" stroke-linecap="round" transform="rotate(-90 82 84)"/>
+  ${T(82,98,40,'#000','0','class="n" direction="ltr"')}${T(82,150,12,NV,'دقيقة أمام الشاشة')}
+  ${[['كل 20 دقيقة',BL,128,46],['انظر بعيدًا 6 أمتار',GR,96,92],['لمدة 20 ثانية',AM,76,138]].map(([l,c,w,y])=>`
+   <g><g class="vl" opacity="0">${T(232,y-10,12,'#000',l)}</g><rect x="168" y="${y-4}" width="128" height="12" rx="6" fill="${sh(.08)}"/><rect class="br" x="${296-w}" y="${y-4}" width="${w}" height="12" rx="6" fill="${c}"/></g>`).join('')}`);
+  const q=s=>$(r,s),qa=s=>$$(r,s),tl=newTL(),rg=q('.rg'),L=prep(rg);
+  gsap.set(qa('.br'),{scaleX:0,transformOrigin:'100% 50%'});
+  tl.to(rg,{strokeDashoffset:L*.33,duration:1.3,ease:'power2.out'});
+  count(tl,q('.n'),0,20,1.3,'<');
+  tl.to(qa('.br'),{scaleX:1,duration:.7,ease:'power3.out',stagger:.2},'<.3')
+    .to(qa('.vl'),{opacity:1,duration:.3,stagger:.2},'<.4')
+    .to(qa('.br')[0],{scaleY:1.35,transformOrigin:'50% 50%',duration:.15,yoyo:true,repeat:3},'+=.5')
+    .to(qa('.br'),{scaleX:0,duration:.5,ease:'power2.in',stagger:.1},'+=1.2')
+    .to(qa('.vl'),{opacity:0,duration:.2},'<')
+    .to(rg,{strokeDashoffset:L,duration:.5},'<');
+  return tl;
+},
+
+map(r){
+  const u=++UID,rt='M70 112 C110 50 180 150 245 58';
+  r.innerHTML=SV(`<defs><pattern id="gr${u}" width="5" height="5" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".6" fill="${sh(.22)}"/></pattern>
+  <mask id="mk${u}"><path class="mr" d="${rt}" stroke="#fff" stroke-width="7" fill="none"/></mask></defs>
+  <rect width="320" height="180" fill="#fff"/><rect width="320" height="180" fill="rgba(255,179,0,.24)"/>
+  <g class="w">
+   <path d="M14 70 C34 34 84 26 112 38 C140 16 196 20 214 44 C240 30 300 44 306 78 L306 150 C250 166 200 146 160 160 C110 176 50 158 14 146 Z" fill="rgba(255,179,0,.34)" stroke="${sh(.45)}"/>
+   <path d="M30 168 q8 -6 16 0 t16 0 M240 22 q8 -6 16 0 t16 0" stroke="${sh(.3)}" fill="none"/>
+   <path d="${rt}" stroke="${CO}" stroke-width="2.4" fill="none" stroke-dasharray="5 5" mask="url(#mk${u})"/>
+   <g class="pA"><path d="M70 120 C62 110 62 100 70 100 C78 100 78 110 70 120Z" fill="${CO}"/><circle cx="70" cy="107" r="3" fill="#fff"/>${T(70,136,11,NV,'الشاشة')}</g>
+   <g class="pB" opacity="0"><path d="M245 66 C237 56 237 46 245 46 C253 46 253 56 245 66Z" fill="${CO}"/><circle cx="245" cy="53" r="3" fill="#fff"/>${T(245,40,11,NV,'النافذة')}</g>
+   <circle class="tv" r="4.5" fill="${NV}" stroke="#fff" stroke-width="1.5"/>
+   <g class="st" opacity="0"><rect x="128" y="84" width="64" height="22" rx="3" fill="none" stroke="${CO}" stroke-width="1.6" transform="rotate(-8 160 95)"/>${T(160,99,12,CO,'6 أمتار','transform="rotate(-8 160 95)"')}</g>
+  </g>
+  <g class="cp"><circle cx="286" cy="148" r="15" fill="${OF}" stroke="${sh(.5)}"/><polygon class="nd" points="286,136 290,148 286,160 282,148" fill="${CO}"/></g>
+  <g class="pl" opacity="0"><rect x="180" y="104" width="120" height="26" rx="13" fill="#000"/>${T(240,121,12,'#fff','انظر 20 ثانية')}</g>
+  <rect width="320" height="180" fill="url(#gr${u})" pointer-events="none"/>`);
+  const q=s=>$(r,s),tl=newTL(),mr=q('.mr'),tv=q('.tv');
+  gsap.set(tv,{x:70,y:112});
+  tl.fromTo(q('.pA'),{y:-30,opacity:0},{y:0,opacity:1,duration:.6,ease:'bounce.out'})
+    .fromTo(q('.nd'),{rotation:0},{rotation:380,svgOrigin:'286 148',duration:1.4,ease:'elastic.out(1,.4)'},'<');
+  drawFollow(tl,mr,tv,1.6,'<.3','power1.inOut');
+  tl.fromTo(q('.pB'),{y:-30,opacity:0},{y:0,opacity:1,duration:.6,ease:'bounce.out'})
+    .fromTo(q('.st'),{opacity:0,scale:2,transformOrigin:'50% 50%'},{opacity:1,scale:1,duration:.3,ease:'power4.in'},'<.2')
+    .to(q('.w'),{scale:1.7,svgOrigin:'245 58',duration:1,ease:'power2.inOut'},'+=.3')
+    .fromTo(q('.pl'),{opacity:0,y:8},{opacity:1,y:0,duration:.3})
+    .to(q('.pl'),{opacity:0,duration:.25},'+=1.1')
+    .to(q('.w'),{scale:1,duration:.8,ease:'power2.inOut'})
+    .to([q('.pA'),q('.pB'),q('.st'),tv],{opacity:0,duration:.3});
+  return tl;
+},
+
+iso(r){
+  const P=(x,y,z)=>[160+(x-y)*.866*.75,102+((x+y)*.5-z)*.75],pt=a=>a.map(p=>p.map(n=>n.toFixed(1)).join(',')).join(' ');
+  const box=(x,y,z,w,d,h,c)=>{const t=[P(x,y,z+h),P(x+w,y,z+h),P(x+w,y+d,z+h),P(x,y+d,z+h)],l=[P(x,y+d,z),P(x+w,y+d,z),P(x+w,y+d,z+h),P(x,y+d,z+h)],rr=[P(x+w,y,z),P(x+w,y+d,z),P(x+w,y+d,z+h),P(x+w,y,z+h)];
+    return `<polygon points="${pt(t)}" fill="${c}"/><polygon points="${pt(l)}" fill="${c}"/><polygon points="${pt(l)}" fill="${sh(.25)}"/><polygon points="${pt(rr)}" fill="${c}"/><polygon points="${pt(rr)}" fill="${sh(.45)}"/>`;};
+  const face=(a,c,cls='')=>`<polygon class="${cls}" points="${pt(a)}" fill="${c}"/>`;
+  const pill=(x,t,c)=>`<rect x="${x-29}" y="156" width="58" height="18" rx="9" fill="${c}"/>${T(x,168.5,10,c===AM?'#000':'#fff',t)}`;
+  r.innerHTML=SV(`<rect width="320" height="180" fill="#fff"/><rect width="320" height="180" fill="rgba(0,86,210,.08)"/>
+  <g class="fl">${box(-64,-64,0,128,128,4,OF)}${box(-68,-64,4,4,128,60,'#fff')}${box(-64,-68,4,128,4,60,'#fff')}
+   ${face([P(-44,-64,26),P(-4,-64,26),P(-4,-64,56),P(-44,-64,56)],'rgba(0,182,255,.5)')}${face([P(-40,-64,28),P(-24,-64,50),P(-8,-64,28)],GR)}</g>
+  <g class="dk">${box(-14,-40,4,52,26,26,OR)}</g>
+  <g class="mn">${box(-2,-36,30,30,4,22,NV)}${face([P(1,-32,33),P(25,-32,33),P(25,-32,49),P(1,-32,49)],SK,'scr')}</g>
+  <g class="k1">${box(42,6,4,16,16,16,AM)}${pill(98,'20 دقيقة',AM)}</g>
+  <g class="k2">${box(16,34,4,16,16,16,CO)}${pill(160,'6 أمتار',CO)}</g>
+  <g class="k3">${box(-16,44,4,16,16,16,GR)}${pill(222,'20 ثانية',GR)}</g>`);
+  const q=s=>$(r,s),tl=newTL();
+  tl.fromTo(q('.fl'),{y:30,opacity:0},{y:0,opacity:1,duration:.6,ease:'power3.out'})
+    .fromTo(q('.dk'),{y:-50,opacity:0},{y:0,opacity:1,duration:.5,ease:'bounce.out'},'-=.1')
+    .fromTo(q('.mn'),{y:-50,opacity:0},{y:0,opacity:1,duration:.5,ease:'bounce.out'},'-=.25')
+    .to(q('.scr'),{fill:TE,duration:.12,yoyo:true,repeat:5});
+  ['.k1','.k2','.k3'].forEach((k,i)=>tl.fromTo(q(k),{y:30,opacity:0},{y:-8,opacity:1,duration:.5,ease:'back.out(2.5)'},i?'+=.25':'+=.1'));
+  tl.to([q('.k1'),q('.k2'),q('.k3')],{y:-2,duration:.6,ease:'sine.inOut',yoyo:true,repeat:3,stagger:.15})
+    .to([q('.k3'),q('.k2'),q('.k1'),q('.mn'),q('.dk'),q('.fl')],{y:24,opacity:0,duration:.4,stagger:.06,ease:'power2.in'},'+=.3');
+  return tl;
+},
+
+parallax(r){
+  r.innerHTML=SV(`<g class="L0"><rect x="-40" y="-40" width="400" height="260" fill="#fff"/><rect x="-40" y="-40" width="400" height="260" fill="rgba(0,182,255,.3)"/><circle cx="240" cy="54" r="14" fill="rgba(255,179,0,.85)"/></g>
+  <g class="L1"><path d="M-40 118 L30 70 L80 100 L140 58 L200 104 L260 64 L360 118 V220 H-40Z" fill="rgba(71,182,204,.6)"/></g>
+  <g class="L2"><path d="M-40 134 Q60 100 160 126 T360 120 V220 H-40Z" fill="rgba(46,165,124,.75)"/></g>
+  <g class="L3"><path d="M-40 158 Q80 132 200 154 T360 148 V220 H-40Z" fill="${GR}"/><rect x="226" y="120" width="5" height="26" fill="${NV}"/><circle cx="228.5" cy="114" r="13" fill="${TE}"/></g>
+  <g class="bd" fill="none" stroke="${NV}" stroke-width="1.5" stroke-linecap="round" opacity="0"><path d="M120 50 l5 4 l5 -4"/><path d="M140 40 l4 3 l4 -3"/><path d="M104 62 l4 3 l4 -3"/></g>
+  <g class="tx" opacity="0"><rect x="70" y="20" width="180" height="28" rx="14" fill="#000"/>${T(160,38.5,13,'#fff','انظر إلى شيء بعيد')}</g>
+  <g class="L4"><path d="M-60 -60 H380 V240 H-60Z M98 36 H222 V138 H98Z" fill="${OF}" fill-rule="evenodd"/><rect x="98" y="36" width="124" height="102" fill="none" stroke="${NV}" stroke-width="6"/>
+   <rect x="88" y="138" width="144" height="8" rx="2" fill="${NV}"/><rect x="198" y="122" width="12" height="16" rx="2" fill="${OR}"/><ellipse cx="204" cy="116" rx="7" ry="9" fill="${GR}"/>
+   <rect x="10" y="150" width="70" height="44" rx="4" fill="${NV}"/><rect x="16" y="156" width="58" height="30" rx="2" fill="${SK}"/>${T(272,96,12,NV,'كل 20 دقيقة')}</g>
+  <g class="t3" opacity="0"><rect x="100" y="140" width="120" height="26" rx="13" fill="#000"/>${T(160,157.5,12,'#fff','لمدة 20 ثانية')}</g>`);
+  const q=s=>$(r,s),tl=newTL(),o='160 87';
+  tl.to(q('.L4'),{scale:3.4,svgOrigin:o,duration:1.9,ease:'power2.in'},'+=.6')
+    .to(q('.L3'),{scale:1.35,svgOrigin:o,duration:1.9,ease:'power2.in'},'<')
+    .to(q('.L2'),{scale:1.18,svgOrigin:o,duration:1.9,ease:'power2.in'},'<')
+    .to(q('.L1'),{scale:1.08,svgOrigin:o,duration:1.9,ease:'power2.in'},'<')
+    .to(q('.L0'),{scale:1.03,svgOrigin:o,duration:1.9,ease:'power2.in'},'<')
+    .to(q('.L4'),{opacity:0,duration:.3},'-=.3')
+    .fromTo(q('.tx'),{opacity:0,y:-8},{opacity:1,y:0,duration:.4})
+    .fromTo(q('.bd'),{opacity:0,x:-40},{opacity:1,x:60,duration:2.4,ease:'none'},'<')
+    .to(q('.L1'),{x:-8,duration:2.4,ease:'sine.inOut'},'<').to(q('.L2'),{x:-16,duration:2.4,ease:'sine.inOut'},'<').to(q('.L3'),{x:-28,duration:2.4,ease:'sine.inOut'},'<')
+    .fromTo(q('.t3'),{opacity:0},{opacity:1,duration:.3},'<.8')
+    .to([q('.tx'),q('.t3'),q('.bd')],{opacity:0,duration:.3})
+    .to([q('.L1'),q('.L2'),q('.L3')],{x:0,scale:1,duration:1.4,ease:'power2.out'})
+    .to(q('.L0'),{scale:1,duration:1.4,ease:'power2.out'},'<')
+    .to(q('.L4'),{opacity:1,scale:1,duration:1.4,ease:'power2.out'},'<');
+  return tl;
+},
+
+cube(r){
+  const C=[[BL,'20','دقيقة'],[CO,'6','أمتار'],[AM,'20','ثانية']];
+  const faces=(c,n,w)=>{const t=c===AM?'#000':'#fff';return `<span style="background:${c};color:${t};transform:translateZ(8.5cqw)">${n}<small>${w}</small></span><span style="background:${c};transform:rotateY(180deg) translateZ(8.5cqw)"></span><span style="background:${c};filter:brightness(.78);transform:rotateY(90deg) translateZ(8.5cqw)"></span><span style="background:${c};filter:brightness(.78);transform:rotateY(-90deg) translateZ(8.5cqw)"></span><span style="background:${c};filter:brightness(1.15);transform:rotateX(90deg) translateZ(8.5cqw)"></span><span style="background:${c};transform:rotateX(-90deg) translateZ(8.5cqw)"></span>`;};
+  r.innerHTML=`<div class="c3"><div class="sc">${C.map(([c,n,w],i)=>`<div class="slot" style="transform:translateX(${(i-1)*24}cqw)"><div class="sh"></div><div class="cube">${faces(c,n,w)}</div></div>`).join('')}</div><div class="cap">قاعدة 20-20-20</div></div>`;
+  const sc=$(r,'.sc'),cubes=$$(r,'.cube'),shs=$$(r,'.sh'),tl=newTL();
+  gsap.set(sc,{rotationX:-16,rotationY:-24});
+  tl.fromTo(cubes,{y:-260},{y:0,duration:.9,ease:'bounce.out',stagger:.25})
+    .fromTo(shs,{opacity:0,scale:.3},{opacity:1,scale:1,duration:.9,ease:'bounce.out',stagger:.25},'<')
+    .fromTo($(r,'.cap'),{opacity:0,y:10},{opacity:1,y:0,duration:.4},'-=.3')
+    .to(sc,{rotationY:336,duration:3.2,ease:'power1.inOut'},'+=.3')
+    .to(cubes,{y:-14,duration:.4,yoyo:true,repeat:1,stagger:.15,ease:'power2.out'},'<.6')
+    .to(cubes,{rotationX:360,duration:.9,stagger:.12,ease:'power2.inOut'},'+=.2')
+    .to(cubes,{y:-260,duration:.6,ease:'power2.in',stagger:.1},'+=.6')
+    .to(shs,{opacity:0,duration:.4},'<').to($(r,'.cap'),{opacity:0,duration:.3},'<');
+  return tl;
+},
+
+clay(r){
+  r.innerHTML=SV(`<rect width="320" height="180" fill="${OF}"/><ellipse class="fs" cx="140" cy="150" rx="44" ry="8" fill="${sh(.12)}"/>
+  <g class="ck"><circle cx="248" cy="72" r="24" fill="${AM}"/><ellipse cx="240" cy="62" rx="9" ry="6" fill="rgba(255,255,255,.4)"/><circle cx="232" cy="50" r="6" fill="${AM}"/><circle cx="264" cy="50" r="6" fill="${AM}"/><path d="M248 72 V58 M248 72 L258 78" stroke="${NV}" stroke-width="5" stroke-linecap="round"/></g>
+  <g class="cy"><path class="bd" d="M140 150 C98 150 92 116 100 96 C108 72 128 62 142 62 C164 62 182 76 184 102 C186 130 176 150 140 150Z" fill="${CO}"/>
+   <ellipse cx="118" cy="84" rx="10" ry="7" fill="rgba(255,255,255,.35)"/>
+   <circle cx="142" cy="102" r="24" fill="#fff"/><g class="ir"><circle cx="142" cy="102" r="12" fill="${BL}"/><circle cx="142" cy="102" r="5.5" fill="#000"/><circle cx="146" cy="98" r="2.5" fill="#fff"/></g>
+   <rect class="lid" x="116" y="76" width="52" height="27" fill="${CO}"/>
+   <ellipse cx="104" cy="132" rx="7" ry="10" fill="${CO}" transform="rotate(20 104 132)"/><ellipse cx="180" cy="132" rx="7" ry="10" fill="${CO}" transform="rotate(-20 180 132)"/></g>
+  <g class="pl" opacity="0"><rect x="196" y="112" width="104" height="30" rx="15" fill="${NV}"/><g class="t1">${T(248,132,13,OF,'كل 20 دقيقة')}</g><g class="t2" opacity="0">${T(248,132,13,OF,'لمدة 20 ثانية')}</g></g>`);
+  const q=s=>$(r,s),tl=newTL();
+  gsap.set(q('.lid'),{scaleY:0,transformOrigin:'50% 0%'});
+  tl.fromTo(q('.cy'),{y:-150},{y:0,duration:.5,ease:'power2.in'})
+    .fromTo(q('.cy'),{scaleX:1.3,scaleY:.7},{scaleX:1,scaleY:1,transformOrigin:'50% 100%',duration:.8,ease:'elastic.out(1.1,.35)'})
+    .fromTo(q('.fs'),{scale:.3},{scale:1,transformOrigin:'50% 50%',duration:.4},'<')
+    .to(q('.lid'),{scaleY:1,duration:.08,yoyo:true,repeat:1})
+    .to(q('.ir'),{x:7,y:-3,duration:.35,ease:'power3.out'},'+=.2')
+    .to(q('.ck'),{rotation:12,transformOrigin:'50% 60%',duration:.5,ease:'elastic.out(1.2,.25)'},'<.1')
+    .to(q('.ck'),{rotation:0,duration:.6,ease:'elastic.out(1.2,.25)'})
+    .fromTo(q('.pl'),{opacity:0,scale:.5,transformOrigin:'50% 50%'},{opacity:1,scale:1,duration:.5,ease:'elastic.out(1,.5)'},'<')
+    .to(q('.ir'),{x:-9,y:-4,duration:.35,ease:'power3.out'},'+=.6')
+    .to(q('.cy'),{scaleY:1.08,scaleX:.95,duration:.25,yoyo:true,repeat:1},'<')
+    .to(q('.t1'),{opacity:0,duration:.15},'<').to(q('.t2'),{opacity:1,duration:.15})
+    .to(q('.lid'),{scaleY:1,duration:.08,yoyo:true,repeat:1},'+=.8')
+    .to(q('.ir'),{x:0,y:0,duration:.3},'+=.3')
+    .to(q('.pl'),{opacity:0,scale:.5,duration:.3},'<')
+    .to(q('.cy'),{scaleX:1.2,scaleY:.8,duration:.15})
+    .to(q('.cy'),{y:-160,scaleX:.9,scaleY:1.15,duration:.45,ease:'power2.in'})
+    .to(q('.fs'),{scale:.3,duration:.3},'<');
+  return tl;
+},
+
+glass(r){
+  const ic={t:'<svg viewBox="0 0 24 24" fill="none" stroke="#0056D2" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2M9 2h6"/></svg>',e:'<svg viewBox="0 0 24 24" fill="none" stroke="#0056D2" stroke-width="2.2" stroke-linecap="round"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>'};
+  r.innerHTML=`<div class="gl"><div class="blob b1" style="width:40cqw;height:40cqw;background:#FF4F5C;left:8%;top:-10%"></div><div class="blob b2" style="width:46cqw;height:46cqw;background:#0056D2;left:46%;top:30%"></div><div class="blob b3" style="width:26cqw;height:26cqw;background:#FFB300;left:66%;top:-6%"></div>
+   <div class="gc c1"><div class="ic">${ic.t}</div><div><h5>كل 20 دقيقة</h5><p>حان وقت راحة العين</p></div></div>
+   <div class="gc c2"><div class="ic">${ic.e}</div><div><h5>انظر إلى شيء بعيد</h5><p>على بعد 6 أمتار أو أكثر</p></div></div>
+   <div class="gc c3"><div class="ic">${ic.t}</div><div><h5>لمدة <span class="n">20</span> ثانية</h5><div class="pb"><i></i></div></div></div></div>`;
+  const q=s=>$(r,s),tl=newTL(),cs=[q('.c1'),q('.c2'),q('.c3')];
+  gsap.set(cs,{xPercent:-50,yPercent:-50,opacity:0,y:60});
+  tl.to(q('.b1'),{x:60,y:30,duration:6,ease:'sine.inOut'},0).to(q('.b2'),{x:-70,y:-20,duration:6,ease:'sine.inOut'},0).to(q('.b3'),{x:-40,y:40,duration:6,ease:'sine.inOut'},0)
+    .to(cs[0],{opacity:1,y:0,duration:.6,ease:'power3.out'},.2)
+    .to(cs[0],{y:-34,scale:.86,opacity:.6,duration:.5,ease:'power2.inOut'},'+=.8')
+    .to(cs[1],{opacity:1,y:0,duration:.6,ease:'power3.out'},'<')
+    .to(cs[0],{y:-58,scale:.74,opacity:0,duration:.5},'+=.9')
+    .to(cs[1],{y:-34,scale:.86,opacity:.6,duration:.5},'<')
+    .to(cs[2],{opacity:1,y:0,duration:.6,ease:'power3.out'},'<')
+    .to(q('.pb i'),{scaleX:1,duration:2,ease:'none'});
+  count(tl,q('.n'),20,0,2,'<');
+  tl.to(cs,{opacity:0,y:60,duration:.5,ease:'power2.in'},'+=.3')
+    .to([q('.b1'),q('.b2'),q('.b3')],{x:0,y:0,duration:1,ease:'sine.inOut'},'<');
+  return tl;
+},
+
+ui(r){
+  const u=++UID;
+  r.innerHTML=SV(`<defs><clipPath id="ph${u}"><rect x="40" y="10" width="78" height="160" rx="11"/></clipPath></defs>
+  <rect width="320" height="180" fill="${OF}"/>
+  <rect x="36" y="6" width="86" height="168" rx="14" fill="#000"/>
+  <g clip-path="url(#ph${u})"><rect x="40" y="10" width="78" height="160" fill="#fff"/>
+   ${[0,1,2].map(row=>[0,1,2].map(col=>`<rect x="${48+col*22}" y="${54+row*24}" width="16" height="16" rx="4" fill="${[BL,AM,GR,CO,TE,NV,OR,SK,BL][row*3+col]}"/>`).join('')).join('')}
+   <g class="nt"><rect x="44" y="16" width="70" height="28" rx="7" fill="#fff" stroke="${sh(.18)}"/><rect x="48" y="24" width="12" height="12" rx="3" fill="${AM}"/>${T(87,28,6.5,'#000','مرّت 20 دقيقة')}${T(87,38,5.5,NV,'انظر بعيدًا الآن')}</g>
+   <circle class="rp" cx="79" cy="30" r="4" fill="${BL}" opacity="0"/>
+   <g class="ts"><rect x="40" y="10" width="78" height="160" fill="${BL}"/><circle cx="79" cy="74" r="24" fill="none" stroke="rgba(255,255,255,.25)" stroke-width="5"/><circle class="pr" cx="79" cy="74" r="24" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" transform="rotate(-90 79 74)"/>
+    ${T(79,80,17,'#fff','20','class="n"')}${T(79,116,7,'#fff','انظر إلى شيء بعيد')}<rect class="btn" x="55" y="134" width="48" height="16" rx="8" fill="#fff"/>${T(79,145,7.5,BL,'تم')}<circle class="rp2" cx="79" cy="142" r="4" fill="${NV}" opacity="0"/></g>
+  </g>
+  <rect x="66" y="13" width="26" height="6" rx="3" fill="#000"/>
+  <g class="k1" opacity="0"><circle cx="160" cy="58" r="11" fill="${BL}"/>${T(160,62,11,'#fff','1')}${T(236,62,13,'#000','إشعار كل 20 دقيقة')}</g>
+  <g class="k2" opacity="0"><circle cx="160" cy="96" r="11" fill="${BL}"/>${T(160,100,11,'#fff','2')}${T(236,100,13,'#000','مؤقّت 20 ثانية')}</g>
+  <g class="k3" opacity="0"><circle cx="160" cy="134" r="11" fill="${GR}"/>${T(160,138,11,'#fff','✓')}${T(236,138,13,'#000','عين مرتاحة')}</g>`);
+  const q=s=>$(r,s),tl=newTL();
+  prep(q('.pr'));gsap.set(q('.ts'),{x:80});gsap.set(q('.nt'),{y:-50});
+  tl.to(q('.nt'),{y:0,duration:.5,ease:'back.out(1.6)'},'+=.3')
+    .fromTo(q('.k1'),{opacity:0,x:16},{opacity:1,x:0,duration:.4},'<.2')
+    .fromTo(q('.rp'),{opacity:.5,scale:1},{opacity:0,scale:5,transformOrigin:'50% 50%',duration:.5},'+=.5')
+    .to(q('.ts'),{x:0,duration:.5,ease:'power3.out'},'<.1')
+    .fromTo(q('.k2'),{opacity:0,x:16},{opacity:1,x:0,duration:.4},'<.2')
+    .to(q('.pr'),{strokeDashoffset:0,duration:2,ease:'none'});
+  count(tl,q('.n'),20,0,2,'<');
+  tl.to(q('.btn'),{scale:.9,transformOrigin:'50% 50%',duration:.1,yoyo:true,repeat:1})
+    .fromTo(q('.rp2'),{opacity:.5,scale:1},{opacity:0,scale:5,transformOrigin:'50% 50%',duration:.5},'<')
+    .fromTo(q('.k3'),{opacity:0,x:16},{opacity:1,x:0,duration:.4},'<')
+    .to(q('.ts'),{x:80,duration:.5,ease:'power3.in'},'+=.9')
+    .to(q('.nt'),{y:-50,duration:.3},'<')
+    .to([q('.k1'),q('.k2'),q('.k3')],{opacity:0,duration:.3},'<');
+  return tl;
+},
+
+apple(r){
+  const u=++UID,col=(x,n)=>`<g class="col" transform="translate(${x} 0)">${Array.from({length:n},(_,i)=>T(0,110+i*70,70,'#fff',i%10)).join('')}</g>`;
+  r.innerHTML=SV(`<defs><clipPath id="od${u}"><rect x="90" y="44" width="140" height="80"/></clipPath></defs><rect width="320" height="180" fill="#000"/>
+  <g class="sub">${T(160,30,11,'rgba(243,242,238,.5)','قاعدة 20-20-20')}</g>
+  <g class="od" clip-path="url(#od${u})"><g class="c0">${col(140,3)}</g><g class="c9">${col(182,11)}</g></g>
+  <g class="c1" opacity="0">${T(160,152,18,'#fff','دقيقة.')}</g>
+  <circle class="rg" cx="160" cy="86" r="46" fill="none" stroke="#fff" stroke-width="2" transform="rotate(-90 160 86)" opacity="0"/>
+  <g class="s2" opacity="0">${T(160,100,40,'#fff','20','class="n2"')}</g><g class="c2" opacity="0">${T(160,156,16,'#fff','ثانية.')}</g>
+  <g class="f" opacity="0">${T(160,96,42,'#fff','20-20-20','direction="ltr"')}${T(160,126,13,'rgba(243,242,238,.6)','لعين أكثر راحة.')}</g>`);
+  const q=s=>$(r,s),tl=newTL();
+  tl.fromTo(q('.c0'),{y:0},{y:-140,duration:1.4,ease:'expo.out'},.2).fromTo(q('.c9'),{y:0},{y:-700,duration:1.8,ease:'expo.out'},.2)
+    .fromTo(q('.c1'),{opacity:0,y:8},{opacity:1,y:0,duration:.6,ease:'expo.out'},'-=.8')
+    .to([q('.od'),q('.c1')],{opacity:0,duration:.4},'+=.8')
+    .to(q('.rg'),{opacity:1,duration:.1});
+  draw(tl,q('.rg'),1.6,'<','none');
+  tl.to(q('.s2'),{opacity:1,duration:.4},'<').to(q('.c2'),{opacity:1,duration:.5},'<.3');
+  count(tl,q('.n2'),20,0,1.6,'<');
+  tl.to([q('.rg'),q('.s2'),q('.c2'),q('.sub')],{opacity:0,duration:.4},'+=.4')
+    .fromTo(q('.f'),{opacity:0,scale:.92,transformOrigin:'50% 50%'},{opacity:1,scale:1,duration:1,ease:'expo.out'})
+    .to(q('.f'),{opacity:0,duration:.5},'+=1');
+  return tl;
+},
+
+logo(r){
+  const u=++UID;
+  r.innerHTML=SV(`<defs><clipPath id="lw${u}"><rect class="cw" x="110" y="122" width="100" height="32"/></clipPath></defs><rect width="320" height="180" fill="${NV}"/>
+  <g class="all"><circle class="rg" cx="160" cy="76" r="36" fill="none" stroke="${CO}" stroke-width="4.5" stroke-linecap="round" transform="rotate(-90 160 76)"/>
+  <path class="ey" d="M128 76 Q160 52 192 76 Q160 100 128 76Z" fill="${OF}"/>
+  <circle class="pp" cx="160" cy="76" r="10" fill="${BL}"/><circle class="hl" cx="164" cy="72" r="3" fill="#fff" opacity="0"/>
+  <path class="sp" d="M200 44 l3 -9 l3 9 l9 3 l-9 3 l-3 9 l-3 -9 l-9 -3Z" fill="${AM}" opacity="0"/>
+  <g clip-path="url(#lw${u})">${T(160,146,26,OF,'عين')}</g>
+  <g class="tg" opacity="0">${T(160,168,10,AM,'20 · 20 · 20','font-family="IBM Plex Mono" direction="ltr" letter-spacing="2"')}</g></g>`);
+  const q=s=>$(r,s),tl=newTL();
+  gsap.set(q('.ey'),{scaleY:0,transformOrigin:'50% 50%'});gsap.set(q('.pp'),{y:-60,opacity:0});gsap.set(q('.cw'),{scaleX:0,transformOrigin:'100% 50%'});
+  draw(tl,q('.rg'),.9,.2,'power3.inOut');
+  tl.to(q('.ey'),{scaleY:1,duration:.5,ease:'back.out(2)'},'-=.2')
+    .to(q('.pp'),{y:0,opacity:1,duration:.55,ease:'bounce.out'})
+    .to(q('.hl'),{opacity:1,duration:.2})
+    .fromTo(q('.sp'),{opacity:0,scale:0,rotation:-45,transformOrigin:'50% 50%'},{opacity:1,scale:1,rotation:0,duration:.4,ease:'back.out(3)'},'<')
+    .to(q('.cw'),{scaleX:1,duration:.6,ease:'power2.out'})
+    .fromTo(q('.tg'),{opacity:0,y:5},{opacity:1,y:0,duration:.4},'<.3')
+    .to(q('.ey'),{scaleY:.08,duration:.08,yoyo:true,repeat:1},'+=.7')
+    .to(q('.pp'),{scaleY:.1,transformOrigin:'50% 50%',duration:.08,yoyo:true,repeat:1},'<')
+    .to(q('.all'),{opacity:0,scale:.94,transformOrigin:'50% 50%',duration:.4},'+=1');
+  return tl;
+},
+
+morph(r){
+  r.innerHTML=`<div class="mo"><div class="orb"><div class="s s1" style="background:#FF4F5C"></div><div class="s s2" style="background:#0056D2"></div><div class="s s3" style="background:#FFB300"></div><div class="s pp" style="background:#000;width:7cqw;height:7cqw;left:-3.5cqw;top:-3.5cqw;opacity:0"></div></div><div class="cap" style="opacity:0">انظر إلى شيء بعيد</div></div>`;
+  const q=s=>$(r,s),W=r.clientWidth||400,tl=newTL(),s1=q('.s1'),s2=q('.s2'),s3=q('.s3'),pp=q('.pp');
+  const X=W*.22;
+  gsap.set(s1,{x:-X});gsap.set(s3,{x:X});
+  tl.to([s1,s2,s3],{borderRadius:'14%',rotation:90,duration:.6,ease:'power2.inOut',stagger:.1},'+=.2')
+    .to([s1,s2,s3],{borderRadius:'50% 0 50% 0',rotation:180,duration:.6,ease:'power2.inOut',stagger:.1})
+    .to(q('.orb'),{rotation:360,duration:1.2,ease:'power2.inOut'})
+    .to([s1,s2,s3],{borderRadius:'50%',rotation:360,duration:.6},'<')
+    .to([s1,s3],{x:0,duration:.6,ease:'power3.inOut'})
+    .to(s2,{scaleX:3.5,scaleY:1.7,duration:.6,ease:'power3.inOut'},'<')
+    .to(s1,{scale:0,duration:.4},'<.2')
+    .to(s3,{scale:1.1,duration:.5,ease:'back.out(2)'},'<')
+    .to(pp,{opacity:1,duration:.2})
+    .fromTo(q('.cap'),{opacity:0,y:8},{opacity:1,y:0,duration:.4},'<')
+    .to([s3,pp],{x:-W*.1,duration:.5,ease:'power2.inOut'},'+=.4')
+    .to([s3,pp],{x:W*.1,duration:.7,ease:'power2.inOut'})
+    .to(s2,{scaleY:.12,duration:.09,yoyo:true,repeat:1},'+=.2')
+    .to([s3,pp],{scaleY:.12,duration:.09,yoyo:true,repeat:1},'<')
+    .to([s3,pp],{x:0,duration:.4})
+    .to([pp,q('.cap')],{opacity:0,duration:.2},'+=.5')
+    .to(s2,{scaleX:1,scaleY:1,duration:.6,ease:'power3.inOut'})
+    .to(s1,{scale:1,x:-X,duration:.6,ease:'power3.inOut'},'<')
+    .to(s3,{scale:1,x:X,duration:.6,ease:'power3.inOut'},'<');
+  return tl;
+},
+
+retro(r){
+  const u=++UID,ray=i=>{const a=(i*30)*Math.PI/180,b=((i*30)+15)*Math.PI/180;return `<path d="M160 120 L${(160+300*Math.cos(a)).toFixed(1)} ${(120+300*Math.sin(a)).toFixed(1)} L${(160+300*Math.cos(b)).toFixed(1)} ${(120+300*Math.sin(b)).toFixed(1)}Z"/>`;};
+  r.innerHTML=SV(`<defs><pattern id="rg${u}" width="4" height="4" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".6" fill="${sh(.32)}"/></pattern></defs>
+  <rect width="320" height="180" fill="${OF}"/><g class="all">
+  <g class="rays" fill="rgba(255,179,0,.28)">${Array.from({length:12},(_,i)=>ray(i)).join('')}</g>
+  <g class="sun"><circle cx="160" cy="120" r="62" fill="${OR}"/>${[118,130,142,154].map((y,i)=>`<rect x="96" y="${y}" width="128" height="${3+i}" fill="${OF}"/>`).join('')}</g>
+  <rect y="150" width="320" height="30" fill="${NV}"/>
+  <g class="tt"><g class="l3">${T(164,92,46,NV,'20-20-20','direction="ltr"')}</g><g class="l2">${T(162,90,46,AM,'20-20-20','direction="ltr"')}</g><g class="l1">${T(160,88,46,CO,'20-20-20','direction="ltr"')}</g></g>
+  <g class="rb"><path d="M66 140 H254 L246 151 L254 162 H66 L74 151Z" fill="${NV}"/>${T(160,155.5,12,OF,'انظر بعيدًا كل 20 دقيقة')}</g></g>
+  <rect width="320" height="180" fill="url(#rg${u})" pointer-events="none"/><rect class="fk" width="320" height="180" fill="#000" opacity="0" pointer-events="none"/>`);
+  const q=s=>$(r,s),tl=newTL();let last=-1;
+  tl.fromTo(q('.sun'),{y:70},{y:0,duration:1.2,ease:'power2.out'})
+    .fromTo(q('.rays'),{opacity:0,rotation:-20},{opacity:1,rotation:0,svgOrigin:'160 120',duration:1.4,ease:'power2.out'},'<')
+    .fromTo(q('.l3'),{x:-40,opacity:0},{x:0,opacity:1,duration:.4,ease:'back.out(2)'},'-=.6')
+    .fromTo(q('.l2'),{x:40,opacity:0},{x:0,opacity:1,duration:.4,ease:'back.out(2)'},'-=.25')
+    .fromTo(q('.l1'),{y:-30,opacity:0},{y:0,opacity:1,duration:.45,ease:'back.out(2.5)'},'-=.25')
+    .fromTo(q('.rb'),{scaleX:0,transformOrigin:'50% 50%'},{scaleX:1,duration:.5,ease:'back.out(1.6)'})
+    .to(q('.tt'),{rotation:-2,transformOrigin:'50% 50%',duration:.5,yoyo:true,repeat:5,ease:'sine.inOut'})
+    .to(q('.rays'),{rotation:30,svgOrigin:'160 120',duration:3,ease:'none'},'<')
+    .to([q('.tt'),q('.rb')],{opacity:0,y:10,duration:.4})
+    .to(q('.sun'),{y:70,duration:.8,ease:'power2.in'},'<.1').to(q('.rays'),{opacity:0,duration:.5},'<');
+  tl.eventCallback('onUpdate',()=>{const f=Math.floor(tl.time()*12);if(f!==last){last=f;gsap.set(q('.all'),{x:gsap.utils.random(-.7,.7),y:gsap.utils.random(-.7,.7)});q('.fk').setAttribute('opacity',(Math.random()*.06).toFixed(3));}});
+  return tl;
+},
+
+neon(r){
+  const u=++UID;
+  r.innerHTML=SV(`<defs><clipPath id="nz${u}"><rect y="106" width="320" height="74"/></clipPath><filter id="ng${u}" x="-20%" y="-50%" width="140%" height="200%"><feGaussianBlur stdDeviation="3"/></filter></defs>
+  <rect width="320" height="180" fill="#000"/>
+  <g class="sun"><circle cx="160" cy="92" r="34" fill="${CO}"/><g class="bars" fill="#000">${[92,100,108,116].map((y,i)=>`<rect x="120" y="${y}" width="80" height="${2+i}"/>`).join('')}</g></g>
+  <path class="mt" d="M0 106 L40 80 L70 96 L110 66 L150 106 M170 106 L210 72 L246 94 L276 76 L320 106" fill="none" stroke="${SK}" stroke-width="1.6"/>
+  <rect y="106" width="320" height="74" fill="#000"/>
+  <g stroke="${SK}" stroke-width="1" opacity=".85"><line x1="0" y1="106" x2="320" y2="106"/>${[-160,-60,20,90,160,230,300,380,480].map(x=>`<line x1="160" y1="106" x2="${x}" y2="180"/>`).join('')}
+   <g clip-path="url(#nz${u})"><g class="hz">${[104,114,126,140,158,180].map(y=>`<line x1="0" y1="${y}" x2="320" y2="${y}"/>`).join('')}</g></g></g>
+  <g class="nt" opacity="0"><g filter="url(#ng${u})" opacity=".7">${T(160,44,30,'none','20 · 20 · 20','stroke="'+CO+'" stroke-width="4" direction="ltr"')}</g>${T(160,44,30,'none','20 · 20 · 20','stroke="'+CO+'" stroke-width="1.6" direction="ltr"')}</g>
+  <g class="s2" opacity="0"><g filter="url(#ng${u})" opacity=".7">${T(160,154,15,SK,'انظر بعيدًا')}</g>${T(160,154,15,'#fff','انظر بعيدًا')}</g>`);
+  const q=s=>$(r,s),tl=newTL();
+  tl.to(q('.hz'),{y:14,duration:.5,ease:'none',repeat:13},0)
+    .fromTo(q('.sun'),{y:40},{y:0,duration:1.4,ease:'power2.out'},0)
+    .to(q('.bars'),{y:6,duration:.7,ease:'none',repeat:9},0);
+  draw(tl,q('.mt'),1.2,.2,'power1.inOut');
+  tl.to(q('.nt'),{keyframes:{opacity:[0,1,0,1,.25,1,1]},duration:.9,ease:'none'},1.2)
+    .to(q('.s2'),{keyframes:{opacity:[0,1,.2,1,1]},duration:.6,ease:'none'},2.2)
+    .to(q('.nt'),{keyframes:{opacity:[1,.3,1,1]},duration:.4,ease:'none'},4.4)
+    .to([q('.nt'),q('.s2'),q('.mt')],{opacity:0,duration:.4},6.3);
+  return tl;
+},
+
+glitch(r){
+  const u=++UID,bands=[[50,18],[68,14],[82,20],[102,16]];
+  const txt=(c,cls='')=>`<text class="gt ${cls}" x="160" y="104" text-anchor="middle" font-size="58" font-weight="700" fill="${c}" font-family="IBM Plex Mono" direction="ltr">20:00</text>`;
+  r.innerHTML=SV(`<defs>${bands.map(([y,h],i)=>`<clipPath id="gb${u}x${i}"><rect x="0" y="${y}" width="320" height="${h}"/></clipPath>`).join('')}
+  <pattern id="sl${u}" width="3" height="3" patternUnits="userSpaceOnUse"><rect width="3" height="1" fill="rgba(255,255,255,.05)"/></pattern></defs>
+  <rect width="320" height="180" fill="#000"/>
+  <g class="rgb">${txt(SK,'c')}${txt(CO,'m')}</g>${txt('#fff','w')}
+  ${bands.map((b,i)=>`<g class="sl" clip-path="url(#gb${u}x${i})">${txt('#fff')}</g>`).join('')}
+  <g class="nz" opacity="0">${[[20,40,90,4],[160,120,120,3],[60,140,60,6],[220,30,70,3]].map(([x,y,w,h])=>`<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="#fff"/>`).join('')}</g>
+  <rect width="320" height="180" fill="url(#sl${u})" pointer-events="none"/>`);
+  const q=s=>$(r,s),qa=s=>$$(r,s),tl=newTL(),all=qa('.gt'),sl=qa('.sl'),c=q('.c'),m=q('.m');
+  const setT=(t,ar)=>all.forEach(e=>{e.textContent=t;e.setAttribute('font-family',ar?'IBM Plex Sans Arabic':'IBM Plex Mono');e.setAttribute('font-size',ar?'44':'58');});
+  const burst=(pos,n=6)=>{for(let i=0;i<n;i++){const t=pos+i*.05;tl.set(sl,{x:()=>gsap.utils.random(-18,18)},t).set(c,{x:gsap.utils.random(-6,-2)},t).set(m,{x:gsap.utils.random(2,6)},t).set(q('.nz'),{opacity:i%2?0:1,y:gsap.utils.random(-30,30)},t);}const e=pos+n*.05;tl.set(sl,{x:0},e).set(c,{x:-2},e).set(m,{x:2},e).set(q('.nz'),{opacity:0},e);};
+  tl.call(()=>setT('20:00'),null,0).set(c,{x:-2},0).set(m,{x:2},0);
+  burst(1.1);tl.call(()=>setT('انظر بعيدًا',true),null,1.25);
+  burst(2.9);tl.call(()=>setT('00:20'),null,3.05);
+  const o={v:20};tl.to(o,{v:0,duration:2,ease:'none',onUpdate:()=>setT('00:'+String(Math.round(o.v)).padStart(2,'0'))},3.3);
+  burst(5.5,8);tl.to(all,{opacity:0,duration:.1},5.9).set(all,{opacity:1},6.4).call(()=>setT('20:00'),null,6.4);
+  return tl;
+},
+
+pixel(r){
+  const px=(map,cols,s,ox,oy)=>map.map((row,y)=>[...row].map((ch,x)=>ch==='.'?'':`<rect x="${ox+x*s}" y="${oy+y*s}" width="${s}" height="${s}" fill="${cols[ch]}"/>`).join('')).join('');
+  const body=['..NNNN..','.NNNNNN.','.NOOOOO.','.OKOOKO.','.OOOOOO.','..CCCC..','.CCCCCC.','OCCCCCCO','..BBBB..'];
+  const cols={N:NV,O:OF,K:'#000',C:CO,B:BL,G:GR,T:NV};
+  r.innerHTML=SV(`<rect width="320" height="180" fill="${SK}"/>
+  <g class="cl" fill="#fff"><rect x="40" y="34" width="30" height="8"/><rect x="46" y="28" width="16" height="6"/><rect x="200" y="40" width="36" height="8"/><rect x="208" y="34" width="18" height="6"/></g>
+  <rect y="138" width="320" height="42" fill="${OR}"/><rect y="138" width="320" height="4" fill="${AM}"/>
+  ${Array.from({length:20},(_,i)=>`<rect x="${i*16+(i%2)*8}" y="150" width="2" height="8" fill="${sh(.25)}"/>`).join('')}
+  <rect x="30" y="112" width="44" height="4" fill="${NV}"/><rect x="34" y="116" width="4" height="22" fill="${NV}"/><rect x="66" y="116" width="4" height="22" fill="${NV}"/>
+  <rect x="36" y="86" width="32" height="24" fill="${NV}"/><rect class="scr" x="40" y="90" width="24" height="16" fill="${BL}"/><rect x="48" y="110" width="8" height="2" fill="${NV}"/>
+  ${px(['..GGG..','.GGGGG.','GGGGGGG','GGGGGGG','.GGGGG.','...T...','...T...','...T...'],cols,4,272,106)}
+  <rect x="12" y="10" width="62" height="16" fill="#000"/><text class="hud" x="43" y="22" text-anchor="middle" font-size="11" font-weight="700" fill="${AM}" font-family="IBM Plex Mono" direction="ltr">20:00</text>
+  <g class="pc"><g class="fl">${px(body,cols,3,-12,-33)}<g class="la">${px(['..B..B..','.BB..BB.'],cols,3,-12,-6)}</g><g class="lb" opacity="0">${px(['...BB...','..B..B..'],cols,3,-12,-6)}</g></g></g>
+  <g class="cn" opacity="0"><rect x="-14" y="-9" width="28" height="17" fill="${AM}"/><text x="0" y="4" text-anchor="middle" font-size="10" font-weight="700" fill="${NV}" font-family="IBM Plex Mono" direction="ltr">+20</text></g>`);
+  const q=s=>$(r,s),tl=newTL(),pc=q('.pc'),la=q('.la'),lb=q('.lb'),fl=q('.fl'),hud=q('.hud');
+  gsap.set(pc,{x:88,y:138});gsap.set(q('.cn'),{x:250,y:80});
+  tl.to(q('.cl'),{x:-30,duration:7,ease:'steps(14)'},0)
+    .to(q('.scr'),{fill:TE,duration:.2,ease:'steps(1)',yoyo:true,repeat:5},0)
+    .to(hud,{opacity:0,duration:.25,ease:'steps(1)',yoyo:true,repeat:3},0)
+    .to(pc,{x:250,duration:1.8,ease:'steps(14)'},1.1)
+    .to(la,{opacity:0,duration:.13,ease:'steps(1)',yoyo:true,repeat:13},1.1)
+    .to(lb,{opacity:1,duration:.13,ease:'steps(1)',yoyo:true,repeat:13},1.1)
+    .to(pc,{y:116,duration:.3,ease:'steps(4)',yoyo:true,repeat:1},3)
+    .fromTo(q('.cn'),{opacity:0,y:80},{opacity:1,y:66,duration:.3,ease:'steps(3)'},3.1)
+    .to(q('.cn'),{opacity:0,duration:.1},3.8);
+  const o={v:20};tl.call(()=>hud.textContent='20:00',null,0).to(o,{v:0,duration:1.6,ease:'steps(20)',onUpdate:()=>hud.textContent='00:'+String(Math.round(o.v)).padStart(2,'0')},3.4)
+    .set(fl,{scaleX:-1,transformOrigin:'50% 50%'},5.1)
+    .to(pc,{x:88,duration:1.8,ease:'steps(14)'},5.1)
+    .to(la,{opacity:0,duration:.13,ease:'steps(1)',yoyo:true,repeat:13},5.1)
+    .to(lb,{opacity:1,duration:.13,ease:'steps(1)',yoyo:true,repeat:13},5.1)
+    .set(fl,{scaleX:1},6.9).call(()=>hud.textContent='20:00',null,6.9);
+  return tl;
+},
+
+mixed(r){
+  const u=++UID;
+  r.innerHTML=SV(`<defs><pattern id="ht${u}" width="4" height="4" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.1" fill="${sh(.55)}"/></pattern><pattern id="hg${u}" width="4" height="4" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.1" fill="rgba(46,165,124,.8)"/></pattern></defs>
+  <rect width="320" height="180" fill="${OF}"/>
+  <g class="ph"><rect x="34" y="22" width="132" height="104" fill="#fff"/><rect x="40" y="28" width="120" height="78" fill="url(#ht${u})"/>
+   <circle cx="86" cy="58" r="14" fill="${NV}"/><path d="M62 106 C62 82 110 82 110 106Z" fill="${NV}"/><rect x="118" y="70" width="34" height="24" fill="${NV}"/><rect x="121" y="73" width="28" height="18" fill="${SK}"/>
+   <rect x="20" y="16" width="34" height="11" fill="rgba(255,179,0,.65)" transform="rotate(-24 37 21)"/><rect x="146" y="114" width="34" height="11" fill="rgba(255,179,0,.65)" transform="rotate(-24 163 119)"/></g>
+  <g class="p2"><rect x="200" y="30" width="96" height="76" fill="#fff"/><rect x="205" y="35" width="86" height="56" fill="rgba(0,182,255,.3)"/><path d="M205 91 L232 58 L250 76 L266 62 L291 91Z" fill="url(#hg${u})"/><circle cx="276" cy="48" r="7" fill="${AM}"/></g>
+  <ellipse class="cr" cx="86" cy="58" rx="22" ry="18" fill="none" stroke="${CO}" stroke-width="2.6" transform="rotate(-8 86 58)"/>
+  <path class="ar" d="M110 50 C140 26 176 26 204 46 M192 38 L205 47 L192 54" fill="none" stroke="${CO}" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <g class="tx"><rect class="hl" x="94" y="140" width="132" height="22" fill="rgba(255,179,0,.7)"/>${T(160,156,14,'#000','انظر إلى شيء بعيد')}</g>
+  ${[[BL,'#fff',-8,232],[CO,'#fff',6,262],[AM,'#000',-4,292]].map(([b,c,a,x])=>`<g class="lt"><g transform="rotate(${a} ${x} 132)"><rect x="${x-13}" y="120" width="26" height="24" fill="${b}"/>${T(x,137,14,c,'20','font-family="IBM Plex Mono" direction="ltr"')}</g></g>`).join('')}`);
+  const q=s=>$(r,s),qa=s=>$$(r,s),tl=newTL();
+  tl.fromTo(q('.ph'),{opacity:0,scale:1.25,rotation:6,transformOrigin:'50% 50%'},{opacity:1,scale:1,rotation:-3,duration:.45,ease:'power3.out'})
+    .fromTo(q('.p2'),{opacity:0,x:60,rotation:-10,transformOrigin:'50% 50%'},{opacity:1,x:0,rotation:5,duration:.5,ease:'power3.out'},'+=.2');
+  draw(tl,q('.cr'),.6,'+=.2');draw(tl,q('.ar'),.6,'>');
+  tl.fromTo(q('.tx'),{opacity:0},{opacity:1,duration:.2},'+=.1').fromTo(q('.hl'),{scaleX:0,transformOrigin:'100% 50%'},{scaleX:1,duration:.4,ease:'power2.out'},'<');
+  qa('.lt').forEach(l=>tl.fromTo(l,{opacity:0,scale:1.8,transformOrigin:'50% 50%'},{opacity:1,scale:1,duration:.22,ease:'power4.in'},'+=.18'));
+  tl.to([q('.ph'),q('.p2'),q('.cr'),q('.ar'),q('.tx'),...qa('.lt')],{opacity:0,duration:.4},'+=1.4');
+  return tl;
+}
+};
+
+/* ---------- data ---------- */
+const FAM={
+  type:{name:'ستايلات الكلام',title:'الكلام نفسه هو الموشن.',sub:'لا تحتاج رسومات؛ الكلمات تتحرك وتظهر مع الصوت.',color:'var(--amber)'},
+  d2:{name:'الرسم ثنائي الأبعاد',title:'رسومات مسطحة تتحرك.',sub:'أشهر عائلة في فيديوهات الشرح والقصص.',color:'var(--coral)'},
+  data:{name:'الأرقام والمعلومات',title:'أرقام وخرائط تحكي.',sub:'عندما يكون عندك بيانات أو رحلة أو تاريخ.',color:'var(--green)'},
+  depth:{name:'العمق والأبعاد الثلاثة',title:'عمق ومجسمات.',sub:'من العالم المائل البسيط إلى الأبعاد الثلاثة.',color:'var(--blue)'},
+  product:{name:'المنتجات والتطبيقات',title:'إعلانات المنتجات والتطبيقات.',sub:'واجهات تتحرك، وأرقام كبيرة، وحركة ناعمة.',color:'var(--teal)'},
+  art:{name:'الفن والهوية',title:'الفن والهوية البصرية.',sub:'شعارات، وأشكال، وطوابع بصرية قوية.',color:'var(--orange)'}
+};
+const STYLES=[
+ {f:'type',s:'kinetic',n:'الكلمات المتحركة',en:'Kinetic typography',u:'اقتباس، أو إعلان سريع، أو ريلز',e:1,l:'كلمات تقفز وتكبر وتختفي، والرقم هو البطل.',q:'kinetic typography'},
+ {f:'type',s:'synced',n:'كلمة بكلمة مع الصوت',en:'Word-synced captions',u:'شرح بصوت، أو ريلز بترجمة',e:1,ours:'plotter',l:'كل كلمة تضيء لحظة نطقها، والأرقام تُبرز.',q:'animated captions video'},
+ {f:'d2',s:'flat',n:'التصميم المسطّح',en:'Flat design',u:'شرح منتج، أو خدمة، أو فكرة',e:1,l:'أشكال بسيطة بلا ظلال، والكاميرا تنتقل من المكتب إلى النافذة.',q:'flat illustration motion graphics'},
+ {f:'d2',s:'character',n:'الشخصيات الكرتونية',en:'Character animation',u:'قصة، أو نصيحة، أو محتوى للأطفال',e:2,l:'شخصية تتعب من الشاشة، ثم تلتفت وتبتسم.',q:'2d character animation style'},
+ {f:'d2',s:'doodle',n:'الرسم بالقلم',en:'Doodle / hand-drawn',u:'حكاية، أو محتوى دافئ وبسيط',e:2,ours:'doodle',l:'خطوط مرتجفة على دفتر، كأنها تُرسم الآن.',q:'doodle animation style'},
+ {f:'d2',s:'whiteboard',n:'السبورة البيضاء',en:'Whiteboard',u:'درس، أو شرح خطوة بخطوة',e:2,ours:'whiteboard',l:'قلم يرسم ويكتب، والكاميرا تتبعه من رسم إلى رسم.',q:'whiteboard animation'},
+ {f:'d2',s:'chalk',n:'السبورة الطباشيرية',en:'Chalkboard',u:'رياضيات، وعلوم، وإثباتات',e:2,ours:'chalkboard',l:'معادلة ورسم توضيحي بالطباشير، مع المسافة.',q:'chalkboard illustration'},
+ {f:'d2',s:'stick',n:'الشخصية العصوية',en:'Stickman',u:'كوميديا، أو نصيحة في موقف',e:2,ours:'stickman',l:'يكتب، يرنّ المنبّه، يقوم ويمشي وينظر بعيدًا.',q:'stickman animation'},
+ {f:'d2',s:'line',n:'الخطوط',en:'Line art / monoline',u:'أيقونات، وشرح أنيق وبسيط',e:1,l:'خط واحد بسُمك ثابت يرسم الشاشة، ثم العين، ثم الجبل.',q:'monoline illustration animation'},
+ {f:'d2',s:'paper',n:'الورق المقصوص',en:'Paper cut-out',u:'قصة دافئة بطابع يدوي',e:2,l:'طبقات ورق بظلالها، وحركة متقطعة مثل الستوب موشن.',q:'paper cut out animation'},
+ {f:'data',s:'info',n:'الإنفوجرافيك',en:'Infographic / data viz',u:'أرقام، وإحصاءات، وتقارير',e:1,ours:'infographic',l:'عدّاد وحلقة وأشرطة تحوّل القاعدة إلى أرقام.',q:'infographic motion design'},
+ {f:'data',s:'map',n:'الخرائط',en:'Map animation',u:'تاريخ، أو رحلة، أو توسّع شركة',e:2,ours:'map-journey',l:'خريطة قديمة، ومسار يُرسم من الشاشة إلى النافذة.',q:'vintage map illustration'},
+ {f:'depth',s:'iso',n:'الأيزومتريك',en:'Isometric',u:'شرح نظام، أو مراحل، أو مدينة',e:1,ours:'isometric',l:'غرفة صغيرة بزاوية مائلة، ومكعبات تحمل الأرقام.',q:'isometric illustration'},
+ {f:'depth',s:'parallax',n:'العمق الوهمي',en:'2.5D / parallax',u:'افتتاحية فنية، أو صور قديمة تتحرك',e:2,ours:'fake3d',l:'الكاميرا تعبر النافذة، وكل طبقة تتحرك بسرعة مختلفة.',q:'parallax illustration layers'},
+ {f:'depth',s:'cube',n:'الأبعاد الثلاثة',en:'3D',u:'إعلان منتج، أو مشاهد فخمة',e:3,l:'مكعبات حقيقية تسقط وتدور حولها الكاميرا.',q:'3d motion design'},
+ {f:'depth',s:'clay',n:'الصلصال',en:'Clay / claymation look',u:'هوية لطيفة، أو محتوى للأطفال',e:3,l:'شخصية لينة تنضغط وترتد، بحركة مطاطية.',q:'clay 3d illustration'},
+ {f:'depth',s:'glass',n:'الزجاج',en:'Glassmorphism',u:'تقنية، وتطبيقات، ودورات',e:1,l:'بطاقات زجاجية شفافة فوق ألوان تتحرك خلفها.',q:'glassmorphism'},
+ {f:'product',s:'ui',n:'حركة الواجهات',en:'UI animation / app promo',u:'إعلان تطبيق، أو موقع، أو منصة',e:1,ours:'product',l:'إشعار، ولمسة، ومؤقّت داخل تطبيق.',q:'app ui animation'},
+ {f:'product',s:'apple',n:'أسلوب Apple',en:'Keynote style',u:'إطلاق منتج، وأرقام كبيرة',e:1,l:'خلفية سوداء، وأرقام تدور كالعدّاد، وحركة هادئة جدًا.',q:'apple keynote design'},
+ {f:'art',s:'logo',n:'تحريك الشعار',en:'Logo animation',u:'مقدمة قناة، أو هوية شركة',e:1,l:'شعار لتطبيق اسمه «عين» يُبنى قطعة قطعة.',q:'logo animation'},
+ {f:'art',s:'morph',n:'الأشكال المتحوّلة',en:'Abstract / shape morphing',u:'هوية، وانتقالات، وخلفيات',e:1,l:'ثلاثة أشكال تتحول وتدور، ثم تندمج في عين.',q:'abstract shape motion design'},
+ {f:'art',s:'retro',n:'الطابع القديم',en:'Retro / vintage',u:'حنين، أو موسيقى، أو هوية كلاسيكية',e:1,l:'شمس مخططة، وعنوان بطبقات ملونة، وحبيبات فيلم.',q:'retro vintage illustration'},
+ {f:'art',s:'neon',n:'النيون',en:'Neon / synthwave',u:'ألعاب، أو موسيقى، أو تقنية بطابع ليلي',e:1,l:'شبكة تتحرك نحو الأفق، ولافتة نيون تومض.',q:'synthwave neon grid'},
+ {f:'art',s:'glitch',n:'التشويش الرقمي',en:'Glitch',u:'تقنية، وإثارة، وانتقالات سريعة',e:1,l:'الشاشة تتشوش، والنص يتقطع ويتغير.',q:'glitch art design'},
+ {f:'art',s:'pixel',n:'البكسل',en:'Pixel art',u:'ألعاب، أو محتوى مرح بطابع قديم',e:2,l:'شخصية لعبة تمشي إلى الشجرة وتجمع +20.',q:'pixel art scene'},
+ {f:'art',s:'mixed',n:'الوسائط المختلطة',en:'Mixed media / collage',u:'تحليل، أو أخبار، أو تاريخ بصور حقيقية',e:2,l:'صور مطبوعة ولاصق وتعليقات بالقلم وأرقام مقصوصة.',q:'mixed media collage design'}
+];
+const EASE={1:'سهل بالكود',2:'متوسط',3:'صعب'};
+const ARROW='<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 8.5 3.5M4.5 3.5h4v4" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+const KIT='../styles/';
+
+function card(st){
+  const real=st.ours?`<div class="layer real"><img class="bg" src="${KIT}${st.ours}/preview.jpg" alt="" loading="lazy"><video muted loop playsinline preload="none" poster="${KIT}${st.ours}/preview.jpg" src="${KIT}${st.ours}/reference.mp4"></video><span class="tag">من مكتبة متعلم</span></div>`:'';
+  const tog=st.ours?`<div class="tog" role="group" aria-label="نوع المثال"><button data-m="live" aria-pressed="true">حي</button><button data-m="real" aria-pressed="false">فيديو</button></div>`:'';
+  return `<article class="card" data-e="${st.e}">
+    <div class="media"><div class="layer live" aria-hidden="true" data-scene="${st.s}"></div>${real}</div>
+    <div class="cb">
+      <div class="cb-top"><h3>${st.n}</h3><span class="ease e${st.e}">${EASE[st.e]}</span></div>
+      <div class="en mono ltr">${st.en}</div>
+      <p class="use">يناسب: ${st.u}</p>
+      <p class="look"><b>في المثال:</b> ${st.l}</p>
+      <div class="links">${tog}<a class="lk" href="https://www.pinterest.com/search/pins/?q=${encodeURIComponent(st.q)}" target="_blank" rel="noopener">ابحث في Pinterest ${ARROW}</a>${st.ours?`<a class="lk" href="https://github.com/motalim-ai/motion-starter-kit/tree/main/styles/${st.ours}" target="_blank" rel="noopener">الستايل في المكتبة ${ARROW}</a>`:''}</div>
+    </div>
+  </article>`;
+}
+
+const main=document.getElementById('main'),famsEl=document.getElementById('fams');
+Object.entries(FAM).forEach(([k,fam])=>{
+  const items=STYLES.filter(s=>s.f===k),sec=document.createElement('section');
+  sec.className='sec';sec.id='f-'+k;
+  sec.innerHTML=`<div class="kicker"><span class="sq" style="background:${fam.color}"></span>${fam.name} · <span class="mono">${items.length}</span></div><h2>${fam.title}</h2><p class="sub">${fam.sub}</p><div class="grid">${items.map(card).join('')}</div>`;
+  main.appendChild(sec);
+  famsEl.insertAdjacentHTML('beforeend',`<a class="chip" href="#f-${k}"><span class="sq" style="background:${fam.color}"></span>${fam.name}</a>`);
+});
+document.getElementById('easyCount').textContent=STYLES.filter(s=>s.e===1).length;
+document.getElementById('tiles').innerHTML=['kinetic','whiteboard','iso','glitch','flat','cube'].map(k=>`<div class="tile" data-scene="${k}"></div>`).join('');
+
+/* ---------- mount scenes, play only what is on screen ---------- */
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const sceneIO=new IntersectionObserver(es=>es.forEach(en=>{const tl=en.target._tl;if(!tl)return;if(reduce){tl.pause(tl.duration()*.55);return;}const hidden=en.target.closest('.card')?.classList.contains('show-real');(en.isIntersecting&&!hidden)?tl.play():tl.pause();}),{threshold:.15});
+function mountAll(){
+  document.querySelectorAll('[data-scene]').forEach(el=>{
+    try{el._tl=SC[el.dataset.scene](el);sceneIO.observe(el);}catch(err){console.error('scene',el.dataset.scene,err);}
+  });
+}
+(document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve()).then(mountAll);
+
+/* ---------- live / library video ---------- */
+const vis=new Set();
+const vidIO=new IntersectionObserver(es=>es.forEach(en=>{const v=en.target;en.isIntersecting?vis.add(v):vis.delete(v);syncVideo(v);}),{threshold:.25});
+function syncVideo(v){const real=v.closest('.card').classList.contains('show-real');(real&&vis.has(v))?v.play().catch(()=>{}):v.pause();}
+document.querySelectorAll('video').forEach(v=>vidIO.observe(v));
+function setMode(c,m){
+  if(!c.querySelector('.layer.real'))return;
+  c.classList.toggle('show-real',m==='real');
+  c.querySelectorAll('.tog button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.m===m));
+  const v=c.querySelector('video');if(v)syncVideo(v);
+  const live=c.querySelector('.layer.live');if(live&&live._tl&&!reduce)(m==='real'?live._tl.pause():live._tl.play());
+}
+main.addEventListener('click',e=>{const b=e.target.closest('.tog button');if(b)setMode(b.closest('.card'),b.dataset.m);});
+document.getElementById('viewSeg').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;document.querySelectorAll('#viewSeg button').forEach(x=>x.setAttribute('aria-pressed',x===b));document.querySelectorAll('.card').forEach(c=>setMode(c,b.dataset.v));});
+document.getElementById('easeSeg').addEventListener('click',e=>{
+  const b=e.target.closest('button');if(!b)return;
+  document.querySelectorAll('#easeSeg button').forEach(x=>x.setAttribute('aria-pressed',x===b));
+  const f=b.dataset.e;
+  document.querySelectorAll('.card').forEach(c=>c.style.display=(f==='all'||c.dataset.e===f)?'':'none');
+  document.querySelectorAll('.sec').forEach(s=>s.style.display=[...s.querySelectorAll('.card')].some(c=>c.style.display!=='none')?'':'none');
+});
+</script>
+</body>
+</html>
