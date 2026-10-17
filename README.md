@@ -11,12 +11,24 @@
 > 2. اقرأ `AGENTS.md` والتزم به، ثم اتبع `.agents/skills/motion-from-reference/SKILL.md` مرحلة بمرحلة.
 > 3. افهم الستايل أولًا، ثم اسأل المستخدم كل أسئلتك مرة واحدة بكلام بسيط. لا تبنِ قبل إجاباته، ولا ترندر قبل أن يشاهد الفيديو في Remotion Studio ويوافق.
 >
-> **For AI agents:** if the user gave you this repo's link and asked for a video: clone it, read `AGENTS.md`, and follow `.agents/skills/motion-from-reference/SKILL.md` step by step. Ask all your questions once, in simple words. Never render before the user has watched the video in Remotion Studio and approved it.
+> 4. إن طلب **تحريك شعاره**، فاتبع `.agents/skills/logo-animation/SKILL.md` بدلًا من ذلك، والمشروع في `logo/`.
+>
+> **For AI agents:** if the user gave you this repo's link and asked for a video: clone it, read `AGENTS.md`, and follow `.agents/skills/motion-from-reference/SKILL.md` step by step. For an animated logo, follow `.agents/skills/logo-animation/SKILL.md` (project in `logo/`). Ask all your questions once, in simple words. Never render before the user has watched the result in Remotion Studio and approved it.
 
 ## معرض ستايلات الموشن جرافيك
 [![معرض ستايلات الموشن جرافيك](gallery/preview.jpg)](https://motalim-ai.github.io/motion-starter-kit/gallery/)
 
 لا تعرف أي ستايل تختار؟ افتح **[المعرض](https://motalim-ai.github.io/motion-starter-kit/gallery/)**: فيه 26 ستايلًا في 6 عائلات، وكلها تشرح الفكرة نفسها بمثال حي يتحرك، لترى الفرق بعينك. ومع كل ستايل: ما الذي يناسبه، وكلمات البحث عنه في Pinterest، وفيديو الستايل إن كان من الستايلات العشرة في هذا الريبو.
+
+## تحريك الشعار
+[![معرض تحريك الشعار](gallery/logo/videos/L08-LightSweep.jpg)](https://motalim-ai.github.io/motion-starter-kit/gallery/logo/)
+
+**[معرض تحريك الشعار](https://motalim-ai.github.io/motion-starter-kit/gallery/logo/)**: 15 ستايلًا لتحريك الشعار في Remotion، كلها على شعار متعلم، ولكل ستايل مؤثراته الصوتية. اختر ستايلًا، ثم أعطِ الوكيل رابط الريبو (أو ملف المعرض نفسه) وشعارك بصيغة SVG:
+```
+https://github.com/motalim-ai/motion-starter-kit
+هذا شعاري بصيغة SVG. أريده متحركًا بستايل «اللمعة» من معرض تحريك الشعار، بدون خلفية لأضعه فوق فيديوهاتي.
+```
+يسألك الوكيل ما ينقصه، ومنه: **بخلفية بلون محدد، أم بدون خلفية؟** النسخة بدون خلفية تُصدَّر MOV (ProRes 4444) لبرامج المونتاج، وWebM للمواقع. المشروع في `logo/`، والطريقة في `.agents/skills/logo-animation/SKILL.md`.
 
 ## الاستخدام: رابط وجملة واحدة
 1. انسخ رابط الريبو: `https://github.com/motalim-ai/motion-starter-kit`
@@ -88,6 +100,7 @@ https://github.com/motalim-ai/motion-starter-kit
 ```
 styles/             مكتبة الستايلات: لكل ستايل فيديو ومعاينة
 gallery/            معرض الستايلات: صفحة تُفتح في المتصفح، فيها 26 ستايلًا بأمثلة حية
+  logo/             معرض تحريك الشعار: 15 ستايلًا بفيديو لكل ستايل، وطريقة بناء كل ستايل للوكيل
 reference/          أو ضع هنا فيديو مرجعيًا من عندك
 AGENTS.md           القانون: القواعد لكل الوكلاء
 CLAUDE.md           يستورد AGENTS.md لـ Claude Code
@@ -97,8 +110,15 @@ PROMPT.md           أمثلة على الطلبات
   SKILL.md          الطريقة، مرحلة بمرحلة
   references/       الأسئلة، وقالب دليل الأسلوب، وقواعد Remotion والعربية والصوت والمراجعة
   scripts/          analyze.py (تحليل الستايل)، وalign.py (توقيت الكلمات)، وsfx.py (مؤثرات)، وmusic.py (موسيقى)
-.claude/skills/     نفس السكيل لـ Claude Code
+.agents/skills/logo-animation/
+  SKILL.md          تحريك الشعار، مرحلة بمرحلة
+  references/       طريقة بناء كل ستايل، وقواعد الكلمة العربية
+.claude/skills/     نفس السكيلات لـ Claude Code
 video/              مشروع Remotion (تُبنى فيه المشاهد)
+logo/               مشروع Remotion لتحريك الشعار
+  public/logo/      ضع هنا شعارك بصيغة SVG
+  src/styles/       الستايلات المبنية لشعارك (ومثال «اللمعة» جاهز)
+  reference/motalim/ كود الستايلات الخمسة عشر على شعار متعلم
 ```
 
 ويكتب الوكيل في جذر المشروع: `STYLE.md` و`PLAN.md` و`script.txt`، وفي `analysis/` نتائج تحليل الستايل.
@@ -109,6 +129,17 @@ video/              مشروع Remotion (تُبنى فيه المشاهد)
 | `npm run studio` | يفتح Remotion Studio للمعاينة |
 | `npm run stills -- 3 7.5` | صور ثابتة عند ثوانٍ محددة |
 | `npm run render -- --approved` | الرندر الكامل، بعد موافقتك فقط |
+
+## أوامر تحريك الشعار (داخل `logo/`)
+| الأمر | ماذا يفعل |
+|---|---|
+| `npm run split` | يقسّم الشعار (`public/logo/logo.svg`) إلى أجزاء |
+| `npm run sfx` | يصنع المؤثرات الصوتية بالكود |
+| `npm run skeleton -- --group word=p8` | هيكل حروف الكلمة، لستايلات الكتابة والتحوّل |
+| `npm run studio` | يفتح Remotion Studio للمعاينة |
+| `npm run stills -- --id LightSweep 1 2 4` | صور ثابتة عند ثوانٍ محددة |
+| `npm run render -- --approved --id LightSweep` | MP4 بالخلفية، بعد موافقتك فقط |
+| `npm run render -- --approved --id LightSweep --alpha` | بدون خلفية: MOV وWebM بشفافية |
 
 ## عن المرجع
 - استخدم فيديوهات من حقك أن تتعلم منها.

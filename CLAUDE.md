@@ -1,3 +1,3 @@
 @AGENTS.md
 
-The skill is also at `.claude/skills/motion-from-reference/` (the same files as `.agents/skills/motion-from-reference/`).
+The skills are also at `.claude/skills/motion-from-reference/` and `.claude/skills/logo-animation/` (the same files as in `.agents/skills/`).
