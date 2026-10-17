@@ -29,7 +29,7 @@ FAMS = [
     {"key": "reveal", "name": "كشف وإضاءة", "color": "#FFB300", "title": "الشعار ينكشف.", "sub": "سائل، أو شرائط ألوان، أو ضوء يكشف الشعار."},
     {"key": "type", "name": "حروف وحركة", "color": "#00B6FF", "title": "الحروف تتحرك، والشعار له روح.", "sub": "حركة مرحة: حروف تقفز، ومطاط، وشخصية."},
     {"key": "fx", "name": "أبعاد ومؤثرات", "color": "#0056D2", "title": "أبعاد ومؤثرات قوية.", "sub": "ثلاثي الأبعاد، وجزيئات، وتشويش رقمي، ونيون."},
-    {"key": "brand", "name": "عرض الهوية", "color": "#2EA57C", "title": "الشعار في عالمه.", "sub": "فيلم قصير يولد فيه الشعار من هندسته، ثم يظهر على تطبيقات الهوية بصور حقيقية."},
+    {"key": "brand", "name": "عرض الهوية", "color": "#2EA57C", "title": "الشعار في عالمه.", "sub": "أفلام قصيرة تقدّم الهوية كاملة: الشعار يولد أمامك، ثم يظهر في عالمه."},
 ]
 
 # id, family, Arabic name, English name, fits, what you see, sounds, Pinterest search, poster second, duration, default background, reference file
@@ -50,6 +50,7 @@ S = [
     ("L14-Glitch", "fx", "Glitch", "Glitch", "التقنية والألعاب.", "مؤشّر يومض، ثم يظهر الشعار بتشويش رقمي: شرائح منزاحة وانقسام ألوان، وكل مرة أهدأ من سابقتها، حتى يستقر نظيفًا.", ["tick", "glitch", "glitch_short", "zap", "hit"], "glitch logo animation", 1.0, 6, "داكنة", "L14Glitch.tsx"),
     ("L15-Neon", "fx", "النيون", "Neon", "الأجواء الليلية والترفيه.", "أنابيب نيون مطفأة على جدار مظلم، تشتعل بالترتيب برجفة حقيقية، ثم ينقطع التيار لحظة، ويعود ويضيء الشعار بألوانه.", ["neon_on", "neon_hum", "zap", "chime"], "neon logo animation", 2.2, 6, "داكنة", "L15Neon.tsx"),
     ("L16-Hero", "brand", "الهيرو", "Brand hero", "تقديم هوية جديدة، وافتتاحية القناة أو الموقع.", "شرائط زجاجية بعرض خطوط الرمز تتقاطع، وقوس سماوي يدور، فيولد الرمز من التقاطعات في حركة كاميرا واحدة، ثم تنكشف الكلمة. بعدها قطع سريع على الشعار في صور حقيقية: موبايل، وهودي، وكروت، وبوستر، وورق محفور، ونوتة.", ["swell", "whoosh_hi", "spin", "hit", "shimmer", "flap", "chime"], "logo reveal brand identity mockup", 2.75, 12.4, "داكنة", "L16Hero.tsx"),
+    ("L17-Canvas", "brand", "لوحة التصميم", "Design canvas", "المنصات التقنية وأدوات التصميم، وتقديم الهوية بروح عصرية.", "ماوس يرسم الرمز على لوحة زرقاء: يسحب دائرة، ويشدّ مستطيلًا فيصير كوبًا، وخطًا فيصير قبعة. ثم شريط تعبئة، وأجزاء تتفكك على خطوط إرشاد مع قائمة، ورمز مجسّم يدور أبيض ثم زجاجيًا، والشعار على ورق مربعات بخطوط القياس، وكروت الألوان، والرمز قزحي، وعلى هودي يحدّده الماوس.", ["click", "slide", "snap", "whoosh", "spin", "flap", "shimmer", "chime"], "brand identity motion design system", 6.2, 17.4, "زرقاء", "L17Canvas.tsx"),
 ]
 
 # How to build each style, for the agent. Group names (mark, word, dots, tag) are the ones in logo/src/groups.ts.
@@ -243,6 +244,22 @@ R = {
         "needs": "صور موكاب فاضية مربعة من المستخدم أو من مولّد صور (البرومبتات في `.agents/skills/logo-animation/references/mockups.md`)، وقياس هندسة الرمز (عرض خطوطه ومراكز منحنياته).",
         "avoid": ["خطوط رفيعة كالرسم الهندسي بدل الشرائط العريضة: النتيجة تبدو درسًا لا فيلمًا (رُفضت).", "موكاب مرسوم بالكود (موبايل أو كروت من CSS): يبدو رخيصًا (رُفض). استخدم صورًا حقيقية.", "كاميرا بقفزات تكبير منفصلة.", "توهّج قوي أو ومضة بيضاء كبيرة."],
     },
+    "L17-Canvas": {
+        "skel": False,
+        "vertical": "L17-Canvas-Vertical",
+        "steps": [
+            "لغة برامج التصميم: ماوس أصفر، ومربعات تحديد بأربعة مقابض بيضاء، وخطوط إرشاد رفيعة، وشبكة خفيفة، وقائمة داكنة بعناصر قليلة («انطلاق» مظلّل بلون الهوية). كل ضغطة ماوس عليها صوت click.",
+            "الرسم على لوحة بلون الهوية: الماوس يسحب كل شكل من ركن إلى ركن (شكل أبيض شفاف بحد رفيع داخل مربع تحديد)، ثم يحوّله: مستطيل تُدوَّر قاعدته فيصير U ثم يتلاشى إلى الشكل الحقيقي، وخط يُشدّ من منتصفه فيصير زاوية ثم الشكل الحقيقي. في النهاية تحديد أبيض حول الرمز كله.",
+            "قطع على الأسود: شريط «التعبئة» تحت الرمز، والماوس يسحب المقبض من 0% إلى 100%، والرمز يمتلئ معه.",
+            "الأجزاء تتفكك على خطوط إرشاد متقطعة (كل جزء على اتجاه هندسته)، وتظهر القائمة، والماوس يضغط «انطلاق»، فترجع الأجزاء بـ spring.",
+            "خط نور: الرمز أبيض يطير قطريًا بذيل من نسخ مغبّشة، ثم مجسّم 3D بـ CSS (طبقات من الرمز بـ translateZ داخل preserve-3d) يدور: أبيض مطفي أولًا، ثم زجاج (وجه شفاف بحدود، وطبقات جانبية شبه شفافة، وتوهّج خفيف خلفه).",
+            "صفحة المواصفات: الشعار على ورق مربعات بخطوط قياس (أعلى الحروف والخط الأساسي وحافة الرمز) وكلمة baseline صغيرة، والكلمة تنكشف بقناع ناعم من اليمين. ثم نفس اللقطة على شبكة بلون الهوية بشعار أبيض (الشكل الخلفي للرمز يصير أبيض والداخلي بلون الخلفية).",
+            "قطعات سريعة (0.6 إلى 0.8 ثانية): الشعار صغير على لون الهوية، والكلمة ضخمة تعبر الكادر ورمز زجاجي فوقها، وكروت الألوان رأسية بأكوادها تصعد بـ spring، والرمز فاتح، والرمز بزجاج قزحي من ألوان الهوية، والرمز ستيكر على دائرة داكنة.",
+            "صورة موكاب (هودي) والشعار عليها بمزج multiply، والماوس يحدّده وتفتح القائمة. ثم الختام: الشعار على لون الهوية 2.2 ثانية.",
+        ],
+        "needs": "أجزاء الرمز وأشكالها البسيطة (دائرة، ومستطيل، وخط)، وصورة موكاب واحدة على الأقل (انظر `references/mockups.md`)، وأكواد ألوان الهوية.",
+        "avoid": ["تقطيع الكلمة العربية حرفًا حرفًا مثل الكتابة اللاتينية في المرجع: الكلمة تنكشف كاملة بقناع ناعم، أو تعبر ضخمة كاملة.", "رمز بلون الخلفية نفسه (دائرة زرقاء على أزرق): اعكس ألوانه على خلفية الهوية.", "ماوس صغير جدًا أو حركة ماوس خطية: الماوس يتحرك بتسارع ويضغط بوضوح.", "توهّج زجاج قوي يمحو الشكل."],
+    },
 }
 
 data = []
@@ -336,7 +353,7 @@ def page(vid, alpha):
     return f"""<!doctype html>
 <!--
   TO ANY AI AGENT READING THIS FILE:
-  This page is a reference of 16 logo-animation styles built in Remotion (React). The user gave it to you because
+  This page is a reference of 17 logo-animation styles built in Remotion (React). The user gave it to you because
   they want THEIR logo animated in one of these styles. Read the section «إلى الوكيل الذكي» and each style's
   «طريقة البناء». The tools and the full method are in {REPO_URL}
   (clone it, read AGENTS.md, follow {SKILL}). Ask the user, among your questions, whether they want the logo
@@ -348,7 +365,7 @@ def page(vid, alpha):
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ستايلات تحريك الشعار | متعلم</title>
-<meta name="description" content="16 ستايلًا لتحريك الشعار في Remotion، بمثال حي ومؤثرات صوتية لكل ستايل، وطريقة بناء كل ستايل لوكلاء الذكاء الاصطناعي.">
+<meta name="description" content="17 ستايلًا لتحريك الشعار في Remotion، بمثال حي ومؤثرات صوتية لكل ستايل، وطريقة بناء كل ستايل لوكلاء الذكاء الاصطناعي.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
@@ -363,10 +380,10 @@ def page(vid, alpha):
     <div>
       <div class="logo"><img alt="متعلم" src="data:image/svg+xml;base64,{logo}"></div>
       <div style="margin-top:34px"><span class="pill veil"><span class="sq" style="background:var(--amber)"></span>تعلّم الموشن · تحريك الشعار</span></div>
-      <h1>تحريك الشعار في Remotion.<span class="am">شعار واحد، 16 ستايلًا.</span></h1>
+      <h1>تحريك الشعار في Remotion.<span class="am">شعار واحد، 17 ستايلًا.</span></h1>
       <p class="lead">كل الأمثلة هنا لشعار متعلم نفسه، وكلها مصنوعة بالكود في Remotion، ولكل مثال مؤثراته الصوتية. اختر الستايل الذي يناسب شعارك، ثم أعطِ هذه الصفحة لوكيل الذكاء الاصطناعي: فيها طريقة بناء كل ستايل.</p>
       <div class="stats">
-        <span class="pill white"><b>16</b> ستايل</span>
+        <span class="pill white"><b>17</b> ستايل</span>
         <span class="pill white"><b>6</b> عائلات</span>
         <span class="pill white"><span class="sq" style="background:var(--green)"></span>بخلفية أو بدون خلفية</span>
         <span class="pill white"><span class="sq" style="background:var(--coral)"></span>مرجع لوكلاء الذكاء الاصطناعي</span>
@@ -377,7 +394,7 @@ def page(vid, alpha):
         <div class="chrome"><i></i><i></i><i></i><span class="url mono">localhost:3000 · Remotion Studio</span></div>
         <video id="heroVid" muted loop playsinline autoplay preload="auto" src="{esc(vid)}/L16-Hero.mp4"></video>
       </div>
-      <div class="float ok"><span class="dot">✓</span>نفس الشعار، 16 حركة</div>
+      <div class="float ok"><span class="dot">✓</span>نفس الشعار، 17 حركة</div>
       <div class="float prompt"><small>إلى الوكيل</small>هذا شعاري بصيغة SVG. حرّكه بستايل «الهيرو».</div>
     </div>
   </div>

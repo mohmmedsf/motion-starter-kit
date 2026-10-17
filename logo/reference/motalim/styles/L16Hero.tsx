@@ -183,7 +183,7 @@ type Photo = {
   opacity?: number;
 };
 const IMG = 1254;
-const PHOTOS: Photo[] = [
+export const PHOTOS: Photo[] = [
   { name: "phone", kind: "screen", at: { x: 627.5, y: 565.5 }, w: 420, focus: { x: 628, y: 566 } },
   { name: "hoodie", kind: "full", at: { x: 640, y: 845 }, w: 360, focus: { x: 640, y: 760 }, opacity: 0.9 },
   { name: "cards", kind: "full", at: { x: 630, y: 583 }, w: 470, focus: { x: 630, y: 600 }, opacity: 0.92 },
@@ -216,7 +216,7 @@ const SketchMark: React.FC<{ size: number }> = ({ size }) => (
   </svg>
 );
 
-const PhotoMock: React.FC<{ ph: Photo; lt: number; W: number; H: number; dur: number }> = ({ ph, lt, W, H, dur }) => {
+export const PhotoMock: React.FC<{ ph: Photo; lt: number; W: number; H: number; dur: number }> = ({ ph, lt, W, H, dur }) => {
   // الصورة بتملا الكادر (cover) حوالين نقطة التركيز
   const sc = Math.max(W, H) / IMG;
   const D = IMG * sc;

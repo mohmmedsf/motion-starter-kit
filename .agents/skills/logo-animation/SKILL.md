@@ -1,13 +1,13 @@
 ---
 name: logo-animation
-description: Animate the user's own logo in Remotion in one of 16 styles (line draw, handwriting, assembly, morph, geometric, liquid fill, mask wipe, light sweep, kinetic typing, elastic, character, 3D flip, particles, glitch, neon, and a brand-hero film with real photo mockups), with synthesized sound effects, on a background colour or transparent (alpha MOV/WebM). Use when the user asks for an animated logo, a logo reveal, a logo intro or «تحريك الشعار» / «شعار متحرك», names a style from the logo styles gallery (gallery/logo/), or hands you the file «ستايلات تحريك الشعار.html». Covers getting the SVG, splitting it into parts, one round of questions (including background colour vs transparent), building with Arabic-safe techniques, review in Remotion Studio, and rendering only after the user approves.
+description: Animate the user's own logo in Remotion in one of 17 styles (line draw, handwriting, assembly, morph, geometric, liquid fill, mask wipe, light sweep, kinetic typing, elastic, character, 3D flip, particles, glitch, neon, a brand-hero film with real photo mockups, and a design-canvas brand film in the language of design tools), with synthesized sound effects, on a background colour or transparent (alpha MOV/WebM). Use when the user asks for an animated logo, a logo reveal, a logo intro or «تحريك الشعار» / «شعار متحرك», names a style from the logo styles gallery (gallery/logo/), or hands you the file «ستايلات تحريك الشعار.html». Covers getting the SVG, splitting it into parts, one round of questions (including background colour vs transparent), building with Arabic-safe techniques, review in Remotion Studio, and rendering only after the user approves.
 ---
 
 <div dir="rtl">
 
 # تحريك الشعار في Remotion
 
-**الهدف:** شعار المستخدم نفسه متحركًا بأحد الستايلات الستة عشر في [معرض تحريك الشعار](https://motalim-ai.github.io/motion-starter-kit/gallery/logo/) (`gallery/logo/index.html`)، بمؤثرات صوتية، وينتهي بالشعار الأصلي تمامًا.
+**الهدف:** شعار المستخدم نفسه متحركًا بأحد الستايلات السبعة عشر في [معرض تحريك الشعار](https://motalim-ai.github.io/motion-starter-kit/gallery/logo/) (`gallery/logo/index.html`)، بمؤثرات صوتية، وينتهي بالشعار الأصلي تمامًا.
 
 **قبل أن تبدأ:**
 - المشروع الجاهز في `logo/`. شغّل أوامر `npm` من داخله.
@@ -40,7 +40,7 @@ description: Animate the user's own logo in Remotion in one of 16 styles (line d
 5. **الصوت:** مؤثرات صوتية على لحظات الحركة، أم بدون صوت؟
 6. **المقاس:** عرضي 16:9، أم طولي 9:16، أم مربع 1:1؟ وبدقة 1080p أم 4K؟
 7. **الاستخدام:** أين سيضعه؟ بداية فيديو يوتيوب، أو موقع، أو ريلز.
-8. **ستايل «الهيرو» فقط:** يحتاج صور موكاب فاضية (هودي، وموبايل، وكروت، وبوستر، وورق داكن، ونوتة). اسأله: هل يولّدها هو ببرومبتات تعطيها له من [references/mockups.md](references/mockups.md)، أم تولّدها أنت إن كان عندك مولّد صور، أم عنده صور جاهزة؟ لا ترسم الموكاب بالكود.
+8. **ستايلا «الهيرو» و«لوحة التصميم» فقط:** يحتاج صور موكاب فاضية (هودي، وموبايل، وكروت، وبوستر، وورق داكن، ونوتة). اسأله: هل يولّدها هو ببرومبتات تعطيها له من [references/mockups.md](references/mockups.md)، أم تولّدها أنت إن كان عندك مولّد صور، أم عنده صور جاهزة؟ لا ترسم الموكاب بالكود.
 
 انتظر الإجابات، ولا تبدأ البناء قبلها.
 
