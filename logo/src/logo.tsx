@@ -1,5 +1,5 @@
 // The logo split into parts (src/logo-data.json, written by scripts/split-logo.mjs from public/logo/logo.svg).
-// Each part gets its own style: position, size, rotation, opacity, colour, stroke drawing, blur, a fixed clip.
+// Each part gets its own style: position, size, rotation, opacity, colour, stroke drawing, blur, a fixed clip or mask.
 import React from "react";
 import { evolvePath } from "@remotion/paths";
 import DATA from "./logo-data.json";
@@ -43,6 +43,7 @@ export type PartStyle = {
   filter?: string; // url(#..) from defs
   d?: string; // a replacement path (for morphs)
   clip?: string; // url(#..) a fixed clip in logo coordinates
+  mask?: string; // url(#..) a fixed mask in logo coordinates (soft-edged reveals)
   shadow?: string; // CSS drop-shadow
 };
 
@@ -87,8 +88,8 @@ export const Logo: React.FC<{
             }}
           />
         );
-        return s.clip ? (
-          <g key={pt.id} clipPath={s.clip}>
+        return s.clip || s.mask ? (
+          <g key={pt.id} clipPath={s.clip} mask={s.mask}>
             {el}
           </g>
         ) : (

@@ -40,6 +40,7 @@ export type PartStyle = {
   filter?: string; // url(#..) من defs
   d?: string; // مسار بديل (للتحوّل)
   clip?: string; // url(#..) قص ثابت في إحداثيات الشعار (مش بيتحرك مع الجزء)
+  mask?: string; // url(#..) قناع ثابت في إحداثيات الشعار
   shadow?: string; // CSS drop-shadow
 };
 
@@ -86,8 +87,8 @@ export const Logo: React.FC<{
             }}
           />
         );
-        return s.clip ? (
-          <g key={pt.id} clipPath={s.clip}>
+        return s.clip || s.mask ? (
+          <g key={pt.id} clipPath={s.clip} mask={s.mask}>
             {el}
           </g>
         ) : (
