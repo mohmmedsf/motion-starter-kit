@@ -3,6 +3,8 @@ on:
   pull_request:
     paths:
       - 'video/src/production/**'
+      - 'video/scripts/build-production.mjs'
+      - 'video/scripts/storyboard-to-srt.mjs'
       - 'video/examples/**'
       - 'video/scripts/production-render.mjs'
       - 'video/src/Root.tsx'
@@ -21,6 +23,17 @@ jobs:
           node-version: '22'
       - run: npm install --no-audit --no-fund
       - run: npm run typecheck
+      - name: Generate storyboard and SRT from Arabic text
+        run: |
+          printf 'ابدأ مشروعك بفكرة واضحة\\n\\nحوّل الفكرة إلى فيديو عربي احترافي\\n\\nانشر قصتك بثقة' > out-script.txt
+          node scripts/build-production.mjs --script out-script.txt --output out/production/storyboard.json
+          node scripts/storyboard-to-srt.mjs out/production/storyboard.json out/production/subtitles.srt
+          node -e "const p=require('./out/production/storyboard.json'); if(p.scenes.length!==3)process.exit(1)"
+          test -s out/production/subtitles.srt
+      - name: Render custom storyboard video
+        run: |
+          npx remotion render src/index.ts ProductionDemo out/production/custom-arabic.mp4 --props=out/production/storyboard.json --codec h264 --crf 24
+          test -s out/production/custom-arabic.mp4
       - name: Render Arabic production video
         run: |
           mkdir -p out/production
