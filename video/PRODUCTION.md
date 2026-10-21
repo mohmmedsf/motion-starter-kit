@@ -17,3 +17,14 @@ npx remotion render src/index.ts ProductionDemo out/production-demo.mp4 --codec 
 ```
 
 Current boundaries: animations use code-driven CSS/SVG (not photorealistic 3D), scene subtitles are authored text, and there is no audio transcription or automatic scene generation.
+
+## JSON-driven production
+
+Customize `examples/arabic-business.json` (brand, accent, scenes, durations, subtitles and timestamped `captions`) and run:
+
+```bash
+cd video
+node scripts/production-render.mjs examples/arabic-business.json out/production/my-video.mp4
+```
+
+The composition uses Remotion `calculateMetadata` to derive the total length from scene durations. Caption cue times are absolute seconds from the start. A voiceover filename can be supplied in the manifest, but its audio file must exist under `video/public/`; narration must be recorded and synchronized by the author. There is no automatic transcription, word-level forced alignment, AI-generated visual selection, or built-in text-to-speech yet.
