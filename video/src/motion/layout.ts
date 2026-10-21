@@ -17,7 +17,7 @@ export function gridLayout(items: LayoutItem[], options: LayoutOptions): Record<
   for (let i = 0; i < items.length; i++) {
     const item = items[i];
     if (!item.id || !Number.isFinite(item.width) || !Number.isFinite(item.height) || item.width <= 0 || item.height <= 0) throw new Error('Invalid layout item');
-    if (Object.hasOwn(result, item.id)) throw new Error('Duplicate layout id: ' + item.id);
+    if (Object.prototype.hasOwnProperty.call(result, item.id)) throw new Error('Duplicate layout id: ' + item.id);
     if (item.width > cellWidth || item.height > cellHeight) throw new Error('Item does not fit: ' + item.id);
     const col = i % columns;
     const row = Math.floor(i / columns);
