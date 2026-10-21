@@ -28,3 +28,25 @@ node scripts/production-render.mjs examples/arabic-business.json out/production/
 ```
 
 The composition uses Remotion `calculateMetadata` to derive the total length from scene durations. Caption cue times are absolute seconds from the start. A voiceover filename can be supplied in the manifest, but its audio file must exist under `video/public/`; narration must be recorded and synchronized by the author. There is no automatic transcription, word-level forced alignment, AI-generated visual selection, or built-in text-to-speech yet.
+
+## Generate a video from an Arabic script
+
+Separate scene paragraphs with a blank line. Example:
+
+```text
+ابدأ مشروعك بفكرة واضحة
+
+حوّل الفكرة إلى فيديو عربي احترافي
+
+انشر قصتك بثقة
+```
+
+From `video/`:
+
+```bash
+node scripts/build-production.mjs --script script.txt --output out/storyboard.json --brand "MY BRAND"
+node scripts/storyboard-to-srt.mjs out/storyboard.json out/subtitles.srt
+npx remotion render src/index.ts ProductionDemo out/my-video.mp4 --props=out/storyboard.json --codec h264
+```
+
+`ProductionDemo` uses `calculateMetadata` to adapt its duration to the storyboard. The script builder uses **paragraph splitting, rotating styles, and word-count-based duration estimates**. It does **not** use an LLM or speech recognition. Check and edit the JSON scene timings and subtitles before publishing. Voiceover files can be added via `voiceover` in the storyboard and must be placed in `video/public/`. Audio synchronization is not automatic.
