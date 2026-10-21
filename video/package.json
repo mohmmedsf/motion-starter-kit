@@ -5,7 +5,10 @@
     "studio": "remotion studio src/index.ts",
     "stills": "node scripts/stills.mjs",
     "render": "node scripts/render.mjs",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "render:profiles": "node scripts/render-profiles.mjs",
+    "qa:frames": "node scripts/visual-qa.mjs",
+    "qa:compare": "node scripts/compare-frames.mjs"
   },
   "dependencies": {
     "@remotion/bundler": "4.0.533",
