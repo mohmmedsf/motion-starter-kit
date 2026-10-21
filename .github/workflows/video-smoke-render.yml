@@ -1,0 +1,36 @@
+name: Real MP4 smoke render
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/video-smoke-render.yml'
+      - 'video/src/styles/**'
+      - 'video/src/Root.tsx'
+jobs:
+  render-mp4:
+    runs-on: ubuntu-24.04
+    defaults:
+      run:
+        working-directory: video
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+      - name: Typecheck
+        run: npm run typecheck
+      - name: Render a real six-second MP4
+        run: |
+          mkdir -p out/video-smoke
+          npx remotion render src/index.ts Style-editorial-motion out/video-smoke/editorial-motion.mp4 --codec h264 --crf 24 --log verbose
+      - name: Probe video stream and duration
+        run: |
+          ffprobe -v error -show_entries format=duration,size -show_entries stream=codec_name,width,height,r_frame_rate -of json out/video-smoke/editorial-motion.mp4 | tee out/video-smoke/metadata.json
+          test -s out/video-smoke/editorial-motion.mp4
+      - uses: actions/upload-artifact@v6
+        if: always()
+        with:
+          name: actual-editorial-motion-mp4
+          path: video/out/video-smoke/
+          if-no-files-found: warn
