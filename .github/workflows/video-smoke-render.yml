@@ -24,6 +24,11 @@ jobs:
         run: |
           mkdir -p out/video-smoke
           npx remotion render src/index.ts Style-editorial-motion out/video-smoke/editorial-motion.mp4 --codec h264 --crf 24 --log verbose
+      - name: Install FFprobe
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+          command -v ffprobe
       - name: Probe video stream and duration
         run: |
           set -euo pipefail
