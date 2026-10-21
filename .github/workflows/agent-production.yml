@@ -1,0 +1,18 @@
+name: Agent production checks
+on:
+  pull_request:
+    paths:
+      - '.agents/skills/motion-from-reference/scripts/production*.py'
+      - '.agents/skills/motion-from-reference/scripts/validate_production.py'
+      - '.agents/skills/motion-from-reference/scripts/test_production.py'
+      - '.github/workflows/agent-production.yml'
+jobs:
+  python-unit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test production tools
+        run: python -m unittest discover -s .agents/skills/motion-from-reference/scripts -p 'test_production.py' -v
