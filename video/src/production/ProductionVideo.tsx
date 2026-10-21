@@ -3,6 +3,7 @@ import {AbsoluteFill, Audio, interpolate, Sequence, staticFile, useCurrentFrame,
 import {STYLE_IDS, STYLE_LABELS, STYLE_PALETTES, StyleShowcase, EXTRA_STYLE_IDS, EXTRA_STYLE_LABELS, ExtraStyleShowcase} from '../styles';
 import type {StyleId, ExtraStyleId} from '../styles';
 
+import type {CaptionCue} from './manifest';
 export type ProductionScene={title:string;subtitle?:string;style:StyleId|ExtraStyleId;seconds:number};
 export type ProductionProps={
   scenes:ProductionScene[];
@@ -10,6 +11,7 @@ export type ProductionProps={
   accent?:string;
   voiceover?:string;
   subtitles?:boolean;
+  captions?:CaptionCue[];
 };
 export const DEFAULT_PRODUCTION:ProductionProps={
   brand:'MOTION STUDIO',
@@ -23,7 +25,7 @@ export const DEFAULT_PRODUCTION:ProductionProps={
 };
 export const getProductionDuration=(scenes:ProductionScene[],fps:number)=>
   Math.max(1,Math.round(scenes.reduce((sum,s)=>sum+Math.max(.5,s.seconds),0)*fps));
-export const ProductionVideo:React.FC<ProductionProps>=({scenes,brand='MOTION STUDIO',accent='#ffb454',voiceover,subtitles=true})=>{
+export const ProductionVideo:React.FC<ProductionProps>=({scenes,brand='MOTION STUDIO',accent='#ffb454',voiceover,subtitles=true,captions=[]})=>{
   const frame=useCurrentFrame(),{fps}=useVideoConfig();
   let offset=0;
   return <AbsoluteFill style={{background:'#090d16',fontFamily:'Arial, Tahoma, sans-serif'}}>
@@ -44,6 +46,8 @@ export const ProductionVideo:React.FC<ProductionProps>=({scenes,brand='MOTION ST
         </AbsoluteFill>
       </Sequence>;
     })}
+    {subtitles&&captions.filter(c=>frame>=Math.round(c.start*fps)&&frame<Math.round(c.end*fps)).map((c,i)=>
+      <div key={i} dir="rtl" style={{position:'absolute',bottom:45,left:170,right:170,textAlign:'center',color:'#fff',fontSize:45,fontWeight:700,textShadow:'0 3px 8px #000',background:'#000b',padding:'14px 25px',borderRadius:16}}>{c.text}</div>)}
     <div style={{position:'absolute',bottom:0,left:0,height:6,background:accent,width:`${interpolate(frame,[0,Math.max(1,getProductionDuration(scenes,fps)-1)],[0,100],{extrapolateRight:'clamp'})}%`}}/>
   </AbsoluteFill>;
 };
