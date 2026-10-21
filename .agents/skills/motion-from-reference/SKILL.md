@@ -119,3 +119,10 @@ description: Build a new motion-graphics video in Remotion in the style of a ref
   الناتج في `video/out/video.mp4`.
 
 </div>
+
+
+## Optional production v2 enhancements (new)
+
+For script-to-storyboard planning, visual asset manifests, brand/style checks, Arabic SRT subtitles, isolated scene revisions and optional multi-agent handoffs, read [references/production-v2.md](references/production-v2.md).
+
+These tools are **additive** and never override the original sequence: reference analysis → user questions → plan → authoritative audio/word alignment → scenes → Studio review → explicit user render approval. In particular, `production.py` generates *heuristic proposals*, not AI-authored scenes or verified visual understanding. Review and correct the storyboard before implementing it.
