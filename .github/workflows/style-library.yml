@@ -1,0 +1,31 @@
+name: Style library checks
+on:
+  pull_request:
+    paths:
+      - 'video/src/styles/**'
+      - 'video/src/Root.tsx'
+      - '.github/workflows/style-library.yml'
+jobs:
+  style-previews:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: video
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-audit --no-fund
+      - run: npm run typecheck
+      - name: Capture each style at three timestamps
+        run: |
+          for style in glass-motion editorial-motion paper-cutout exploded-view data-storytelling ui-walkthrough timeline-documentary network-visualization; do
+            npm run stills -- --id "Style-$style" 0 2 5
+          done
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: eight-style-previews
+          path: video/out/stills/
+          if-no-files-found: ignore
