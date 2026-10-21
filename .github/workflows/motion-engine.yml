@@ -11,13 +11,13 @@ on:
       - '.github/workflows/motion-engine.yml'
 jobs:
   validate-video:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     defaults:
       run:
         working-directory: video
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
         with:
           node-version: '22'
       - name: Install dependencies
@@ -28,7 +28,7 @@ jobs:
         run: npm run stills -- --id MotionEngineDemo 0 1 2 3 5
       - name: Upload visual evidence
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: motion-engine-stills
           path: video/out/stills/
