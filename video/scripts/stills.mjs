@@ -6,7 +6,7 @@ import path from "node:path";
 const args = process.argv.slice(2);
 const idIndex = args.indexOf("--id");
 const id = idIndex >= 0 ? args[idIndex + 1] : "Main";
-const secs = args.filter((_, i) => i !== idIndex && i !== idIndex + 1 && args[i] !== "--id").map(Number).filter(Number.isFinite);
+const secs = args.filter((_, i) => idIndex < 0 || (i !== idIndex && i !== idIndex + 1)).map(Number).filter(Number.isFinite);
 if (!id || !secs.length) {
   console.error("usage: npm run stills -- [--id Composition] <seconds> [<seconds> ...]");
   process.exit(1);
