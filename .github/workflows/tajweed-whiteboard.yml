@@ -6,6 +6,11 @@ on:
       - 'video/src/production/TajweedWhiteboard30.tsx'
       - 'video/src/Root.tsx'
       - '.github/workflows/tajweed-whiteboard.yml'
+  pull_request:
+    paths:
+      - 'video/src/production/TajweedWhiteboard30.tsx'
+      - 'video/src/Root.tsx'
+      - '.github/workflows/tajweed-whiteboard.yml'
   workflow_dispatch:
 jobs:
   render:
@@ -20,11 +25,14 @@ jobs:
           node-version: '22'
       - run: npm install --no-audit --no-fund
       - run: npm run typecheck
+      - run: sudo apt-get update && sudo apt-get install -y ffmpeg
       - name: Render 30-second Tajweed whiteboard
         run: |
           mkdir -p out/tajweed
           npx remotion render src/index.ts TajweedWhiteboard30 out/tajweed/tajweed-whiteboard-new-30s.mp4 --codec h264 --crf 24 --concurrency 2
           test -s out/tajweed/tajweed-whiteboard-new-30s.mp4
+          ffprobe -v error -select_streams v:0 -show_entries stream=width,height,nb_frames,r_frame_rate -show_entries format=duration -of json out/tajweed/tajweed-whiteboard-new-30s.mp4 > out/tajweed/metadata.json
+          node -e "const m=require('./out/tajweed/metadata.json');if(Math.abs(Number(m.format.duration)-30)>0.1||m.streams[0].width!==1920||m.streams[0].height!==1080)process.exit(1)"
       - uses: actions/upload-artifact@v6
         with:
           name: tajweed-whiteboard-new-30s
