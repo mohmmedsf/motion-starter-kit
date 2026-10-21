@@ -25,7 +25,7 @@ jobs:
       - run: npm run typecheck
       - name: Generate storyboard and SRT from Arabic text
         run: |
-          printf 'ابدأ مشروعك بفكرة واضحة\\n\\nحوّل الفكرة إلى فيديو عربي احترافي\\n\\nانشر قصتك بثقة' > out-script.txt
+          printf '%s\n\n%s\n\n%s\n' 'ابدأ مشروعك بفكرة واضحة' 'حوّل الفكرة إلى فيديو عربي احترافي' 'انشر قصتك بثقة' > out-script.txt
           node scripts/build-production.mjs --script out-script.txt --output out/production/storyboard.json
           node scripts/storyboard-to-srt.mjs out/production/storyboard.json out/production/subtitles.srt
           node -e "const p=require('./out/production/storyboard.json'); if(p.scenes.length!==3)process.exit(1)"
