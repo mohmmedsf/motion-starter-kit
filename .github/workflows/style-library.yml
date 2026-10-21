@@ -20,12 +20,12 @@ jobs:
       - run: npm run typecheck
       - name: Capture each style at three timestamps
         run: |
-          for style in glass-motion editorial-motion paper-cutout exploded-view data-storytelling ui-walkthrough timeline-documentary network-visualization; do
+          for style in glass-motion editorial-motion paper-cutout exploded-view data-storytelling ui-walkthrough timeline-documentary network-visualization isometric-3d cinematic-documentary whiteboard-explainer product-launch; do
             npm run stills -- --id "Style-$style" 0 2 5
           done
       - uses: actions/upload-artifact@v6
         if: always()
         with:
-          name: eight-style-previews
+          name: twelve-style-previews
           path: video/out/stills/
           if-no-files-found: ignore

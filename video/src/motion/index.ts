@@ -11,3 +11,5 @@ export { CameraDirector } from './CameraDirector';
 export type { CameraDirectorProps, CameraKeyframe } from './CameraDirector';
 export { SmartLayout } from './SmartLayout';
 export type { SmartLayoutProps } from './SmartLayout';
+export { AnimatedSubtitle } from './AnimatedSubtitle';
+export type { SubtitleCue } from './AnimatedSubtitle';
