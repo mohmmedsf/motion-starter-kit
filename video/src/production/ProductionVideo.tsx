@@ -1,6 +1,6 @@
 import React from 'react';
 import {AbsoluteFill, Audio, interpolate, Sequence, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
-import {STYLE_IDS, STYLE_LABELS, STYLE_PALETTES, StyleShowcase, EXTRA_STYLE_IDS, EXTRA_STYLE_LABELS, ExtraStyleShowcase} from '../styles';
+import {STYLE_PALETTES} from '../styles';
 import type {StyleId, ExtraStyleId} from '../styles';
 
 import type {CaptionCue} from './manifest';
@@ -34,15 +34,18 @@ export const ProductionVideo:React.FC<ProductionProps>=({scenes,brand='MOTION ST
       const start=offset;
       const frames=Math.max(1,Math.round(Math.max(.5,scene.seconds)*fps));
       offset+=frames;
-      const extra=(EXTRA_STYLE_IDS as readonly string[]).includes(scene.style);
-      const palette=extra?{fg:'#fff',bg:'#090d16',accent}:STYLE_PALETTES[scene.style as StyleId];
+      const hasCaption= captions.some(c=>c.start< (start+frames)/fps && c.end>start/fps);
+      const distinctSubtitle=scene.subtitle?.trim() && scene.subtitle.trim()!==scene.title.trim() && !hasCaption;
+      const colors=STYLE_PALETTES[scene.style as StyleId];
+      const background=colors?.bg || '#101d29';
       return <Sequence key={index} from={start} durationInFrames={frames}>
         <AbsoluteFill>
-          {extra?<ExtraStyleShowcase styleId={scene.style as ExtraStyleId}/>:<StyleShowcase styleId={scene.style as StyleId}/>}
+          <AbsoluteFill style={{background:`radial-gradient(ellipse at 50% 35%,#244354,${background} 75%)`}}/>
+          <svg width="1920" height="1080" viewBox="0 0 1920 1080" style={{position:'absolute',inset:0}} aria-hidden="true"><path d="M250 620 C540 350 820 780 1130 500 S1530 330 1690 590" stroke={accent} strokeWidth="11" strokeLinecap="round" fill="none" strokeDasharray="2200" strokeDashoffset={2200*Math.max(0,1-Math.min(1,(frame-start)/(fps*2.2)))}/><circle cx="1500" cy="380" r="125" stroke={accent} strokeWidth="9" fill="none" opacity="0.35"/></svg>
           <AbsoluteFill style={{background:'linear-gradient(0deg,rgba(0,0,0,.87),rgba(0,0,0,0) 62%)',pointerEvents:'none'}}/>
           <div style={{position:'absolute',top:38,left:65,padding:'12px 22px',background:'#0009',borderLeft:`6px solid ${accent}`,color:'#fff',fontSize:25,letterSpacing:2}}>{brand}</div>
-          <div dir="rtl" style={{position:'absolute',right:100,left:100,bottom:subtitles?170:100,color:'#fff',fontSize:74,fontWeight:900,textAlign:'center',textShadow:'0 6px 18px #000',lineHeight:1.4}}>{scene.title}</div>
-          {subtitles&&scene.subtitle?<div dir="rtl" style={{position:'absolute',bottom:58,left:230,right:230,textAlign:'center',background:'#000b',borderRadius:20,padding:'17px 30px',color:palette.fg,fontSize:39,lineHeight:1.35}}>{scene.subtitle}</div>:null}
+          <div dir="rtl" style={{position:'absolute',right:100,left:100,bottom:distinctSubtitle?230:160,color:'#fff',fontSize:74,fontWeight:900,textAlign:'center',textShadow:'0 6px 18px #000',lineHeight:1.4}}>{scene.title}</div>
+          {subtitles&&distinctSubtitle?<div dir="rtl" style={{position:'absolute',bottom:58,left:230,right:230,textAlign:'center',background:'#000b',borderRadius:20,padding:'17px 30px',color:'#ffffff',fontSize:39,lineHeight:1.35}}>{scene.subtitle}</div>:null}
         </AbsoluteFill>
       </Sequence>;
     })}
