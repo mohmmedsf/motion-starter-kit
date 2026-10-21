@@ -16,7 +16,7 @@ const styles=['editorial-motion','cinematic-documentary','whiteboard-explainer',
 const scenes=paragraphs.map((paragraph,i)=>{
   const words=paragraph.split(/\s+/).length;
   const seconds=Math.max(3,Math.round(words/wpm*60*10)/10);
-  return {title:paragraph.length>85?paragraph.slice(0,82)+'…':paragraph,subtitle:paragraph,style:styles[i%styles.length],seconds};
+  return {title:paragraph.length>85?paragraph.slice(0,82)+'…':paragraph,style:styles[i%styles.length],seconds};
 });
 const output={brand:option('--brand','MOTION STUDIO'),accent:'#ffb454',subtitles:true,scenes};
 const destination=option('--output','out/storyboard.json');
