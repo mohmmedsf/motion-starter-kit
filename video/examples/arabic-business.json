@@ -1,0 +1,42 @@
+{
+  "brand": "MOTION STUDIO",
+  "accent": "#ffb454",
+  "subtitles": true,
+  "scenes": [
+    {
+      "title": "من الفكرة إلى التنفيذ",
+      "subtitle": "خطة واضحة ومشاهد متحركة",
+      "style": "editorial-motion",
+      "seconds": 4
+    },
+    {
+      "title": "احكِ قصة مشروعك",
+      "subtitle": "تصميم سينمائي باللغة العربية",
+      "style": "cinematic-documentary",
+      "seconds": 5
+    },
+    {
+      "title": "ابدأ الآن",
+      "subtitle": "اصنع فيديوك بهويتك",
+      "style": "product-launch",
+      "seconds": 4
+    }
+  ],
+  "captions": [
+    {
+      "start": 0,
+      "end": 3.9,
+      "text": "من الفكرة إلى التنفيذ"
+    },
+    {
+      "start": 4,
+      "end": 8.9,
+      "text": "احكِ قصة مشروعك"
+    },
+    {
+      "start": 9,
+      "end": 12.9,
+      "text": "ابدأ الآن"
+    }
+  ]
+}
