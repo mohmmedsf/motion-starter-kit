@@ -1,0 +1,35 @@
+name: Motion engine checks
+on:
+  pull_request:
+    paths:
+      - 'video/**'
+      - '.github/workflows/motion-engine.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'video/**'
+      - '.github/workflows/motion-engine.yml'
+jobs:
+  validate-video:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: video
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+      - name: Typecheck
+        run: npm run typecheck
+      - name: Render demo stills
+        run: npm run stills -- --id MotionEngineDemo 0 1 2 3 5
+      - name: Upload visual evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: motion-engine-stills
+          path: video/out/stills/
+          if-no-files-found: ignore
