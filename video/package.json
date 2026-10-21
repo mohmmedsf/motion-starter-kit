@@ -8,7 +8,8 @@
     "typecheck": "tsc --noEmit",
     "render:profiles": "node scripts/render-profiles.mjs",
     "qa:frames": "node scripts/visual-qa.mjs",
-    "qa:compare": "node scripts/compare-frames.mjs"
+    "qa:compare": "node scripts/compare-frames.mjs",
+    "performance": "node scripts/performance.mjs"
   },
   "dependencies": {
     "@remotion/bundler": "4.0.533",
