@@ -41,7 +41,7 @@ export const ProductionVideo:React.FC<ProductionProps>=({scenes,brand='MOTION ST
       return <Sequence key={index} from={start} durationInFrames={frames}>
         <AbsoluteFill>
           <AbsoluteFill style={{background:`radial-gradient(ellipse at 50% 35%,#244354,${background} 75%)`}}/>
-          <svg width="1920" height="1080" viewBox="0 0 1920 1080" style={{position:'absolute',inset:0}} aria-hidden="true"><path d="M250 620 C540 350 820 780 1130 500 S1530 330 1690 590" stroke={accent} strokeWidth="11" strokeLinecap="round" fill="none" strokeDasharray="2200" strokeDashoffset={2200*Math.max(0,1-Math.min(1,(frame-start)/(fps*2.2)))}/><circle cx="1500" cy="380" r="125" stroke={accent} strokeWidth="9" fill="none" opacity="0.35"/></svg>
+          <svg width="1920" height="1080" viewBox="0 0 1920 1080" style={{position:'absolute',inset:0}} aria-hidden="true"><path d="M250 620 C540 350 820 780 1130 500 S1530 330 1690 590" stroke={accent} strokeWidth="11" strokeLinecap="round" fill="none" strokeDasharray="2200" strokeDashoffset={2200*Math.max(0,1-Math.min(1,Math.max(0,(frame-start)/(fps*2.2))))}/><circle cx="1500" cy="380" r="125" stroke={accent} strokeWidth="9" fill="none" opacity="0.35"/></svg>
           <AbsoluteFill style={{background:'linear-gradient(0deg,rgba(0,0,0,.87),rgba(0,0,0,0) 62%)',pointerEvents:'none'}}/>
           <div style={{position:'absolute',top:38,left:65,padding:'12px 22px',background:'#0009',borderLeft:`6px solid ${accent}`,color:'#fff',fontSize:25,letterSpacing:2}}>{brand}</div>
           <div dir="rtl" style={{position:'absolute',right:100,left:100,bottom:distinctSubtitle?230:160,color:'#fff',fontSize:74,fontWeight:900,textAlign:'center',textShadow:'0 6px 18px #000',lineHeight:1.4}}>{scene.title}</div>
