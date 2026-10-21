@@ -7,6 +7,6 @@ if(!existsSync(source))throw Error(`Manifest not found: ${source}`);
 const props=JSON.parse(readFileSync(source,'utf8'));
 if(!Array.isArray(props.scenes)||props.scenes.length===0)throw Error('scenes array is required');
 mkdirSync(dirname(resolve(output)),{recursive:true});
-const result=spawnSync(process.execPath,['node_modules/@remotion/cli/remotion-cli.js','render','src/index.ts','ProductionDemo',output,'--codec','h264','--props',JSON.stringify(props)],{stdio:'inherit',shell:false});
+const result=spawnSync('npx',['--no-install','remotion','render','src/index.ts','ProductionDemo',output,'--codec','h264','--props',JSON.stringify(props)],{stdio:'inherit',shell:false});
 if(result.error)throw result.error;
 process.exit(result.status??1);
